@@ -1,22 +1,11 @@
 import GlobalStyle from "./styles/global";
+import ButtonHeader from "./components/ButtonHeader";
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ButtonHeader value={"button"} />
     </>
   );
 }
