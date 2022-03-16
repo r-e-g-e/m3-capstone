@@ -6,10 +6,11 @@ const PagColeta = () => {
     <CollectionContainer>
       <CollectionHeader>
         <h2>
-          <span className="ajude">Ajude</span> <span className="me">me</span>
+          <span className="ajude">Ajude.</span>
+          <span className="me">me</span>
         </h2>
-        <StyledButton isWide={false} bgColor={"white"}>
-          Button
+        <StyledButton isWide={false} bgColor="orange">
+          Voltar
         </StyledButton>
       </CollectionHeader>
     </CollectionContainer>
