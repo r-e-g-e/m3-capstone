@@ -1,6 +1,9 @@
+import GlobalStyle from "./styles/global";
+
 function App() {
   return (
-    <div className="App">
+    <>
+      <GlobalStyle />
       <header className="App-header">
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -14,7 +17,7 @@ function App() {
           Learn React
         </a>
       </header>
-    </div>
+    </>
   );
 }
 
