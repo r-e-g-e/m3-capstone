@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const Container = styled.button`
   background: var(--branco);
   color: var(--laranja);
-  padding: 5px 10px;
+  padding: 3px;
+  width: 201px;
   border-color: var(--branco);
   border-radius: 5px;
   font-weight: bold;
@@ -11,8 +12,5 @@ export const Container = styled.button`
   :hover {
     background: var(--laranja);
     color: var(--branco);
-  }
-  @media (min-width: 600px) {
-    font-size: 24px;
   }
 `;
