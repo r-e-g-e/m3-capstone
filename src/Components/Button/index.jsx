@@ -1,12 +1,14 @@
 import { StyledButton } from "./styles";
 
-export const Button = ({ bgColor, children, width, ...rest }) => {
+function Button({ bgColor, children, width, height, ...rest }) {
   return (
-    <StyledButton width={width} bgColor={bgColor} {...rest}>
+    <StyledButton width={width} bgColor={bgColor} height={height} {...rest}>
       {children}
     </StyledButton>
   );
-};
+}
+
+export default Button;
 
 /* 
   bgColor = 'orange' || 'white';

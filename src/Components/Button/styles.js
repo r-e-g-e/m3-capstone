@@ -12,13 +12,14 @@ export const StyledButton = styled.button`
   border: 2px solid
     ${(props /* eslint-disable-next-line indent */) =>
       props.bgColor === "orange" ? "var(--laranja)" : "var(--branco)"};
-  height: 40px;
+  height: ${({ height }) => height};
   font-weight: bold;
   font-size: 18px;
   :hover {
     background-color: ${(props /* eslint-disable-next-line indent */) =>
       props.bgColor === "orange" ? "var(--branco)" : "var(--laranja)"};
-    color: ${(props) => (props.bgColor === "orange" ? "#D55B3E" : "#fff")};
+    color: ${(props /* eslint-disable-next-line indent */) =>
+      props.bgColor === "orange" ? "var(--laranja)" : "var(--branco)"};
     transition: 0.4s;
   }
 `;
