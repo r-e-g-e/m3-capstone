@@ -1,7 +1,14 @@
 import React from "react";
+import { Container } from "./styles";
+import Header from "../../components/Header";
 
-const PaginaSobre = () => {
-  return <div>PaginaSobre</div>;
-};
+function PaginaSobre() {
+
+  return (
+    <Container>
+      <Header/>
+    </Container>
+  );
+}
 
 export default PaginaSobre;
