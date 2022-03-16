@@ -1,8 +1,13 @@
-export default function Input({title, placeholder = title, inputType = "text"}){
+import { Container } from "./styles";
+
+export default function Input({title, placeholder = title, inputType = "text", error, register}){
   return(
-    <div>
-      <p>{title}</p>
-      <input type={inputType} placeholder={placeholder} />
-    </div>
+    <Container>
+      <div>
+        <p>{title}</p>
+        {error && <small>{error}</small>}
+      </div>
+      <input {...register} type={inputType} placeholder={placeholder} />
+    </Container>
   );
 }
