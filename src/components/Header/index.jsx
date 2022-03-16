@@ -1,11 +1,9 @@
 import React from "react";
-import LogoAjudaMe from "../Logo";
-import { HeaderButtons, HeaderContainer } from "./styles";
+import { HeaderContainer, HeaderButtons } from "./styles";
 
-const Header = () => {
+function Header() {
   return (
     <HeaderContainer>
-      <LogoAjudaMe />
       <div>
         <HeaderButtons>Pontos de coleta</HeaderButtons>
         <HeaderButtons>Sobre</HeaderButtons>
@@ -13,6 +11,6 @@ const Header = () => {
       </div>
     </HeaderContainer>
   );
-};
+}
 
 export default Header;
