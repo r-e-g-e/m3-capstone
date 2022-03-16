@@ -1,8 +1,8 @@
 import { StyledButton } from "./styles";
 
-export const Button = ({ isWide, bgColor, children, ...rest }) => {
+export const Button = ({ bgColor, children, width, ...rest }) => {
   return (
-    <StyledButton isWide={isWide} bgColor={bgColor} {...rest}>
+    <StyledButton width={width} bgColor={bgColor} {...rest}>
       {children}
     </StyledButton>
   );
