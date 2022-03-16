@@ -9,7 +9,7 @@ const PagColeta = () => {
           <span className="ajude">Ajude.</span>
           <span className="me">me</span>
         </h2>
-        <StyledButton isWide={false} bgColor="orange">
+        <StyledButton width="100px" bgColor="orange">
           Voltar
         </StyledButton>
       </CollectionHeader>
@@ -18,10 +18,3 @@ const PagColeta = () => {
 };
 
 export default PagColeta;
-
-/*
-#FCF4D9 - background
-#8ED2C9 - verde-claro
-#00AAA0 - verde-escuro
-#D55B3E - laranja (?)
-*/

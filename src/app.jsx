@@ -1,9 +1,11 @@
 import { Route, Switch } from "react-router-dom";
 import PagColeta from "./pages/PagColeta";
+import { GlobalStyle } from "./styles/styles";
 
 function App() {
   return (
     <>
+      <GlobalStyle />
       <Switch>
         <Route exact path="/"></Route>
         <Route path="/pontos-de-coleta">
