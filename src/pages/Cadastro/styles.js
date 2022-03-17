@@ -48,19 +48,26 @@ export const Container = styles("section")`
 
       margin-bottom: 30px;
     }
+  }
+`;
 
-    button{
-      background-color: ${secundaria};
+export const Botao = styles.button`
+background-color: var(--laranja);
+  color:white;
 
-      padding: 10px 12px;
+  padding: 10px 12px;
 
-      color: white;
+  color: white;
 
-      font-size: 18px;
-      font-weight: 600 ;
-      
-      border: none;
-      border-radius: 5px;
-    }
+  font-size: 18px;
+  font-weight: 600;
+  
+  border: none;
+  border-radius: 5px;
+  
+  
+  &:hover{
+    background-color: white;
+    color:var(--laranja);
   }
 `;
