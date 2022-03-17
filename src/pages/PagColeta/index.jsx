@@ -1,8 +1,10 @@
-import { StyledButton } from "../../Components/Button/styles";
+import Button from "../../Components/Button";
 import {
   CollectionContainer,
   CollectionHeader,
   SelectContainer,
+  CarrouselContainer,
+  LocationsContainer,
 } from "./styles";
 import { AboutButton } from "../../Components/AboutButton/styles";
 import * as yup from "yup";
@@ -34,32 +36,42 @@ function PagColeta() {
             <span className="ajude">Ajude.</span>
             <span className="me">me</span>
           </h1>
-          <StyledButton width="100px" height="40px" bgColor="orange">
+          <Button width="100px" height="40px" bgColor="orange">
             Voltar
-          </StyledButton>
+          </Button>
         </CollectionHeader>
+        <CarrouselContainer></CarrouselContainer>
         <SelectContainer>
           <h2>Busca por pontos de coleta e voluntariado</h2>
           <div className="select__innerContainer">
             <form onSubmit={handleSubmit(onSubmitFunction)}>
-              <select {...register("state")}>
-                <option value="0">Escolha estado</option>
-                <option value="Paraná">Paraná</option>
-              </select>
+              <h4>Busca por pontos de coleta e voluntariado</h4>
+              <div className="selectBtnAuxContainer">
+                <select {...register("state")}>
+                  <option value="0">Escolha estado</option>
+                  <option value="Paraná">Paraná</option>
+                </select>
 
-              <select {...register("city")}>
-                <option value="0">Escolha cidade</option>
-                <option value="Campo Mourao">Campo Mourão</option>
-              </select>
+                <select {...register("city")}>
+                  <option value="0">Escolha cidade</option>
+                  <option value="Campo Mourao">Campo Mourão</option>
+                </select>
 
-              <StyledButton
-                type="submit"
-                bgColor="orange"
-                width="100px"
-                height="35px"
-              >
-                Buscar
-              </StyledButton>
+                <Button
+                  type="submit"
+                  bgColor="orange"
+                  width="100px"
+                  height="35px"
+                >
+                  Buscar
+                </Button>
+              </div>
+              <LocationsContainer>
+                <span>
+                  orem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                  eiusmod tempor incididunt ut labore et dolore
+                </span>
+              </LocationsContainer>
             </form>
           </div>
         </SelectContainer>

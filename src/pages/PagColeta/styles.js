@@ -15,6 +15,12 @@ export const CollectionContainer = styled.div`
     font-style: italic;
     color: var(--laranja);
   }
+
+  @media (min-width: 992px) {
+    h2 {
+      display: none;
+    }
+  }
 `;
 
 export const CollectionHeader = styled.div`
@@ -44,6 +50,10 @@ export const CollectionHeader = styled.div`
 export const SelectContainer = styled.div`
   width: 285px;
   height: 400px;
+  @media (min-width: 992px) {
+    width: 750px;
+    height: 230px;
+  }
 
   .select__innerContainer {
     width: inherit;
@@ -53,18 +63,66 @@ export const SelectContainer = styled.div`
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    @media (min-width: 992px) {
+      border-radius: 20px;
+      flex-direction: row;
+    }
 
     form {
       display: flex;
       flex-direction: column;
-      justify-content: space-evenly;
+      justify-content: space-around;
       align-items: center;
       height: inherit;
+      width: inherit;
+
+      h4 {
+        font-size: 25px;
+        color: var(--branco);
+        display: none;
+
+        @media (min-width: 992px) {
+          display: block;
+        }
+      }
+
+      .selectBtnAuxContainer {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        height: inherit;
+
+        @media (min-width: 992px) {
+          height: 80px;
+          width: 100%;
+          flex-direction: row;
+        }
+      }
+
+      @media (min-width: 992px) {
+        justify-content: space-around;
+      }
     }
 
     select {
       width: 199px;
       height: 35px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
   }
 `;
+
+export const LocationsContainer = styled.div`
+  display: none;
+
+  @media (min-width: 992px) {
+    display: block;
+    width: 91%;
+    height: 72px;
+    border-radius: 20px;
+    background-color: var(--branco);
+  }
+`;
+
+export const CarrouselContainer = styled.div``;

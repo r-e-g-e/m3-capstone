@@ -9,6 +9,12 @@ export const AboutButton = styled.button`
   border: 0;
   color: var(--branco);
   background-color: var(--verde-escuro);
+  border: 2px solid var(--verde-escuro);
   font-weight: bold;
   font-size: 20px;
+  :hover {
+    background-color: var(--branco);
+    color: var(--verde-escuro);
+    transition: 0.4s;
+  }
 `;
