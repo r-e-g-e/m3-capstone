@@ -1,13 +1,11 @@
 import styles from "styled-components";
 
-const primary = "#00AAA0";
-const secondary = "#D55B3E";
+const primaria = "var(--verde-escuro)";
+const secundaria = "var(--laranja)";
 
 export const Container = styles("section")`
   display: flex;
   flex-direction: column;
-
-  background-color: #FCF4D9;
   
   height: 100%;
   width: 100%;
@@ -18,7 +16,7 @@ export const Container = styles("section")`
   }
 
   & > h2{
-    color: ${secondary};
+    color: ${secundaria};
 
     font-weight: 300;
     font-size: 30px;
@@ -29,7 +27,7 @@ export const Container = styles("section")`
   }
   
   form{
-    background-color: ${primary};
+    background-color: ${primaria};
     
     margin: 0 auto;
     padding: 30px 40px;
@@ -52,7 +50,7 @@ export const Container = styles("section")`
     }
 
     button{
-      background-color: ${secondary};
+      background-color: ${secundaria};
 
       padding: 10px 12px;
 

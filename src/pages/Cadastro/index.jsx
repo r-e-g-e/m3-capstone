@@ -18,17 +18,16 @@ export default function PaginaCadastro(){
     
     cpf: yup.string()
       .required("Campo obrigatorio.")
+      .min(9, "Seu cpf deve conter 9 numeros!")
       .max(9, "Seu cpf deve conter apenas 9 numeros!"),
     
     senha: yup.string()
       .required("Campo obrigatorio.")
-      .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s)/g, "Sua senha deve conter caracteres especiais")
-      .min(8),
+      .min(6),
 
     confirmarSenha: yup.string()
       .required("Campo obrigatorio.")
-      .oneOf([yup.ref("password"), null], "Senha diferente")
-      .min(8)
+      .oneOf([yup.ref("senha"), null], "Senhas diferentes!")
   });
 
   const { register, handleSubmit, formState:{ errors } } = useForm({
@@ -52,7 +51,7 @@ export default function PaginaCadastro(){
       
       <h2>Cadastrar</h2>
 
-      <form onSubmit={handleSubmit(handleFormSubmit())}>
+      <form onSubmit={handleSubmit(handleFormSubmit)}>
 
         <section>
           <Input 
@@ -82,8 +81,8 @@ export default function PaginaCadastro(){
           <Input 
             error={errors.confirmarSenha?.message}
             register={register("confirmarSenha")}
-            placeholder="confirme sua senha" 
-            title="Confirme sua senha:"
+            placeholder="confirme a senha" 
+            title="Confirme a senha:"
           />
         </section>
         
