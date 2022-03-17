@@ -1,11 +1,10 @@
 import { Container } from "./styles";
 import ButtonHeader from "../ButtonHeader";
-import Logo from "../../assets/Ajude.me.png";
 
 function Header() {
   return (
     <Container>
-      <img src={Logo} alt="Logo " />
+      <img src={process.env.PUBLIC_URL + "/assets/Ajude.me.png"} alt="Logo " />
       <ButtonHeader value={"voltar"} />
     </Container>
   );
