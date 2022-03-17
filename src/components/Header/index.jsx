@@ -1,4 +1,3 @@
-import React from "react";
 import { HeaderContainer, HeaderButtons } from "./styles";
 
 function Header() {

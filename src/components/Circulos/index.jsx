@@ -1,4 +1,3 @@
-import React from "react";
 import { CirculosSistemasDeCores } from "./styles";
 
 function CirculoSistemaCores({ color }) {

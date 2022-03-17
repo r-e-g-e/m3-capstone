@@ -1,7 +1,6 @@
-import React from "react";
+import PerfilCriadores from "../../components/PerfilCriadores";
 import CirculoSistemaCores from "../../components/Circulos";
 import Header from "../../components/Header";
-import PerfilCriadores from "../../components/PerfilCriadores";
 import { DivCriadores, DivSistemaCores } from "./styles";
 import {
   Container,
