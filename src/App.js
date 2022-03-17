@@ -1,11 +1,11 @@
 import { Route, Switch } from "react-router-dom";
-import { GlobalStyle } from "./styles/styles";
-import Landing from "./pages/Lading-page";
+import { GlobalStyle } from "./styles/global";
+import Landing from "./pages/Lading";
 
 function App() {
   return (
     <>
-      <GlobalStyle />
+      <GlobalStyle/>
       <Switch>
         <Route exact path="/">
           <Landing/>
