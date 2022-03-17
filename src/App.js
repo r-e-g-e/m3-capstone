@@ -1,15 +1,14 @@
 import { Route, Switch } from "react-router-dom";
-import PagColeta from "./pages/PagColeta";
 import { GlobalStyle } from "./styles/styles";
+import Landing from "./pages/Lading-page";
 
 function App() {
   return (
     <>
       <GlobalStyle />
       <Switch>
-        <Route exact path="/"></Route>
-        <Route path="/pontos-de-coleta">
-          <PagColeta />
+        <Route exact path="/">
+          <Landing/>
         </Route>
       </Switch>
     </>

@@ -7,10 +7,5 @@ function Button({ bgColor, children, width, height, ...rest }) {
     </StyledButton>
   );
 }
-
 export default Button;
 
-/* 
-  bgColor = 'orange' || 'white';
-  isWide = true => width: 200px || false => width: 100px;
-*/
