@@ -1,20 +1,18 @@
-import { Container, FotoPerfil } from "./styles";
+import { LinkedInLink } from "../../pages/sobre/styles";
+import { CargoSpan, Container, FotoPerfil } from "./styles";
+import criadores from "../../utils/criadores";
 
 function PerfilCriadores() {
-  const criadores = [
-    { nome: "Bryan Torres", foto: "BT" },
-    { nome: "Rodrigo Tavares", foto: "RT" },
-    { nome: "Wellery Chaves", foto: "WC" },
-    { nome: "Raphael Felipe", foto: "RF" },
-    { nome: "Antônio Marcos", foto: "AM" },
-  ];
-
   return (
     <>
       {criadores.map((pessoa, index) => (
         <Container key={index}>
           <FotoPerfil>{pessoa.foto}</FotoPerfil>
           <p>{pessoa.nome}</p>
+          <CargoSpan>{pessoa.cargo}</CargoSpan>
+          <LinkedInLink href={pessoa.linkedin} target="_blank">
+            linkedin
+          </LinkedInLink>
         </Container>
       ))}
     </>

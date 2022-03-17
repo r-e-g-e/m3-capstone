@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  min-width: 60px;
-  max-width: 60px;
+  width: 110px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -11,13 +10,14 @@ export const Container = styled.div`
   p {
     margin-top: 5px;
     text-align: center;
+    font-weight: bold;
   }
 
   @media only screen and (min-width: 600px) {
-  p {
+    p {
     margin-top: 10px;
     font-size: 20px;
-  }
+    }
   }
 `;
 
@@ -30,10 +30,17 @@ export const FotoPerfil = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
+  font-size: 30px;
 
   @media only screen and (min-width: 600px) {
   width: 110px;
   height: 110px;
   }
+`;
+
+export const CargoSpan = styled.span`
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.8;
+  margin: 5px 0;
 `;
