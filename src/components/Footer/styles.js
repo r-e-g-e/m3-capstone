@@ -4,8 +4,11 @@ export const Container = styled.footer`
   background: var(--verde-escuro);
   height: 38px;
   display: flex;
-  align-items: center;
+  align-items:  center;
   justify-content: center;
+  position:absolute;
+	bottom:0;
+	width:100%;
 
   a {
     color: var(--branco);
