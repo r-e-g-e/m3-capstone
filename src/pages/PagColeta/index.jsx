@@ -3,7 +3,6 @@ import {
   CollectionContainer,
   CollectionHeader,
   SelectContainer,
-  CarrouselContainer,
   LocationsContainer,
 } from "./styles";
 import { AboutButton } from "../../Components/AboutButton/styles";
@@ -40,7 +39,6 @@ function PagColeta() {
             Voltar
           </Button>
         </CollectionHeader>
-        <CarrouselContainer></CarrouselContainer>
         <SelectContainer>
           <h2>Busca por pontos de coleta e voluntariado</h2>
           <div className="select__innerContainer">
@@ -75,7 +73,7 @@ function PagColeta() {
             </form>
           </div>
         </SelectContainer>
-        <AboutButton>Sobre</AboutButton>
+        <AboutButton>Ajude.me</AboutButton>
       </CollectionContainer>
     </>
   );

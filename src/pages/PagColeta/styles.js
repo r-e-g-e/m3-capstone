@@ -119,10 +119,8 @@ export const LocationsContainer = styled.div`
   @media (min-width: 992px) {
     display: block;
     width: 91%;
-    height: 72px;
+    height: 100px;
     border-radius: 20px;
     background-color: var(--branco);
   }
 `;
-
-export const CarrouselContainer = styled.div``;
