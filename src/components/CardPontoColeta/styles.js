@@ -3,10 +3,12 @@ import styled from "styled-components";
 export const Container = styled.div`
   background: var(--laranja);
   width: 50%;
-  height: 200px;
+  min-width: 300px;
+  height: 100%;
   border-radius: 5px;
   padding: 10px;
   color: var(--branco);
+  display: flex;
 
   div {
     display: flex;
@@ -30,6 +32,7 @@ export const Container = styled.div`
     color: var(--laranja);
     background: var(--branco);
     border-color: var(--branco);
+    align-self: center;
 
     :hover {
       color: var(--branco);

@@ -8,7 +8,7 @@ export const Container = styled.div`
   justify-content: space-around;
   padding: 10px;
 
-  @media (min-width: 600px) {
+  @media (min-width: 700px) {
     height: 100px;
     align-items: center;
   }

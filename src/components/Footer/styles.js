@@ -15,7 +15,7 @@ export const Container = styled.footer`
     font-family: "Lobster", cursive;
   }
 
-  @media (min-width: 600px) {
+  @media (min-width: 700px) {
     height: 75px;
 
     a {

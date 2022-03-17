@@ -5,7 +5,7 @@ function Header() {
   return (
     <Container>
       <img src={process.env.PUBLIC_URL + "/assets/Ajude.me.png"} alt="Logo " />
-      <ButtonHeader value={"voltar"} />
+      <ButtonHeader>voltar</ButtonHeader>
     </Container>
   );
 }

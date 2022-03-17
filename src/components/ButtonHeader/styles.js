@@ -12,7 +12,7 @@ export const Container = styled.button`
     background: var(--laranja);
     color: var(--branco);
   }
-  @media (min-width: 600px) {
+  @media (min-width: 700px) {
     font-size: 24px;
   }
 `;
