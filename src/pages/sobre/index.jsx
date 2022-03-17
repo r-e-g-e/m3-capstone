@@ -1,7 +1,13 @@
 import PerfilCriadores from "../../components/PerfilCriadores";
 import CirculoSistemaCores from "../../components/Circulos";
-import Header from "../../components/Header";
-import { DivCriadores, DivSistemaCores } from "./styles";
+import Header from "../../components/HeaderSobre";
+//import Logo from "../../../public/assets/Ajude.me.svg";
+import {
+  DivCriadores,
+  DivCoresSobre,
+  //SobreDiv,
+  DivSistemaCores,
+} from "./styles";
 import {
   Container,
   ContentContainer,
@@ -27,28 +33,38 @@ function PaginaSobre() {
         {/* Sistema de cores */}
         <TitulosLightItalic>Entenda o sistema de cores:</TitulosLightItalic>
         <DivSistemaCores>
-          <CirculoSistemaCores color="verde" />
-          <p>
-            Verde: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          </p>
+          <DivCoresSobre>
+            <CirculoSistemaCores color="verde" />
+            <p>
+              <span>Verde</span>: Lorem ipsum dolor sit amet, consectetur
+              adipisicing elit.
+            </p>
+          </DivCoresSobre>
+          <DivCoresSobre>
+            <CirculoSistemaCores color="amarelo" />
+            <p>
+              <span>Amarelo</span>: Lorem ipsum dolor sit amet, consectetur
+              adipisicing elit.
+            </p>
+          </DivCoresSobre>
+          <DivCoresSobre>
+            <CirculoSistemaCores />
+            <p>
+              <span>Vermelho</span>: Lorem ipsum dolor sit amet, consectetur
+              adipisicing elit.
+            </p>
+          </DivCoresSobre>
         </DivSistemaCores>
-        <DivSistemaCores>
-          <CirculoSistemaCores color="amarelo" />
-          <p>
-            Amarelo: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          </p>
-        </DivSistemaCores>
-        <DivSistemaCores>
-          <CirculoSistemaCores />
-          <p>
-            Vermelho: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-          </p>
-        </DivSistemaCores>
-
         {/* Controle e criação do ponto de coleta */}
         <TitulosLightItalic>
           Controle e criação do ponto de coleta
         </TitulosLightItalic>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis quam
+          cupiditate praesentium, rerum amet officiis, accusamus excepturi,
+          dolore magnam labore reprehenderit soluta aperiam saepe voluptas nemo
+          quibusdam impedit nesciunt exercitationem!
+        </p>
 
         {/* Criadores do Ajude.me */}
         <TitulosLightItalic>Criadores do Ajude.me</TitulosLightItalic>
@@ -56,6 +72,9 @@ function PaginaSobre() {
           <PerfilCriadores />
         </DivCriadores>
       </ContentContainer>
+      {/* <SobreDiv>
+        <img src={Logo} />
+      </SobreDiv> */}
     </Container>
   );
 }
