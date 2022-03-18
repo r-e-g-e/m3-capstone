@@ -5,7 +5,7 @@ export const Container = styled.button`
   color: var(--laranja);
   padding: 5px 10px;
   border-color: var(--branco);
-  border-radius: 5px;
+  border-radius: 10px;
   font-weight: bold;
   font-size: 14px;
   :hover {

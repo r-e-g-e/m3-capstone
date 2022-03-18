@@ -10,8 +10,12 @@ export const Container = styled.div`
 
   span {
     display: flex;
-    flex-direction: column-reverse;
     margin-top: 10px;
+    align-items: flex-end;
+  }
+
+  div {
+    margin-bottom: 5px;
   }
 
   a {
@@ -24,9 +28,8 @@ export const Container = styled.div`
   }
 
   .foto {
-    width: 40px;
+    width: 55px;
     border-radius: 50px;
-    align-self: flex-end;
     margin-top: 10px;
   }
 
@@ -37,17 +40,19 @@ export const Container = styled.div`
   @media (min-width: 700px) {
     height: 100px;
     align-items: center;
-    div {
-    }
     span {
-      flex-direction: row;
       width: 220px;
       align-items: center;
     }
     .foto {
-      width: 60px;
+      width: 80px;
       margin-bottom: 20px;
     }
+
+    div {
+      margin-top: 30px;
+    }
+
     .logo {
       width: 170px;
     }

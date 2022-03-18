@@ -8,8 +8,24 @@ export const Container = styled.div`
   justify-content: space-around;
   padding: 10px;
 
+  .logo {
+    width: 130px;
+  }
+
+  .hidden {
+    display: none;
+  }
+
   @media (min-width: 700px) {
     height: 100px;
     align-items: center;
+
+    .hidden {
+      display: unset;
+    }
+
+    .logo {
+      width: 170px;
+    }
   }
 `;
