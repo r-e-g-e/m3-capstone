@@ -26,4 +26,15 @@ export const GlobalStyle = createGlobalStyle`
     a{
         text-decoration: none;
     }
+    .help-landing{
+    width: 223px;
+    height: 136px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 47px;
+    text-align: center;
+    color: #FEFEFE;
+    }
 `;
