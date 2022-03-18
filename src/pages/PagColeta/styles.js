@@ -77,7 +77,8 @@ export const CollectionHeader = styled.div`
 
 export const SelectContainer = styled.div`
   width: 285px;
-  height: 400px;
+  height: 390px;
+
   @media (min-width: 992px) {
     width: 750px;
     height: 230px;
@@ -85,8 +86,7 @@ export const SelectContainer = styled.div`
 
   .select__innerContainer {
     width: inherit;
-    height: 317px;
-    background-color: var(--verde-escuro);
+    height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -99,7 +99,7 @@ export const SelectContainer = styled.div`
     form {
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      justify-content: space-evenly;
       align-items: center;
       height: inherit;
       width: inherit;
@@ -137,18 +137,41 @@ export const SelectContainer = styled.div`
       width: 199px;
       height: 35px;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      color: var(--laranja);
+      text-align: center;
     }
   }
 `;
 
 export const LocationsContainer = styled.div`
-  display: none;
+  width: 290px;
+  height: 100vh;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 
-  @media (min-width: 992px) {
-    display: block;
-    width: 91%;
-    height: 100px;
-    border-radius: 20px;
-    background-color: var(--branco);
+  h4 {
+    color: var(--laranja);
+    width: 80%;
+    height: 50px;
+    font-size: 14px;
+    text-align: center;
+    font-weight: lighter;
+    a {
+      color: cyan;
+    }
+  }
+
+  .locationsInnerContainer {
+    width: 95%;
+    border: 2px solid black;
+    height: 425px;
+    overflow: scroll;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: var(--bege-escuro);
   }
 `;

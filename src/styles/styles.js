@@ -17,6 +17,8 @@ export const GlobalStyle = createGlobalStyle`
         --verde-escuro: #00aaa0;
         --cinza: #c4c4c4;
         --laranja: #d55b3e;
+        --laranja-escuro: #CB6A41;
+        --bege-escuro: #E5DFCA;
         --preto: #000000;
         --bege: #fcf4d9;
     }
