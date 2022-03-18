@@ -27,14 +27,30 @@ export const GlobalStyle = createGlobalStyle`
         text-decoration: none;
     }
     .help-landing{
-    width: 223px;
-    height: 136px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 47px;
-    text-align: center;
-    color: #FEFEFE;
+        width: 223px;
+        height: 136px;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 47px;
+        text-align: center;
+        color:  var(--branco);
+    }
+    .button{
+        background-color: var( --laranja);
+        width:200px;
+        height: 40px;
+        color var(--branco);
+        border: none;
+        border-radius: 8px;
+        margin: 10px 0;
+    }
+    .flex{
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
     }
 `;

@@ -28,8 +28,10 @@ export const Flex = styled.div`
 export const ContainerMenu = styled.div`
   width: 354px;
   height: 549px;
-  background-color: #00AAA0;
+  background-color: var(--verde-escuro);
   margin-top: 79px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
@@ -51,7 +53,7 @@ export const Figure = styled.figure`
    line-height: 58px;
    display: flex;
    align-items: center;
-   color: #D55B3E;
+   color: var( --laranja);
    margin-top: 109px;
 }
   span{
@@ -62,11 +64,10 @@ export const Figure = styled.figure`
    font-weight: 400;
    font-size: 24px;
    line-height: 29px;
-   color: #D55B3E;  
+   color: var( --laranja);  
    margin-left: 66px;
    margin-top: 30px;
 }
-
 @media (max-width: 1024px){
    display: none;
 }
