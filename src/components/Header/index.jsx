@@ -9,7 +9,7 @@ function Header() {
         src={process.env.PUBLIC_URL + "/assets/Ajude.me.svg"}
         alt="Logo "
       />
-      {/* <ButtonHeader className="hidden">voltar</ButtonHeader> */}
+      <ButtonHeader>voltar</ButtonHeader>
     </Container>
   );
 }

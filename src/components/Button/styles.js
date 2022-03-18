@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.button`
-  background: var(--branco);
-  color: var(--laranja);
+  background: ${(props) => (props.Cor ? "var(--branco)" : "var(--laranja)")};
+  color: ${(props) => (props.Cor ? "var(--laranja)" : "var(--branco)")};
   padding: 3px;
   width: 201px;
   border-color: var(--branco);
@@ -10,7 +10,7 @@ export const Container = styled.button`
   font-weight: bold;
   font-size: 14px;
   :hover {
-    background: var(--laranja);
-    color: var(--branco);
+    background: ${(props) => (props.Cor ? "var(--laranja)" : "var(--branco)")};
+    color: ${(props) => (props.Cor ? "var(--branco)" : "var(--laranja)")};
   }
 `;

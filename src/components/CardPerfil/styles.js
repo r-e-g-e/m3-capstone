@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background: var(--branco);
+  background: transparent;
   height: 340px;
   width: 300px;
   display: flex;
@@ -10,15 +10,16 @@ export const Container = styled.div`
 
   header {
     width: 100%;
-    height: 140px;
+    height: 78px;
     background: var(--verde-escuro);
     display: flex;
     padding: 10px;
     align-items: center;
     justify-content: space-between;
+    border-radius: 5px;
 
     .mobile {
-      width: 50px;
+      width: 60px;
       border-radius: 50px;
     }
 
@@ -37,6 +38,7 @@ export const Container = styled.div`
         align-items: center;
       }
       h3 {
+        align-self: baseline;
         color: var(--branco);
       }
       p {
@@ -44,21 +46,38 @@ export const Container = styled.div`
       }
     }
   }
-  h4 {
+  .ponto {
+    height: 106px;
+    width: 290px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: var(--branco);
+    margin-top: 20px;
+    border-radius: 35px;
+    font-size: 14px;
+    align-items: center;
+  }
+  p {
     margin: 10px;
     color: var(--laranja);
     text-align: center;
-    width: 200px;
   }
-  div {
-    height: 90px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+  button {
+    font-size: 14px;
+    font-weight: 300;
   }
+
   @media (min-width: 700px) {
     height: 275px;
     width: 660px;
+
+    .ponto {
+      height: 162px;
+      width: 660px;
+      margin-top: 10px;
+    }
 
     .perfil {
       span {
@@ -68,6 +87,9 @@ export const Container = styled.div`
 
     header {
       height: 113px;
+      .mobile {
+        width: 70px;
+      }
     }
 
     h4 {

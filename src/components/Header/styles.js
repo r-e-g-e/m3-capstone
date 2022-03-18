@@ -12,7 +12,7 @@ export const Container = styled.div`
     width: 130px;
   }
 
-  .hidden {
+  button {
     display: none;
   }
 
@@ -20,7 +20,7 @@ export const Container = styled.div`
     height: 100px;
     align-items: center;
 
-    .hidden {
+    button {
       display: unset;
     }
 

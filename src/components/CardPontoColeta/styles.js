@@ -1,12 +1,13 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  background: var(--cinza);
+export const Content = styled.div`
+  background: ${(props) => props.bgColor};
   width: 313px;
   height: 196px;
   border-radius: 40px;
   padding: 10px;
-  color: var(--branco);
+  color: ${(props) =>
+    props.bgColor === "var(--laranja)" ? "var(--branco)" : "var(--laranja)"};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
