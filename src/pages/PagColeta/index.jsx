@@ -50,13 +50,13 @@ function PagColeta() {
             </h1>
 
             <div className="loggedin__navContainer">
-              <div className="profilePic">
-                <ProfilePicture
-                  width={"40px"}
-                  height={"40px"}
-                  userName="marco the kid"
-                />
-              </div>
+              <Link to="/about">Sobre</Link>
+              <Link to="/">Sair</Link>
+              <ProfilePicture
+                width={"60px"}
+                height={"60px"}
+                userName="marco the kid"
+              />
             </div>
           </CollectionHeader>
         ) : (

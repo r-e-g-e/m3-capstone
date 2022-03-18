@@ -33,13 +33,15 @@ export const CollectionHeader = styled.div`
   margin: 0;
 
   .loggedin__navContainer {
-    width: 120px;
+    width: 160px;
     height: 65px;
     display: flex;
     flex-direction: row
     flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-end;
     @media (min-width: 850px) {
-      flex-direction: row;
+      width: 300px;
     }
 
     .profilePic {
@@ -54,8 +56,7 @@ export const CollectionHeader = styled.div`
     a {
       text-decoration: none;
       color: var(--branco);
-      :hover {
-      }
+      border-radius: 5px;
     }
   }
 
