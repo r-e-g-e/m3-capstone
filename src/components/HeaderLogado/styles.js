@@ -10,7 +10,7 @@ export const Container = styled.div`
 
   a {
     color: var(--branco);
-    margin-right: 50px;
+    margin-right: 10px;
 
     :hover {
       color: var(--laranja);
@@ -25,5 +25,9 @@ export const Container = styled.div`
   @media (min-width: 700px) {
     height: 100px;
     align-items: center;
+
+    a {
+      margin-right: 50px;
+    }
   }
 `;
