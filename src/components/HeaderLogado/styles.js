@@ -8,6 +8,12 @@ export const Container = styled.div`
   justify-content: space-around;
   padding: 10px;
 
+  span {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 10px;
+  }
+
   a {
     color: var(--branco);
     margin-right: 10px;
@@ -18,14 +24,33 @@ export const Container = styled.div`
   }
 
   .foto {
-    width: 50px;
+    width: 40px;
     border-radius: 50px;
+    align-self: flex-end;
+    margin-top: 10px;
+  }
+
+  .logo {
+    width: 130px;
   }
 
   @media (min-width: 700px) {
     height: 100px;
     align-items: center;
-
+    div {
+    }
+    span {
+      flex-direction: row;
+      width: 220px;
+      align-items: center;
+    }
+    .foto {
+      width: 60px;
+      margin-bottom: 20px;
+    }
+    .logo {
+      width: 170px;
+    }
     a {
       margin-right: 50px;
     }
