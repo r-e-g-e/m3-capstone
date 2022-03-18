@@ -5,12 +5,17 @@ import {
   SelectContainer,
   LocationsContainer,
 } from "./styles";
+import ProfilePicture from "../../Components/ProfilePicture";
 import { AboutButton } from "../../Components/AboutButton/styles";
+import { Link } from "react-router-dom";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useState } from "react";
 
 function PagColeta() {
+  const [isLoggedIn, setIsLoggedIn] = useState(true); //TESTING
+
   const formSchema = yup.object().shape({
     state: yup.string().required("Campo obrigatório"),
     city: yup.string().required("Campo obrigatório"),
@@ -27,18 +32,45 @@ function PagColeta() {
     }
   };
 
+  {
+    /*<Link to="/about">Sobre</Link>
+              <Link to="/" onClick={() => setIsLoggedIn(false)}>
+                Sair
+              </Link>*/
+  }
+
   return (
     <>
       <CollectionContainer>
-        <CollectionHeader>
-          <h1>
-            <span className="ajude">Ajude.</span>
-            <span className="me">me</span>
-          </h1>
-          <Button width="100px" height="40px" bgColor="orange">
-            Voltar
-          </Button>
-        </CollectionHeader>
+        {isLoggedIn ? (
+          <CollectionHeader>
+            <h1>
+              <span className="ajude">Ajude.</span>
+              <span className="me">me</span>
+            </h1>
+
+            <div className="loggedin__navContainer">
+              <div className="profilePic">
+                <ProfilePicture
+                  width={"40px"}
+                  height={"40px"}
+                  userName="marco the kid"
+                />
+              </div>
+            </div>
+          </CollectionHeader>
+        ) : (
+          <CollectionHeader>
+            <h1>
+              <span className="ajude">Ajude.</span>
+              <span className="me">me</span>
+            </h1>
+            <Button width="100px" height="40px" bgColor="orange">
+              Voltar
+            </Button>
+          </CollectionHeader>
+        )}
+
         <SelectContainer>
           <h2>Busca por pontos de coleta e voluntariado</h2>
           <div className="select__innerContainer">

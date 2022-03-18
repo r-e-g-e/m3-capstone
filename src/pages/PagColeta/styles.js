@@ -32,6 +32,33 @@ export const CollectionHeader = styled.div`
   background-color: var(--verde-claro);
   margin: 0;
 
+  .loggedin__navContainer {
+    width: 120px;
+    height: 65px;
+    display: flex;
+    flex-direction: row
+    flex-wrap: wrap;
+    @media (min-width: 850px) {
+      flex-direction: row;
+    }
+
+    .profilePic {
+      display: flex;
+      flex-direction: row;
+      width: inherit;
+      align-items: center;
+      justify-content: flex-end;
+      height: 40px;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--branco);
+      :hover {
+      }
+    }
+  }
+
   .ajude,
   .me {
     font-size: 26px;
