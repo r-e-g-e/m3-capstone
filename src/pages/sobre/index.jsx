@@ -1,11 +1,10 @@
 import PerfilCriadores from "../../components/PerfilCriadores";
 import CirculoSistemaCores from "../../components/Circulos";
 import Header from "../../components/HeaderSobre";
-//import Logo from "../../../public/assets/Ajude.me.svg";
 import {
   DivCriadores,
   DivCoresSobre,
-  //SobreDiv,
+  SobreDiv,
   DivSistemaCores,
 } from "./styles";
 import {
@@ -72,9 +71,9 @@ function PaginaSobre() {
           <PerfilCriadores />
         </DivCriadores>
       </ContentContainer>
-      {/* <SobreDiv>
-        <img src={Logo} />
-      </SobreDiv> */}
+      <SobreDiv>
+        <img src="/assets/Ajude.me.svg" />
+      </SobreDiv> 
     </Container>
   );
 }

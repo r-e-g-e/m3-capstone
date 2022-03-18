@@ -50,7 +50,7 @@ export const DivCoresSobre = styled.div`
   display: flex;
   align-items: center;
 
-  color: var(--preto);
+  color: var(--laranja);
 
   p {
     margin-left: 10px;
@@ -85,8 +85,4 @@ export const SobreDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
-  img {
-    background-color: magenta;
-  }
 `;
