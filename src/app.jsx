@@ -1,7 +1,7 @@
 import { Route, Switch } from "react-router-dom";
 import PaginaCadastro from "./pages/Cadastro";
 import GlobalStyle from "./styles/global";
-import Imagens from "./components/Imagens";
+import FormBackground from "./components/FormBackground";
 
 function App() {
   return (
@@ -12,9 +12,9 @@ function App() {
         </Route>
 
         <Route path={"/cadastrar"}>
-          <Imagens>
+          <FormBackground>
             <PaginaCadastro />
-          </Imagens>
+          </FormBackground>
         </Route>
       </Switch>
     </>
