@@ -6,13 +6,14 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
 
+
 `;
 
 export const ContentContainer = styled.div`
   width: 90%;
 
-  @media only screen and (min-width: 850px) {
-  width: 60%;
+  @media only screen and (min-width: 1366px) {
+  width: 65%;
   }
 `;
 
@@ -32,24 +33,23 @@ export const TitulosLightItalic = styled.h2`
 
 export const PDescricao = styled.p`
   margin-top: 25px;
-  color:var(--preto);
+  color:var(--laranja);
   font-family: 'Roboto', sans-serif;
 `;
 
 export const DivSistemaCores = styled.div`
-
   margin: 0 auto;
 
   @media only screen and (min-width: 850px) {
   width: 60%;
   }
 `;
+
 export const DivCoresSobre = styled.div`
   margin-top: 10px;
   margin-bottom: 35px;
   display: flex;
   align-items: center;
-
   color: var(--laranja);
 
   p {
@@ -63,26 +63,14 @@ export const DivCoresSobre = styled.div`
 
 export const DivCriadores = styled.div`
   margin-top: 20px;
+  margin-bottom: 20px;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
-`;
+  gap: 30px;
 
-export const Footer = styled.div`
-  background-color: var(--verde-escuro);
-`;
-
-export const LinkedInLink = styled.a`
-  color: var(--verde-escuro);
-  cursor: pointer;
-  text-align: center;
-`;
-
-export const SobreDiv = styled.div`
-  width: 100%;
-  height: 70px;
-  margin-top: 25px;
-  background-color: var(--verde-escuro);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @media only screen and (min-width: 600px) {
+    flex-direction: row;
+    gap: 0;
+  }
 `;

@@ -1,24 +1,20 @@
 import PerfilCriadores from "../../components/PerfilCriadores";
 import CirculoSistemaCores from "../../components/Circulos";
-import Header from "../../components/HeaderSobre";
-import {
-  DivCriadores,
-  DivCoresSobre,
-  SobreDiv,
-  DivSistemaCores,
-} from "./styles";
 import {
   Container,
   ContentContainer,
   TitulosLightItalic,
   PDescricao,
+  DivSistemaCores,
+  DivCoresSobre,
+  DivCriadores,
 } from "./styles";
 
 function PaginaSobre() {
   return (
     <Container>
       {/* Header da página */}
-      <Header />
+      {/* Lembrar de colocar o componente header no futuro */}
       <ContentContainer>
         {/* Objetivo */}
         <TitulosLightItalic>Qual é o nosso objetivo?</TitulosLightItalic>
@@ -58,12 +54,12 @@ function PaginaSobre() {
         <TitulosLightItalic>
           Controle e criação do ponto de coleta
         </TitulosLightItalic>
-        <p>
+        <PDescricao>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis quam
           cupiditate praesentium, rerum amet officiis, accusamus excepturi,
           dolore magnam labore reprehenderit soluta aperiam saepe voluptas nemo
           quibusdam impedit nesciunt exercitationem!
-        </p>
+        </PDescricao>
 
         {/* Criadores do Ajude.me */}
         <TitulosLightItalic>Criadores do Ajude.me</TitulosLightItalic>
@@ -71,9 +67,6 @@ function PaginaSobre() {
           <PerfilCriadores />
         </DivCriadores>
       </ContentContainer>
-      <SobreDiv>
-        <img src="/assets/Ajude.me.svg" />
-      </SobreDiv> 
     </Container>
   );
 }
