@@ -1,47 +1,61 @@
 import styled from "styled-components";
 
 export const Content = styled.div`
-  background: ${(props) => props.bgColor};
+  display: flex;
+  justify-content: space-between;
+
+  background: ${({corDeFundo}) => corDeFundo};
+  color: ${({corDeFundo}) =>
+    corDeFundo === "var(--laranja)" ? "var(--branco)" : "var(--laranja)"
+};
+
   width: 313px;
   height: 196px;
+
   border-radius: 40px;
-  padding: 10px;
-  color: ${(props) =>
-    props.bgColor === "var(--laranja)" ? "var(--branco)" : "var(--laranja)"};
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  padding: 20px;
 
   img {
     width: 70px;
     height: 70px;
+
     border-radius: 50px;
   }
 
   div {
-    padding: 10px;
     display: flex;
+    flex-direction: column;
+
     align-items: center;
     justify-content: space-between;
+
+    padding:0 10px;
+    padding-top:25px;
+
+    width: 100%;
+
+    button{
+      display: block;
+      margin: 0 auto;
+    }
 
     h2 {
       font-size: 16px;
     }
-    P {
-      margin-top: 5px;
-      font-size: 14px;
-    }
   }
 
   button {
-    padding: 5px 12px;
-    border-radius: 5px;
-    color: var(--laranja);
-    background: var(--branco);
-    border-color: var(--branco);
     align-self: center;
+    
+    border-radius: 5px;
+    border-color: var(--branco);
+    
+    padding: 5px 12px;
     margin-bottom: 10px;
     margin-right: 60px;
+    
+    color: var(--laranja);
+    background: var(--branco);
 
     :hover {
       color: var(--branco);
