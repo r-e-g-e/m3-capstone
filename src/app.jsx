@@ -1,7 +1,9 @@
 //Bibliotecas
 import { Route, Switch } from "react-router-dom";
+import PaginaCadastro from "./pages/Cadastro";
 import GlobalStyle from "./styles/global";
 import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 //paginas
 import Landing from "./pages/Lading";
 import Login from "./pages/Login";
@@ -14,6 +16,8 @@ import CardCreate from "./components/CardCreate";
 import CardPontoColeta from "./components/CardPontoColeta";
 import  Header from "./components/Header";
 import HeaderLogado from "./components/HeaderLogado";
+import FormBackground from "./components/FormBackground";
+
 
 function App() {
   //Esse "porcentagem" vai ser mudado para um array onde vai ser decido a cor aparti de quantidade de arrays de iténs no inventario
@@ -31,8 +35,13 @@ function App() {
         <Route exact path="/">
           <Landing/>
         </Route>
-        <Route exact path="/Login">
+        <Route exact path="/login">
           <Login/>
+        </Route>
+        <Route path={"/signup"}>
+          <FormBackground>
+            <PaginaCadastro />
+          </FormBackground>
         </Route>
         <Route path="/sobre">
           <PaginaSobre />
