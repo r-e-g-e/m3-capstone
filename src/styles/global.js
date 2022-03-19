@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-export default createGlobalStyle`
+export const GlobalStyle = createGlobalStyle`
  *{
         margin: 0;
         padding: 0;
@@ -29,5 +29,31 @@ export default createGlobalStyle`
     a{
         text-decoration: none;
     }
-
+    .help-landing{
+        width: 223px;
+        height: 136px;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 47px;
+        text-align: center;
+        color:  var(--branco);
+    }
+    .button{
+        background-color: var( --laranja);
+        width:200px;
+        height: 40px;
+        color var(--branco);
+        border: none;
+        border-radius: 8px;
+        margin: 10px 0;
+    }
+    .flex{
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
 `;
