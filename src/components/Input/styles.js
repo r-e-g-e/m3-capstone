@@ -1,6 +1,6 @@
-import styles from "styled-components";
+import styled from "styled-components";
 
-export const Container = styles("div")`
+export const Container = styled("div")`
   display: flex;
   flex-direction: column;
   
@@ -20,7 +20,7 @@ export const Container = styles("div")`
   }
 
   input{
-    border:none;
+    border: 2px solid ${({error}) => error ? "red" : "transparent"};
     border-radius: 5px;
     
     height: 40px;
@@ -29,5 +29,9 @@ export const Container = styles("div")`
 
     box-sizing: borde-box;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  
+  small{
+    color:red;
   }
 `;
