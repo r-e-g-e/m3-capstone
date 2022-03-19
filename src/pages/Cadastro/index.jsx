@@ -15,8 +15,7 @@ export default function PaginaCadastro(){
     
     cpf: yup.string()
       .required("Campo obrigatorio.")
-      .min(9, "Seu cpf deve conter 9 numeros!")
-      .max(9, "Seu cpf deve conter apenas 9 numeros!"),
+      .length(9, "Seu cpf deve conter 9 numeros!"),
     
     senha: yup.string()
       .required("Campo obrigatorio.")

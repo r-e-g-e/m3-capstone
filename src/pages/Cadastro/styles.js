@@ -1,9 +1,9 @@
-import styles from "styled-components";
+import styled from "styled-components";
 
 const primaria = "var(--verde-escuro)";
 const secundaria = "var(--laranja)";
 
-export const Container = styles("section")`
+export const Container = styled.section`
   display: flex;
   flex-direction: column;
   
@@ -35,6 +35,9 @@ export const Container = styles("section")`
     border-radius: 5px;
     
     text-align: center;
+
+    width: 40%;
+    max-width:400px;
     
     div{
       text-align: left;  
@@ -51,8 +54,8 @@ export const Container = styles("section")`
   }
 `;
 
-export const Botao = styles.button`
-background-color: var(--laranja);
+export const Botao = styled.button`
+  background-color: var(--laranja);
   color:white;
 
   padding: 10px 12px;

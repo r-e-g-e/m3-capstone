@@ -1,6 +1,7 @@
 import { Route, Switch } from "react-router-dom";
 import PaginaCadastro from "./pages/Cadastro";
 import GlobalStyle from "./styles/global";
+import Imagens from "./components/Imagens";
 
 function App() {
   return (
@@ -10,8 +11,10 @@ function App() {
         <Route exact path={"/"}>
         </Route>
 
-        <Route exact path={"/cadastrar"}>
-          <PaginaCadastro />
+        <Route path={"/cadastrar"}>
+          <Imagens>
+            <PaginaCadastro />
+          </Imagens>
         </Route>
       </Switch>
     </>
