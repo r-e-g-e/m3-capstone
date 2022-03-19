@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Input from "../../components/Input";
 import { Container, Botao } from "./styles";
+import axios from "axios";
+import { toast } from "react-toastify";
 
 export default function PaginaCadastro(){
   const schema = yup.object().shape({
@@ -30,9 +32,21 @@ export default function PaginaCadastro(){
     resolver: yupResolver(schema)
   });
 
-  function handleFormSubmit(data){
-    console.log(data);
-    // history.push("/dashboard/" + data.name);
+  async function handleFormSubmit(data){
+
+    delete data.confirmarSenha;
+
+    const response = await axios({
+      method:"POST",
+      data,
+      // url:"https://m3-capstone-api.herokuapp.com/user/signup",
+      url:"http://localhost:3030/users/signup",
+      validateStatus: () => true
+    });
+
+    if(response.status >= 400) return toast.error(response.data.error);
+
+    toast.success("Conta criada!");
   }
 
   return(
