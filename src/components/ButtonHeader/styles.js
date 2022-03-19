@@ -6,7 +6,7 @@ export const Container = styled.button`
   color: var(--laranja);
   padding: 5px 10px;
   border-color: var(--branco);
-  border-radius: 5px;
+  border-radius: 10px;
   font-weight: bold;
   font-size: 14px;
   border: none;
@@ -15,7 +15,7 @@ export const Container = styled.button`
     background: var(--laranja);
     color: var(--branco);
   }
-  @media (min-width: 600px) {
+  @media (min-width: 700px) {
     font-size: 24px;
   }
 `;

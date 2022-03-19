@@ -1,14 +1,30 @@
-import { Container } from "./styles";
+import { Content } from "./styles";
+import { useState, useEffect } from "react";
 
-function CardPontoColeta() {
+function CardPontoColeta({ dados }) {
+  const { nome, id, porcentagem } = dados;
+  const [ cor, setCor ] = useState("var(--laranja)");
+
+  useEffect( () => {
+    if(porcentagem < 33.33){
+      setCor("var(--laranja)");
+    }
+    else if(porcentagem >= 33.33 && porcentagem < 66.66){
+      setCor("var(--amarelo)");
+    }
+    else{
+      setCor("var(--verde-medio)");
+    }
+  }, []);
+
   return (
-    <Container>
+    <Content corDeFundo={cor}>
       <div>
-        <h2>Ponto Igreja São Pedro</h2>
-        <p>Av. dos Pinheiros, 758 - Vila dos Estivadores - Vitória</p>
+        <h2>{nome}</h2>
+        <button>Ver</button>
       </div>
-      <button>EXCLUIR PONTO</button>
-    </Container>
+      <img src="" alt="siglas"/>
+    </Content>
   );
 }
 export default CardPontoColeta;

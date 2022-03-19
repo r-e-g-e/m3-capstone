@@ -1,19 +1,10 @@
 import PerfilCriadores from "../../components/PerfilCriadores";
 import CirculoSistemaCores from "../../components/Circulos";
-import {
-  Container,
-  ContentContainer,
-  TitulosLightItalic,
-  PDescricao,
-  DivSistemaCores,
-  DivCoresSobre,
-  DivCriadores,
-} from "./styles";
+import { Container, ContentContainer, TitulosLightItalic, PDescricao, DivSistemaCores, DivCoresSobre, DivCriadores} from "./styles";
 
 function PaginaSobre() {
   return (
     <Container>
-      {/* Header da página */}
       {/* Lembrar de colocar o componente header no futuro */}
       <ContentContainer>
         {/* Objetivo */}

@@ -15,5 +15,4 @@ function HeaderPaginaSobre() {
     </HeaderContainer>
   );
 }
-
 export default HeaderPaginaSobre;

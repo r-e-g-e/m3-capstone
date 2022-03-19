@@ -1,7 +1,7 @@
-//bibliotecas
+//Bibliotecas
 import { Route, Switch } from "react-router-dom";
 import GlobalStyle from "./styles/global";
-
+//paginas
 import PaginaSobre from "./pages/sobre";
 import Landing from "./pages/Lading";
 
@@ -10,10 +10,9 @@ function App() {
     <>
       <GlobalStyle />
       <Switch>
-        <Route exact path="/"></Route>
-        <Landing/>
-      </Switch>
-      <Switch>
+        <Route exact path="/">
+          <Landing/>
+        </Route>
         <Route path="/sobre">
           <PaginaSobre />
         </Route>
@@ -21,5 +20,4 @@ function App() {
     </>
   );
 }
-
 export default App;

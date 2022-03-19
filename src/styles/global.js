@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-export const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
  *{
         margin: 0;
         padding: 0;
@@ -22,6 +22,8 @@ export const GlobalStyle = createGlobalStyle`
         --preto: #000000;
         --cinza: #c4c4c4;
         --branco: #fefefe;  
+        --bege: #fcf4d9;
+        --verde-medio: #70C76E;
     }
     button{
         cursor: pointer;
@@ -57,3 +59,4 @@ export const GlobalStyle = createGlobalStyle`
         align-items: center;
     }
 `;
+export default GlobalStyle;
