@@ -1,9 +1,12 @@
 //Bibliotecas
 import { Route, Switch } from "react-router-dom";
 import GlobalStyle from "./styles/global";
+import { ToastContainer } from "react-toastify";
 //paginas
-import PaginaSobre from "./pages/sobre";
 import Landing from "./pages/Lading";
+import Login from "./pages/Login";
+import PaginaSobre from "./pages/sobre";
+
 //componentes
 import Button from "./components/Button";
 import ButtonHeader from "./components/ButtonHeader";
@@ -23,9 +26,13 @@ function App() {
   return (
     <>
       <GlobalStyle />
+      <ToastContainer/>
       <Switch>
         <Route exact path="/">
           <Landing/>
+        </Route>
+        <Route exact path="/Login">
+          <Login/>
         </Route>
         <Route path="/sobre">
           <PaginaSobre />
