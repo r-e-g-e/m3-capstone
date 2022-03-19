@@ -7,22 +7,22 @@ import { Container, Botao } from "./styles";
 export default function PaginaCadastro(){
   const schema = yup.object().shape({
     nome: yup.string()
-      .required("Campo obrigatorio."),
+      .required("Campo obrigatório."),
     
     email: yup.string()
-      .required("Campo obrigatorio.")
-      .email(),
+      .required("Campo obrigatório.")
+      .email("Email invalido"),
     
     cpf: yup.string()
-      .required("Campo obrigatorio.")
-      .length(9, "Seu cpf deve conter 9 numeros!"),
+      .required("Campo obrigatório.")
+      .length(9, "Seu CPF deve conter 9 numeros!"),
     
     senha: yup.string()
-      .required("Campo obrigatorio.")
-      .min(6),
+      .required("Campo obrigatório.")
+      .min(6, "Minimo de 6 caracteres."),
 
     confirmarSenha: yup.string()
-      .required("Campo obrigatorio.")
+      .required("Campo obrigatório.")
       .oneOf([yup.ref("senha"), null], "Senhas diferentes!")
   });
 

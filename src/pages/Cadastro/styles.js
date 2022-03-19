@@ -10,6 +10,7 @@ export const Container = styled.section`
   height: 100%;
   width: 100%;
 
+  min-height: 100vh;
 
   & > div{
     text-align: right;
@@ -36,7 +37,7 @@ export const Container = styled.section`
     
     text-align: center;
 
-    width: 40%;
+    width: 95%;
     max-width:400px;
     
     div{
