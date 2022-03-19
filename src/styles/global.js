@@ -12,13 +12,16 @@ export default createGlobalStyle`
         background-color: var(--bege);
     }
     :root {
-        --branco: #fefefe;
+        --bege: #fcf4d9;
         --verde-claro: #8ed2c9;
         --verde-escuro: #00aaa0;
-        --cinza: #c4c4c4;
+        --verde-medio: #70c76e;
+        --amarelo: #cae45c;
         --laranja: #d55b3e;
+        --laranja-02: #cb6a41;
         --preto: #000000;
-        --bege: #fcf4d9;
+        --cinza: #c4c4c4;
+        --branco: #fefefe;  
     }
     button{
         cursor: pointer;
