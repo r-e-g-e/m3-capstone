@@ -13,8 +13,9 @@ export const StyledButton = styled.button`
     ${(props /* eslint-disable-next-line indent */) =>
       props.bgColor === "orange" ? "var(--laranja)" : "var(--branco)"};
   height: ${({ height }) => height};
-  font-weight: bold;
-  font-size: 18px;
+  font-weight: 400;
+  font-size: ${(props) => props.fontSize};
+  font-family: "Roboto", sans-serif;
   :hover {
     background-color: ${(props /* eslint-disable-next-line indent */) =>
       props.bgColor === "orange" ? "var(--branco)" : "var(--laranja)"};

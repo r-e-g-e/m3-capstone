@@ -1,6 +1,6 @@
 import { Route, Switch } from "react-router-dom";
 import PagColeta from "./pages/PagColeta";
-import { GlobalStyle } from "./styles/styles";
+import { GlobalStyle } from "./styles/global";
 
 function App() {
   return (

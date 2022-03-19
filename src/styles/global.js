@@ -21,6 +21,8 @@ export const GlobalStyle = createGlobalStyle`
         --bege-escuro: #E5DFCA;
         --preto: #000000;
         --bege: #fcf4d9;
+        --amarelo: #CAE45C;
+        --verde-medio: #70C76E;
     }
     button{
         cursor: pointer;
