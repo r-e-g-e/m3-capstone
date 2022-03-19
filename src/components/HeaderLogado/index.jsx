@@ -2,9 +2,7 @@ import { HeaderContainer, HeaderButtons } from "./styles";
 
 // Mais a frente fazer uma div para colocar imagem de perfil do usuário logado
 
-
-// Header da pagina sobre
-function HeaderPaginaSobre() {
+function HeaderLogado() {
   return (
     <HeaderContainer>
       <div>
@@ -15,4 +13,4 @@ function HeaderPaginaSobre() {
     </HeaderContainer>
   );
 }
-export default HeaderPaginaSobre;
+export default HeaderLogado;

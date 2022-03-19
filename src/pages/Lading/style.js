@@ -26,8 +26,8 @@ export const Flex = styled.div`
 `;
 
 export const ContainerMenu = styled.div`
-  width: 354px;
-  height: 549px;
+  width: 300px;
+  height: 500px;
   background-color: var(--verde-escuro);
   margin-top: 79px;
   display: flex;

@@ -8,7 +8,7 @@ export const Container = styled.button`
   border-color: var(--branco);
   border-radius: 10px;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 5px;
   border: none;
   :hover {
     transition: 0.4s;

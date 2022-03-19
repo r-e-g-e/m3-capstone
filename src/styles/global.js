@@ -22,8 +22,6 @@ const GlobalStyle = createGlobalStyle`
         --preto: #000000;
         --cinza: #c4c4c4;
         --branco: #fefefe;  
-        --bege: #fcf4d9;
-        --verde-medio: #70C76E;
     }
     button{
         cursor: pointer;

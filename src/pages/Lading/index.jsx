@@ -1,5 +1,7 @@
 import {Header, Container,  Flex, ContainerMenu, Figure, Image } from "./style.js";
 
+import Button from "../../components/Button";
+
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function Landing() {
@@ -15,9 +17,9 @@ function Landing() {
         <ContainerMenu>
           <h2 className="help-landing">Um site para ajuda ao próximo</h2>
           <div className="flex">
-            <button onClick={()=>history.push("/login")} className="button">ENTRAR</button>
-            <button onClick={()=>history.push("/signup")} className="button">CADASTRA-SE</button>
-            <button onClick={()=>history.push("/collection")} className="button">PONTO DE COLETA</button>
+            <Button onClick={()=>history.push("/login")}>ENTRAR</Button>
+            <Button onClick={()=>history.push("/signup")}>CADASTRA-SE</Button>
+            <Button onClick={()=>history.push("/collection")}>PONTO DE COLETA</Button>
           </div>
         </ContainerMenu>
         <Figure>

@@ -23,7 +23,6 @@ function CardPontoColeta({ dados }) {
         <h2>{nome}</h2>
         <button>Ver</button>
       </div>
-      <img src="" alt="siglas"/>
     </Content>
   );
 }
