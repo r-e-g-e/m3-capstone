@@ -5,8 +5,6 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-
 `;
 
 export const ContentContainer = styled.div`
@@ -38,8 +36,11 @@ export const PDescricao = styled.p`
 `;
 
 export const DivSistemaCores = styled.div`
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   margin: 0 auto;
-
   @media only screen and (min-width: 850px) {
   width: 60%;
   }

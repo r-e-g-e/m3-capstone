@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-export default createGlobalStyle`
+const GlobalStyle = createGlobalStyle`
  *{
         margin: 0;
         padding: 0;
@@ -18,7 +18,8 @@ export default createGlobalStyle`
         --verde-medio: #70c76e;
         --amarelo: #cae45c;
         --laranja: #d55b3e;
-        --laranja-02: #cb6a41;
+        --laranja-escuro: #CB6A41;
+        --bege-escuro: #E5DFCA;
         --preto: #000000;
         --cinza: #c4c4c4;
         --branco: #fefefe;  
@@ -29,5 +30,29 @@ export default createGlobalStyle`
     a{
         text-decoration: none;
     }
-
+    .help-landing{
+        width: 223px;
+        height: 136px;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 47px;
+        text-align: center;
+        color:  var(--branco);
+    }
+    .flex-column{
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .flex{
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 `;
+export default GlobalStyle;
