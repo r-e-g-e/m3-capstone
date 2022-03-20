@@ -34,20 +34,25 @@ function App() {
         <Route exact path="/">
           <Landing/>
         </Route>
-        <Route exact path="/login">
+    
+        <Route path="/login">
           <Login/>
         </Route>
-        <Route path={"/signup"}>
+    
+        <Route path="/signup">
           <FormBackground>
             <PaginaCadastro />
           </FormBackground>
         </Route>
+
         <Route path="/collection">
           <PagColeta/>
         </Route>
+
         <Route path="/about">
           <PaginaSobre />
         </Route>
+
         <Route path="/componentes">
           <Button>Teste</Button>
           <ButtonHeader>Teste</ButtonHeader>
@@ -56,6 +61,7 @@ function App() {
           
           <Header/>
         </Route>
+        
       </Switch>
     </>
   );
