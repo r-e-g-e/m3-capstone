@@ -77,11 +77,16 @@ export const CollectionHeader = styled.div`
 
 export const SelectContainer = styled.div`
   width: 285px;
-  height: 390px;
+  height: 350px;
+
+  .mobile__h2 {
+    font-family: "Roboto", sans-serif;
+  }
 
   @media (min-width: 992px) {
     width: 750px;
-    height: 230px;
+    height: 145px;
+    margin: 50px;
   }
 
   .select__innerContainer {
@@ -91,9 +96,22 @@ export const SelectContainer = styled.div`
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    .select__auxDiv {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      width: inherit;
+      height: inherit;
+      @media (min-width: 992px) {
+        flex-direction: row;
+      }
+    }
     @media (min-width: 992px) {
       border-radius: 20px;
       flex-direction: row;
+      width: 750px;
+      height: 145px;
     }
 
     form {
@@ -103,8 +121,15 @@ export const SelectContainer = styled.div`
       align-items: center;
       height: inherit;
       width: inherit;
+      @media (min-width: 992px) {
+        width: 750px;
+        height: 145px;
+        background-color: var(--verde-escuro);
+        border-radius: 20px;
+      }
 
-      h4 {
+      .select__h4 {
+        font-family: "Roboto", sans-serif;
         font-size: 25px;
         color: var(--branco);
         display: none;
@@ -152,15 +177,21 @@ export const LocationsContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
 
-  h4 {
+  .h4__about {
     color: var(--laranja);
     width: 80%;
     height: 50px;
     font-size: 14px;
     text-align: center;
-    font-weight: lighter;
+    font-family: "Itim", cursive;
+    font-weight: bold;
+    margin-bottom: 10px;
     a {
       color: cyan;
+    }
+
+    @media (min-width: 992px) {
+      display: none;
     }
   }
 

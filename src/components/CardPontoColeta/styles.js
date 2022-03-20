@@ -10,7 +10,7 @@ export const Content = styled.div`
 
   width: 313px;
   height: 196px;
-
+  font-family: "Itim", cursive;
   border-radius: 40px;
   padding: 20px;
 

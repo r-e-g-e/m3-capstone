@@ -35,35 +35,37 @@ function PagColeta() {
   return (
     <>
       <CollectionContainer>
-        <Header logado={false} />
+        <Header logado={true} />
         <SelectContainer>
-          <h2>Busca por pontos de coleta:</h2>
+          <h2 className="mobile__h2">Busca por pontos de coleta:</h2>
           <div className="select__innerContainer">
             <form onSubmit={handleSubmit(onSubmitFunction)}>
-              <h4>Busca por pontos de coleta</h4>
-              <select {...register("state")}>
-                <option value="0">Escolha estado</option>
-                <option value="Paraná">Paraná</option>
-              </select>
-              <select {...register("city")}>
-                <option value="0">Escolha cidade</option>
-                <option value="Campo Mourao">Campo Mourão</option>
-              </select>
+              <h4 className="select__h4">Busca por pontos de coleta</h4>
+              <div className="select__auxDiv">
+                <select {...register("state")}>
+                  <option value="0">Escolha estado</option>
+                  <option value="Paraná">Paraná</option>
+                </select>
+                <select {...register("city")}>
+                  <option value="0">Escolha cidade</option>
+                  <option value="Campo Mourao">Campo Mourão</option>
+                </select>
 
-              <Button
-                type="submit"
-                bgColor="orange"
-                width="100px"
-                height="35px"
-              >
-                BUSCAR
-              </Button>
+                <Button
+                  type="submit"
+                  bgColor="orange"
+                  width="100px"
+                  height="35px"
+                >
+                  BUSCAR
+                </Button>
+              </div>
             </form>
           </div>
         </SelectContainer>
 
         <LocationsContainer>
-          <h4>
+          <h4 className="h4__about">
             O nivel de necessidade é definido por cores{" "}
             <Link to="/sobre">entenda</Link>
           </h4>
