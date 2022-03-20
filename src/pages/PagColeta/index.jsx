@@ -3,6 +3,7 @@ import {
   CollectionContainer,
   SelectContainer,
   LocationsContainer,
+  Footer,
 } from "./styles";
 import { Link } from "react-router-dom";
 import * as yup from "yup";
@@ -77,8 +78,14 @@ function PagColeta() {
             >*/}
 
             <CardPontoColeta dados={dados} />
+            <CardPontoColeta dados={dados} />
           </div>
         </LocationsContainer>
+
+        <Footer>
+          O nivel de necessidade é definido por cores{" "}
+          <Link to="/sobre">entenda</Link>
+        </Footer>
       </CollectionContainer>
     </>
   );

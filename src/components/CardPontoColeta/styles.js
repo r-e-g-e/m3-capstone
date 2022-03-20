@@ -8,11 +8,14 @@ export const Content = styled.div`
   color: ${({ corDeFundo }) =>
     corDeFundo === "var(--laranja)" ? "var(--branco)" : "var(--laranja)"};
 
-  width: 313px;
+  width: 268px;
   height: 196px;
   font-family: "Itim", cursive;
   border-radius: 40px;
   padding: 20px;
+  @media (min-width: 992px) {
+    width: 313px;
+  }
 
   img {
     width: 70px;

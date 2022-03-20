@@ -1,13 +1,33 @@
 import styled from "styled-components";
+import img from "../../assets/wheelchair2.svg";
+
+export const Footer = styled.div`
+  display: none;
+  @media (min-width: 992px) {
+    display: block;
+    position: fixed;
+    width: 648px;
+    left: 0px;
+    bottom: 0px;
+    color: var(--laranja);
+    font-size: 18px;
+    font-family: "Itim", cursive;
+    font-weight: bold;
+    margin-bottom: 10px;
+    a {
+      color: cyan;
+    }
+  }
+`;
 
 export const CollectionContainer = styled.div`
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 
-  h2 {
+  .mobile__h2 {
     text-align: center;
     font-weight: 500;
     font-size: 30px;
@@ -16,10 +36,15 @@ export const CollectionContainer = styled.div`
     color: var(--laranja);
   }
 
+  .mobile__h2 {
+    display: none;
+  }
+
   @media (min-width: 992px) {
-    h2 {
-      display: none;
-    }
+    background: url(${img});
+    background-repeat: no-repeat;
+    background-size: 500px;
+    background-position: bottom -50px right -50px;
   }
 `;
 
@@ -169,13 +194,16 @@ export const SelectContainer = styled.div`
 `;
 
 export const LocationsContainer = styled.div`
-  width: 290px;
+  width: 320px;
   height: 100vh;
-  overflow: scroll;
+
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  @media (min-width: 992px) {
+    width: 730px;
+  }
 
   .h4__about {
     color: var(--laranja);
@@ -198,11 +226,20 @@ export const LocationsContainer = styled.div`
   .locationsInnerContainer {
     width: 95%;
     border: 2px solid black;
-    height: 425px;
+    min-height: 425px;
     overflow: scroll;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
     background-color: var(--bege-escuro);
+    @media (min-width: 992px) {
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      border: none;
+      background-color: inherit;
+    }
   }
 `;
