@@ -4,10 +4,9 @@ export const Content = styled.div`
   display: flex;
   justify-content: space-between;
 
-  background: ${({corDeFundo}) => corDeFundo};
-  color: ${({corDeFundo}) =>
-    corDeFundo === "var(--laranja)" ? "var(--branco)" : "var(--laranja)"
-};
+  background: ${({ corDeFundo }) => corDeFundo};
+  color: ${({ corDeFundo }) =>
+    corDeFundo === "var(--laranja)" ? "var(--branco)" : "var(--laranja)"};
 
   width: 313px;
   height: 196px;
@@ -29,12 +28,12 @@ export const Content = styled.div`
     align-items: center;
     justify-content: space-between;
 
-    padding:0 10px;
-    padding-top:25px;
+    padding: 0 10px;
+    padding-top: 25px;
 
     width: 100%;
 
-    button{
+    button {
       display: block;
       margin: 0 auto;
     }
@@ -46,24 +45,21 @@ export const Content = styled.div`
 
   button {
     align-self: center;
-    
+    border: 2px solid;
     border-radius: 5px;
     border-color: var(--branco);
-    
+
     padding: 5px 12px;
     margin-bottom: 10px;
     margin-right: 60px;
-    
+
     color: var(--laranja);
     background: var(--branco);
 
     :hover {
       color: var(--branco);
       background: var(--laranja);
+      transition: 0.4s;
     }
   }
-  /* @media (min-width: 700px) {
-    width: 561px;
-    height: 80px;
-  } */
 `;

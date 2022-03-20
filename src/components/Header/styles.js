@@ -4,6 +4,7 @@ export const Container = styled.header`
   display: flex;
   justify-content: space-around;
   margin-bottom: 20px;
+  width: 100%;
   height: 75px;
   padding: 10px;
 
@@ -35,23 +36,20 @@ export const LogadoContainer = styled.section`
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-
   gap: 20px;
 
-  img{
+  img {
     width: 59px;
     height: 59px;
-
     border-radius: 100%;
   }
 
-  ul{
+  ul {
     display: flex;
     gap: 20px;
-
     list-style: none;
 
-    a{
+    a {
       color: white;
     }
   }

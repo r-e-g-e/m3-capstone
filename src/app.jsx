@@ -4,12 +4,12 @@ import PaginaCadastro from "./pages/Cadastro";
 import GlobalStyle from "./styles/global";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-//paginas
+//Paginas
 import Landing from "./pages/Lading";
 import Login from "./pages/Login";
 import PaginaSobre from "./pages/sobre";
-
-//componentes
+import PagColeta from "./pages/PagColeta";
+//Componentes
 import Button from "./components/Button";
 import ButtonHeader from "./components/ButtonHeader";
 import CardCreate from "./components/CardCreate";
@@ -24,7 +24,7 @@ function App() {
   const dados = {
     nome: "teste", 
     id: 20, 
-    porcentagem: 10   
+    porcentagem: 40   
   };
 
   return (
@@ -43,7 +43,10 @@ function App() {
             <PaginaCadastro />
           </FormBackground>
         </Route>
-        <Route path="/sobre">
+        <Route path="/collection">
+          <PagColeta/>
+        </Route>
+        <Route path="/about">
           <PaginaSobre />
         </Route>
         <Route path="/componentes">

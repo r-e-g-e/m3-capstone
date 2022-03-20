@@ -1,18 +1,17 @@
 import { Content } from "./styles";
 import { useState, useEffect } from "react";
+import ProfilePicture from "../ProfilePicture";
 
 function CardPontoColeta({ dados }) {
   const { nome, id, porcentagem } = dados;
-  const [ cor, setCor ] = useState("var(--laranja)");
+  const [cor, setCor] = useState("var(--laranja)");
 
-  useEffect( () => {
-    if(porcentagem < 33.33){
+  useEffect(() => {
+    if (porcentagem < 33.33) {
       setCor("var(--laranja)");
-    }
-    else if(porcentagem >= 33.33 && porcentagem < 66.66){
+    } else if (porcentagem >= 33.33 && porcentagem < 66.66) {
       setCor("var(--amarelo)");
-    }
-    else{
+    } else {
       setCor("var(--verde-medio)");
     }
   }, []);
@@ -20,6 +19,7 @@ function CardPontoColeta({ dados }) {
   return (
     <Content corDeFundo={cor}>
       <div>
+        <ProfilePicture/>
         <h2>{nome}</h2>
         <button>Ver</button>
       </div>

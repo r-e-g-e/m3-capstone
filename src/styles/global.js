@@ -18,7 +18,8 @@ const GlobalStyle = createGlobalStyle`
         --verde-medio: #70c76e;
         --amarelo: #cae45c;
         --laranja: #d55b3e;
-        --laranja-02: #cb6a41;
+        --laranja-escuro: #CB6A41;
+        --bege-escuro: #E5DFCA;
         --preto: #000000;
         --cinza: #c4c4c4;
         --branco: #fefefe;  
@@ -40,20 +41,17 @@ const GlobalStyle = createGlobalStyle`
         text-align: center;
         color:  var(--branco);
     }
-    .button{
-        background-color: var( --laranja);
-        width:200px;
-        height: 40px;
-        color var(--branco);
-        border: none;
-        border-radius: 8px;
-        margin: 10px 0;
+    .flex-column{
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
     }
     .flex{
         margin-top: 20px;
         display: flex;
         justify-content: center;
-        flex-direction: column;
         align-items: center;
     }
 `;
