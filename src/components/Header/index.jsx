@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import ButtonHeader from "../ButtonHeader";
 import ProfilePicture from "../ProfilePicture";
 
-function Header({ logado = false }) {
+function Header({ logado = true }) {
   return (
     <Container>
       <img className="logo" src="/assets/Ajude.me.svg" alt="ajude.me logo" />

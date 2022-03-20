@@ -9,8 +9,8 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
-import CardPontoColeta from "../../components/CardPontoColeta";
 import Header from "../../components/Header";
+import CartaoDeColeta from "../../components/CartaoDeColeta";
 
 function PagColeta() {
   const [isLoggedIn, setIsLoggedIn] = useState(true); //TESTING
@@ -73,8 +73,7 @@ function PagColeta() {
               height="186px"
               color={"var(--laranja-escuro)"}
             >*/}
-
-            <CardPontoColeta dados={dados} />
+            <CartaoDeColeta width={`${300}px`} height={`${300}px`} dados = {dados} /> 
           </div>
         </LocationsContainer>
       </CollectionContainer>

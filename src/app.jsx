@@ -13,9 +13,8 @@ import PagColeta from "./pages/PagColeta";
 import Button from "./components/Button";
 import ButtonHeader from "./components/ButtonHeader";
 import CardCreate from "./components/CardCreate";
-import CardPontoColeta from "./components/CardPontoColeta";
+import CartaoDeColeta from "./components/CartaoDeColeta";
 import  Header from "./components/Header";
-import HeaderLogado from "./components/HeaderLogado";
 import FormBackground from "./components/FormBackground";
 
 
@@ -53,9 +52,9 @@ function App() {
           <Button>Teste</Button>
           <ButtonHeader>Teste</ButtonHeader>
           <CardCreate/>
-          <CardPontoColeta dados = {dados}/>
+          <CartaoDeColeta width={`${300}px`} height={`${300}px`} dados = {dados} />
+          
           <Header/>
-          <HeaderLogado/>
         </Route>
       </Switch>
     </>

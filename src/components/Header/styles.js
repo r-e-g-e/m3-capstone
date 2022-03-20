@@ -38,7 +38,7 @@ export const LogadoContainer = styled.section`
   align-items: flex-end;
   gap: 20px;
 
-  img {
+  &>img {
     width: 59px;
     height: 59px;
     border-radius: 100%;
