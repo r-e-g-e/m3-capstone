@@ -17,7 +17,7 @@ import CartaoDeColeta from "./components/CartaoDeColeta";
 import Header from "./components/Header";
 import FormBackground from "./components/FormBackground";
 import ModalItem from "./components/Modals/ModalItem";
-import CriaçãoPontoDeColeta from "./components/Modals/CriaçãoPontoEColeta";
+import CriaçãoPontoDeColeta from "./components/Modals/CriaçãoPontoDeColeta";
 
 function App() {
   //Esse "porcentagem" vai ser mudado para um array onde vai ser decido a cor aparti de quantidade de arrays de iténs no inventario
