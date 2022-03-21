@@ -14,31 +14,31 @@ import Button from "./components/Button";
 import ButtonHeader from "./components/ButtonHeader";
 import CardCreate from "./components/CardCreate";
 import CartaoDeColeta from "./components/CartaoDeColeta";
-import  Header from "./components/Header";
+import Header from "./components/Header";
 import FormBackground from "./components/FormBackground";
-
+import ModalItem from "./components/Modals/ModalItem";
 
 function App() {
   //Esse "porcentagem" vai ser mudado para um array onde vai ser decido a cor aparti de quantidade de arrays de iténs no inventario
   const dados = {
-    nome: "teste", 
-    id: 20, 
-    porcentagem: 40   
+    nome: "teste",
+    id: 20,
+    porcentagem: 40,
   };
 
   return (
     <>
       <GlobalStyle />
-      <ToastContainer/>
+      <ToastContainer />
       <Switch>
         <Route exact path="/">
-          <Landing/>
+          <Landing />
         </Route>
-    
+
         <Route path="/login">
-          <Login/>
+          <Login />
         </Route>
-    
+
         <Route path="/signup">
           <FormBackground>
             <PaginaCadastro />
@@ -46,7 +46,7 @@ function App() {
         </Route>
 
         <Route path="/collection">
-          <PagColeta/>
+          <PagColeta />
         </Route>
 
         <Route path="/about">
@@ -56,12 +56,15 @@ function App() {
         <Route path="/componentes">
           <Button>Teste</Button>
           <ButtonHeader>Teste</ButtonHeader>
-          <CardCreate/>
-          <CartaoDeColeta width={`${300}px`} height={`${300}px`} dados = {dados} />
-          
-          <Header/>
+          <CardCreate />
+          <CartaoDeColeta
+            width={`${300}px`}
+            height={`${300}px`}
+            dados={dados}
+          />
+          <ModalItem />
+          <Header />
         </Route>
-        
       </Switch>
     </>
   );

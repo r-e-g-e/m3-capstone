@@ -21,7 +21,9 @@ const GlobalStyle = createGlobalStyle`
         --laranja-escuro: #CB6A41;
         --bege-escuro: #E5DFCA;
         --preto: #000000;
+        --cinza-escuro: #7D7C7C;
         --cinza: #c4c4c4;
+        --cinza-claro: #C4C4C487;
         --branco: #fefefe;  
     }
     button{
