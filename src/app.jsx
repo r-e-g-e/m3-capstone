@@ -1,5 +1,5 @@
 //Bibliotecas
-import { Route, Switch } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import PaginaCadastro from "./pages/Cadastro";
 import GlobalStyle from "./styles/global";
 import { ToastContainer } from "react-toastify";
@@ -64,9 +64,10 @@ function App() {
             dados={dados}
           />
           <ModalItem />
-          <CriaçãoPontoDeColeta  />
+          <CriaçãoPontoDeColeta />
           <Header />
         </Route>
+        <Redirect from="*" to="/" />
       </Switch>
     </>
   );
