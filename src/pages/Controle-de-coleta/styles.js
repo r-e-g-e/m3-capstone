@@ -23,8 +23,10 @@ export const Container = styled.div`
     margin: 10px 0;
     width: 246px;
     height: 41px;
-    background: #C4C4C4;
-    border: 1px solid #000000;
+    background: var(--cinza);
+    color: var(--branco);
+    font-size: 35px;
+    border: 1px solid var(--preto);
     box-sizing: border-box;
     @media (min-width: 768px){
       width: 572px;
@@ -57,7 +59,6 @@ export const Container = styled.div`
     }
   }
   .icon{
-  
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,6 +70,8 @@ export const Container = styled.div`
     height: 50px;
   }
     @media (min-width: 996px){
+      font-weight: bold;
+      font-size: 20px;
       flex-direction: column;
       position: absolute;
       right: 82%;
@@ -88,7 +91,7 @@ export const Container = styled.div`
       width: 600px;
     }
   }
-  @media (min-width: 1428px){
+  @media (min-width: 1561px){
     background-image: url("/assets/background/travelImage.svg");
     background-repeat: no-repeat;
     background-position: 101% -2%;
@@ -103,6 +106,7 @@ export const LocationsContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  margin-top: 40px;
   .locationsInnerContainer {
     width: 95%;
     border: 2px solid black;
@@ -110,11 +114,17 @@ export const LocationsContainer = styled.div`
     overflow: scroll;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     align-items: flex-start;
     background-color: var(--bege-escuro);
     @media (min-width: 768px){
+      width: 700px;
       border:none;
       background-color: var(--bege);
+      overflow: inherit;
+    }
+    @media (min-width: 1354px){
+      width: 1300px;
 }
   }
 `;
