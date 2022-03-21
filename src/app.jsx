@@ -64,7 +64,7 @@ function App() {
             dados={dados}
           />
           <ModalItem />
-          <CriaçãoPontoDeColeta />
+          <CriaçãoPontoDeColeta  />
           <Header />
         </Route>
       </Switch>
