@@ -13,7 +13,7 @@ function Header({ logado = true }) {
         <LogadoContainer>
           <ul>
             <li>
-              <Link to={"/sobre"}>Sobre</Link>
+              <Link to={"/about"}>Sobre</Link>
             </li>
             <li>
               <Link to={"/"}>Sair</Link>
