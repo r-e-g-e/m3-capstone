@@ -1,5 +1,5 @@
 import Button from "../../Button";
-import { Container } from "./styles";
+import { Container, Content } from "./styles";
 import { useState } from "react";
 
 function ModalExcluir() {
@@ -13,7 +13,7 @@ function ModalExcluir() {
         <Container>
           <h2>Tem certeza que deseja excluir?</h2>
 
-          <div>
+          <Content>
             <Button
               width={"100px"}
               bgColor={"orange"}
@@ -31,7 +31,7 @@ function ModalExcluir() {
             >
               Cancelar
             </Button>
-          </div>
+          </Content>
         </Container>
       )}
     </>
