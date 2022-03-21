@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 function ControleDeColeta(){
 
-  const teste = [
+  const testes = [
     {
       name: "Limpeza"
     },
@@ -28,7 +28,7 @@ function ControleDeColeta(){
   ];
 
   function search(input){
-    const result = teste.filter(item=>{
+    const result = testes.filter(item=>{
       return item.name === input;
     });
     setFilter(result);
@@ -38,7 +38,7 @@ function ControleDeColeta(){
     //implementa api
   }
 
-  const [filter, setFilter] = useState(teste);
+  const [filter, setFilter] = useState(testes);
   const [input, setinput] = useState(false); 
   const [modal, setModal] = useState(false);
 
@@ -54,7 +54,7 @@ function ControleDeColeta(){
         <section className="search">
           <input type="text" onChange={(evt)=>setinput(evt.target.value)} />
           <div className="buttons">
-            <Button width={`${220}px`} height={`${50}px`} bgColor = {"orange"} onClick={()=>search(input)} >Pesquisa</Button>
+            <Button width={`${220}px`} height={`${50}px`} bgColor = {"orange"} onClick={()=>search(input)}>Pesquisa</Button>
             <Button width={`${220}px`} height={`${50}px`} bgColor = {"orange"} onClick={()=>createCard(input)} >Criar</Button>
           </div>
         </section>

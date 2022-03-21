@@ -1,6 +1,5 @@
 import { Route, Switch } from "react-router-dom";
 import GlobalStyle from "./styles/global";
-
 import ControleDeColeta from "./pages/Controle-de-coleta";
 
 function App() {
