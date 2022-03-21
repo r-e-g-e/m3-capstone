@@ -15,7 +15,7 @@ function PaginaSobre() {
   return (
     <Container>
       {/* Header */}
-      <Header logado={true} />
+      <Header />
       <ContentContainer>
         {/* Objetivo */}
         <TitulosLightItalic>Qual é o nosso objetivo?</TitulosLightItalic>
