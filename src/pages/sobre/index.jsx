@@ -1,11 +1,21 @@
 import PerfilCriadores from "../../components/PerfilCriadores";
 import CirculoSistemaCores from "../../components/Circulos";
-import { Container, ContentContainer, TitulosLightItalic, PDescricao, DivSistemaCores, DivCoresSobre, DivCriadores} from "./styles";
+import Header from "./../../components/Header/index";
+import {
+  Container,
+  ContentContainer,
+  TitulosLightItalic,
+  PDescricao,
+  DivSistemaCores,
+  DivCoresSobre,
+  DivCriadores,
+} from "./styles";
 
 function PaginaSobre() {
   return (
     <Container>
-      {/* Lembrar de colocar o componente header no futuro */}
+      {/* Header */}
+      <Header logado={true} />
       <ContentContainer>
         {/* Objetivo */}
         <TitulosLightItalic>Qual é o nosso objetivo?</TitulosLightItalic>
