@@ -16,6 +16,7 @@ import CardCreate from "./components/CardCreate";
 import CartaoDeColeta from "./components/CartaoDeColeta";
 import  Header from "./components/Header";
 import FormBackground from "./components/FormBackground";
+import ControleDeColeta from "./pages/Controle-de-coleta";
 
 
 function App() {
@@ -45,6 +46,9 @@ function App() {
         <Route path="/collection">
           <PagColeta/>
         </Route>
+        <Route path="/control">
+          <ControleDeColeta/>
+        </Route>
         <Route path="/about">
           <PaginaSobre />
         </Route>
@@ -53,7 +57,6 @@ function App() {
           <ButtonHeader>Teste</ButtonHeader>
           <CardCreate/>
           <CartaoDeColeta width={`${300}px`} height={`${300}px`} dados = {dados} />
-          
           <Header/>
         </Route>
       </Switch>

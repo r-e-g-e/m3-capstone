@@ -17,6 +17,30 @@ export const Header = styled.div`
 export const Container = styled.div`
   display: flex;
   flex-direction:column;
+  .help-landing{
+        width: 223px;
+        height: 136px;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 47px;
+        text-align: center;
+        color:  var(--branco);
+    }
+    .flex-column{
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .flex{
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 `;
 
 export const Flex = styled.div`
