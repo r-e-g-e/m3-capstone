@@ -65,7 +65,7 @@ function PagColeta() {
         <LocationsContainer>
           <h4>
             O nivel de necessidade é definido por cores{" "}
-            <Link to="/sobre">entenda</Link>
+            <Link to="/about">entenda</Link>
           </h4>
           <div className="locationsInnerContainer">
             {/*<CartaoDeColeta
