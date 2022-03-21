@@ -34,10 +34,9 @@ export const CollectionContainer = styled.div`
     line-height: 35px;
     font-style: italic;
     color: var(--laranja);
-  }
-
-  .mobile__h2 {
-    display: none;
+    @media (min-width: 992px) {
+      display: none;
+    }
   }
 
   @media (min-width: 992px) {
@@ -226,11 +225,11 @@ export const LocationsContainer = styled.div`
   .locationsInnerContainer {
     width: 95%;
     border: 2px solid black;
+    height: 425px;
     min-height: 425px;
     overflow: scroll;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
     background-color: var(--bege-escuro);
     @media (min-width: 992px) {

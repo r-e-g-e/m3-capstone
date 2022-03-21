@@ -79,6 +79,8 @@ function PagColeta() {
 
             <CardPontoColeta dados={dados} />
             <CardPontoColeta dados={dados} />
+            <CardPontoColeta dados={dados} />
+            <CardPontoColeta dados={dados} />
           </div>
         </LocationsContainer>
 
