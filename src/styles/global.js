@@ -54,5 +54,11 @@ const GlobalStyle = createGlobalStyle`
         justify-content: center;
         align-items: center;
     }
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 `;
 export default GlobalStyle;
