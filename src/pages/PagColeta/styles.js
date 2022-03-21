@@ -231,6 +231,7 @@ export const LocationsContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+
     background-color: var(--bege-escuro);
     @media (min-width: 992px) {
       flex-direction: row;

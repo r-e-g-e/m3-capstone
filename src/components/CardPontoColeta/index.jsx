@@ -1,6 +1,7 @@
 import { Content } from "./styles";
 import { useState, useEffect } from "react";
 import igreja from "../../assets/igreja.jpg";
+import ProfilePicture from "../ProfilePicture";
 
 function CardPontoColeta({ dados }) {
   const { nome, id, porcentagem } = dados;
@@ -18,12 +19,16 @@ function CardPontoColeta({ dados }) {
 
   return (
     <Content corDeFundo={cor}>
-      <div>
+      <div className="CardPontoDecolete-Title__container">
         <h2>{nome}</h2>
         <button>Ver</button>
       </div>
 
-      <img src={igreja} />
+      <ProfilePicture
+        userName="Cantinho da Coleta"
+        width="70px"
+        height="55px"
+      />
     </Content>
   );
 }

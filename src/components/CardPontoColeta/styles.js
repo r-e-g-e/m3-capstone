@@ -3,42 +3,38 @@ import styled from "styled-components";
 export const Content = styled.div`
   display: flex;
   justify-content: space-between;
-
   background: ${({ corDeFundo }) => corDeFundo};
   color: ${({ corDeFundo }) =>
     corDeFundo === "var(--laranja)" ? "var(--branco)" : "var(--laranja)"};
-
   width: 268px;
   height: 196px;
   font-family: "Itim", cursive;
   border-radius: 40px;
   padding: 20px;
+  margin-top: 5px;
+  margin-bottom: 10px;
   @media (min-width: 992px) {
     width: 313px;
   }
 
-  img {
-    width: 70px;
-    height: 70px;
-
-    border-radius: 50px;
-  }
-
-  div {
+  .CardPontoDecolete-Title__container {
     display: flex;
     flex-direction: column;
-
     align-items: center;
     justify-content: space-between;
-
     padding: 0 10px;
     padding-top: 25px;
-
     width: 100%;
+    height: 170px;
+
+    @media (min-width: 992px) {
+      height: 186px;
+    }
 
     button {
       display: block;
       margin: 0 auto;
+      margin-bottom: 25px;
     }
 
     h2 {
