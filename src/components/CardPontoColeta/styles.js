@@ -14,6 +14,7 @@ export const Content = styled.div`
   margin-top: 5px;
   margin-bottom: 10px;
   @media (min-width: 992px) {
+    margin: 0;
     width: 313px;
   }
 
