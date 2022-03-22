@@ -9,12 +9,17 @@ import { Link } from "react-router-dom";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useState } from "react";
-import CardPontoColeta from "../../components/CardPontoColeta";
+import { useContext, useEffect, useState } from "react";
+import ListaPontosDeColeta from "../../components/ListaPontosDeColeta";
 import Header from "../../components/Header";
+import { PontosDeColetaContext } from "../../Providers/PontosDeColeta";
+import { LocaisContext } from "../../Providers/Locais";
+import axios from "axios";
 
 function PagColeta() {
   const [isLoggedIn, setIsLoggedIn] = useState(true); //TESTING
+  const [estadoEscolhido, setEstadoEscolhido] = useState("");
+  const [cidades, setCidades] = useState([]);
   const formSchema = yup.object().shape({
     state: yup.string().required("Campo obrigatório"),
     city: yup.string().required("Campo obrigatório"),
@@ -31,8 +36,26 @@ function PagColeta() {
     }
   };
 
-  const dados = { nome: "asdasd", porcentagem: 70, id: 1 };
+  //https://servicodados.ibge.gov.br/api/v1/localidades/estados/41/microrregioes
+  const { pontos } = useContext(PontosDeColetaContext);
+  const { estados } = useContext(LocaisContext);
 
+  useEffect(() => {
+    (async () => {
+      const response = await axios.get(
+        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${estadoEscolhido}/microrregioes`
+      );
+      const cidades = response.data.map(({ nome, id }) => ({ nome, id }));
+      const ordemAlpha = cidades.sort((cidade1, cidade2) =>
+        cidade1.nome < cidade2.nome ? -1 : cidade1.nome > cidade2.nome ? 1 : 0
+      );
+      setCidades(ordemAlpha);
+    })();
+  }, [estadoEscolhido]);
+
+  //setCidades(res.data.map(({nome , id}) => ({ nome, id}))))
+
+  //const dados = { nome: "asdasd", porcentagem: 70, id: 1 };
   return (
     <>
       <CollectionContainer>
@@ -43,13 +66,24 @@ function PagColeta() {
             <form onSubmit={handleSubmit(onSubmitFunction)}>
               <h4 className="select__h4">Busca por pontos de coleta</h4>
               <div className="select__auxDiv">
-                <select {...register("state")}>
+                <select
+                  {...register("state")}
+                  onChange={(e) => setEstadoEscolhido(e.target.value)}
+                >
                   <option value="0">Escolha estado</option>
-                  <option value="Paraná">Paraná</option>
+                  {estados.map(({ name, id }) => (
+                    <option key={id} value={id}>
+                      {name}
+                    </option>
+                  ))}
                 </select>
                 <select {...register("city")}>
                   <option value="0">Escolha cidade</option>
-                  <option value="Campo Mourao">Campo Mourão</option>
+                  {cidades.map(({ id, nome }) => (
+                    <option key={id} value={id}>
+                      {nome}
+                    </option>
+                  ))}
                 </select>
 
                 <Button
@@ -70,20 +104,10 @@ function PagColeta() {
             O nivel de necessidade é definido por cores{" "}
             <Link to="/sobre">entenda</Link>
           </h4>
-          <div className="locationsInnerContainer">
-            {/*<CartaoDeColeta
-              width="268px"
-              height="186px"
-              color={"var(--laranja-escuro)"}
-            >*/}
-
-            <CardPontoColeta dados={dados} />
-            <CardPontoColeta dados={dados} />
-            <CardPontoColeta dados={dados} />
-            <CardPontoColeta dados={dados} />
-          </div>
+          <ListaPontosDeColeta />
+          {/* <div className="locationsInnerContainer">
+          </div> */}
         </LocationsContainer>
-
         <Footer>
           O nivel de necessidade é definido por cores{" "}
           <Link to="/sobre">entenda</Link>
