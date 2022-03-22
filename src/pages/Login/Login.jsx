@@ -39,17 +39,13 @@ const Login = () => {
   };
 
   const onSubmit = (data) => {
-    console.log("botao clicado");
     axios
       .post(url, data)
       .then((response) => {
-        window.localStorage.clear();
-        window.localStorage.setItem("authToken", response.data.token);
-        console.log(response);
-        history.push(`/home`); // adicionar o context
+        history.push(`/home`);
       })
       .catch((err) => {
-        handleError(err);
+        toast.error("Erro no login!");
       });
   };
 
@@ -66,6 +62,7 @@ const Login = () => {
             <InputLogin type="password" {...register("senha")} />
             <BotaoEntrar type="submit">ENTRAR</BotaoEntrar>
           </form>
+          <ToastContainer />
         </QuadroVerde>
         <FormImages />
       </Container>
