@@ -11,6 +11,7 @@ export const Container = styled.div`
   margin: 10px 10px;
   border-radius: 8px;
   .white{
-    color:var(--branco)
+    color:var(--branco);
+    font-size: 25px;
   }
 `;
