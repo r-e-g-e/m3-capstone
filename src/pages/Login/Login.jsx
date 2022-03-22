@@ -6,6 +6,8 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./styles.css";
+import Header from "../../components/Header";
+import FormImages from "../../components/FormBackground";
 
 const Login = () => {
   const url = "http://localhost:3000/"; // conferir o endereço
@@ -47,7 +49,7 @@ const Login = () => {
 
   return (
     <div>
-      <header></header>
+      <Header />
       <main>
         <h2>Login</h2>
         <div id="quadroVerde">
@@ -63,8 +65,8 @@ const Login = () => {
             </button>
           </form>
         </div>
+        <FormImages />
       </main>
-      <footer></footer>
     </div>
   );
 };
