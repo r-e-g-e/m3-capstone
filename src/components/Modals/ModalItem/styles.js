@@ -51,3 +51,9 @@ export const Container = styled.div`
     color: var(--laranja);
   }
 `;
+
+export const Content = styled.div`
+  button {
+    margin: 20px;
+  }
+`;

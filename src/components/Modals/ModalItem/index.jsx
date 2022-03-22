@@ -1,5 +1,5 @@
 import Button from "../../Button";
-import { Container } from "./styles";
+import { Container, Content } from "./styles";
 
 function ModalItem({
   itens = [
@@ -11,14 +11,24 @@ function ModalItem({
   return (
     <Container>
       <h2>Itens</h2>
-      <Button
-        width={"90px"}
-        bgColor={"orange"}
-        height={"40px"}
-        fontSize={"30px"}
-      >
-        +
-      </Button>
+      <Content>
+        <Button
+          width={"90px"}
+          bgColor={"orange"}
+          height={"40px"}
+          fontSize={"20px"}
+        >
+          +
+        </Button>
+        <Button
+          width={"90px"}
+          bgColor={"orange"}
+          height={"40px"}
+          fontSize={"20px"}
+        >
+          Voltar
+        </Button>
+      </Content>
       <section>
         {itens.map((element, index) => (
           <div key={index}>

@@ -18,6 +18,7 @@ import Header from "./components/Header";
 import FormBackground from "./components/FormBackground";
 import ModalItem from "./components/Modals/ModalItem";
 import ModalExcluirItem from "./components/Modals/ModalExcluirItem";
+import ModalMaisItem from "./components/Modals/ModalMaisItem";
 
 function App() {
   //Esse "porcentagem" vai ser mudado para um array onde vai ser decido a cor aparti de quantidade de arrays de iténs no inventario
@@ -55,7 +56,7 @@ function App() {
         </Route>
 
         <Route path="/componentes">
-          {/* <Button>Teste</Button>
+          <Button>Teste</Button>
           <ButtonHeader>Teste</ButtonHeader>
           <CardCreate />
           <CartaoDeColeta
@@ -63,9 +64,10 @@ function App() {
             height={`${300}px`}
             dados={dados}
           />
-          <ModalItem /> */}
+          <ModalItem />
           <ModalExcluirItem />
-          {/* <Header /> */}
+          <ModalMaisItem />
+          <Header />
         </Route>
       </Switch>
     </>
