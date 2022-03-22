@@ -18,7 +18,7 @@ export const Content = styled.div`
     width: 313px;
   }
 
-  .CardPontoDecolete-Title__container {
+  .CardPontoDecoleta-Title__container {
     display: flex;
     flex-direction: column;
     align-items: center;

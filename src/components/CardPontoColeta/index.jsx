@@ -1,6 +1,5 @@
 import { Content } from "./styles";
 import { useState, useEffect } from "react";
-import igreja from "../../assets/igreja.jpg";
 import ProfilePicture from "../ProfilePicture";
 
 function CardPontoColeta({ dados }) {
@@ -19,7 +18,7 @@ function CardPontoColeta({ dados }) {
 
   return (
     <Content corDeFundo={cor}>
-      <div className="CardPontoDecolete-Title__container">
+      <div className="CardPontoDecoleta-Title__container">
         <h2>{nome}</h2>
         <button>Ver</button>
       </div>
