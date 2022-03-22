@@ -1,5 +1,5 @@
 //Bibliotecas
-import { Route, Switch } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import PaginaCadastro from "./pages/Cadastro";
 import GlobalStyle from "./styles/global";
 import { ToastContainer } from "react-toastify";
@@ -17,7 +17,9 @@ import CartaoDeColeta from "./components/CartaoDeColeta";
 import Header from "./components/Header";
 import FormBackground from "./components/FormBackground";
 import ModalItem from "./components/Modals/ModalItem";
-import ModalExcluirItem from "./components/Modals/ModalExcluirItem";
+import CriaçãoPontoDeColeta from "./components/Modals/CriaçãoPontoDeColeta";
+import ModalExcluir from "./components/Modals/ModalExcluir";
+import ModalDoar from "./components/Modals/ModalDoar";
 import ModalMaisItem from "./components/Modals/ModalMaisItem";
 
 function App() {
@@ -65,10 +67,13 @@ function App() {
             dados={dados}
           />
           <ModalItem />
-          <ModalExcluirItem />
           <ModalMaisItem />
+          <CriaçãoPontoDeColeta />
+          <ModalExcluir />
+          <ModalDoar />
           <Header />
         </Route>
+        <Redirect from="*" to="/" />
       </Switch>
     </>
   );

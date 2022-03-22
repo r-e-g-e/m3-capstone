@@ -1,34 +1,32 @@
-import { Contador, Container, Content } from "./styles";
 import Button from "../../Button";
+import { Container, Content } from "./styles";
 import { useState } from "react";
 
-function ModalMaisItem() {
+function ModalExcluir() {
   const [showModal, setShowModal] = useState(true);
 
   const closeModal = () => setShowModal(false);
+
   return (
     <>
       {showModal && (
         <Container>
-          <h2>Nome:</h2>
-          <input className="input-nome" />
-          <Contador>
-            <h2>Quantidade</h2>
-            <input type="number" />
-          </Contador>
+          <h2>Tem certeza que deseja excluir?</h2>
+
           <Content>
             <Button
-              bgColor={"orange"}
               width={"100px"}
-              height={"30px"}
-              type="submit"
+              bgColor={"orange"}
+              height={"40px"}
+              fontSize={"20px"}
             >
-              Criar
+              Sim
             </Button>
             <Button
-              bgColor={"orange"}
               width={"100px"}
-              height={"30px"}
+              bgColor={"orange"}
+              height={"40px"}
+              fontSize={"20px"}
               onClick={closeModal}
             >
               Cancelar
@@ -40,4 +38,4 @@ function ModalMaisItem() {
   );
 }
 
-export default ModalMaisItem;
+export default ModalExcluir;

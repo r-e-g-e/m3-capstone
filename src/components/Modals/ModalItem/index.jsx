@@ -6,6 +6,7 @@ function ModalItem({
     { nome: "laranja", qtd: 5 },
     { nome: "mamão", qtd: 10 },
     { nome: "maçã", qtd: 3 },
+    { nome: "morango", qtd: 7 },
   ],
 }) {
   return (
