@@ -1,24 +1,32 @@
-body {
-  background-color: #fcf4d9;
-}
+import styled from "styled-components";
 
-header {
-  background-color: #8ed2c9;
-  height: 75px;
-  margin: 0;
-  padding: 10px;
-}
+export const Container = styled.section`
+  display: flex;
+  flex-direction: column;
+  background: #fcf4d9;
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
 
-h2 {
+  div {
+    text-align: left;
+  }
+
+  form {
+    margin-top: 40px;
+  }
+`;
+
+export const TituloLogin = styled.p`
   color: #d55b3e;
   text-align: center;
   font-weight: 100;
   font-size: 24pt;
   font-style: italic;
   margin-top: 110px;
-}
+`;
 
-#quadroVerde {
+export const QuadroVerde = styled.button`
   display: flex;
   flex-direction: column;
   background-color: #00aaa0;
@@ -26,32 +34,29 @@ h2 {
   width: 325px;
   height: 370px;
   margin: auto;
-}
+  margin-top: 5px;
+`;
 
-.titulos {
+export const TituloInput = styled.p`
   color: #fefefe;
-  /* font-family: Roboto; */
   font-size: 14pt;
   margin-left: 42px;
   margin-bottom: 5px;
-}
+  text-align: left;
+`;
 
-#emailTitulo {
-  margin-top: 65px;
-}
-
-input {
+export const InputLogin = styled.input`
   border-radius: 5px;
   font-size: 14pt;
   width: 220px;
   height: 40px;
-  margin-left: 42px;
+  margin-left: 0px;
   padding: 0 5px;
   box-sizing: borde-box;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
+`;
 
-#btnEntrar {
+export const BotaoEntrar = styled.button`
   background-color: #d55b3e;
   color: #fefefe;
   border-radius: 5px;
@@ -60,12 +65,12 @@ input {
   font-size: 18px;
   width: 112px;
   height: 40px;
-  margin-left: 106px;
+  margin-left: 0px;
   margin-top: 30px;
-}
 
-#btnEntrar:hover {
-  cursor: pointer;
-  background-color: #fefefe;
-  color: #d55b3e;
-}
+  &:hover {
+    background-color: #fefefe;
+    color: #d55b3e;
+    cursor: pointer;
+  }
+`;

@@ -5,20 +5,25 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "./styles.css";
 import Header from "../../components/Header";
 import FormImages from "../../components/FormBackground";
+import {
+  Container,
+  TituloLogin,
+  TituloInput,
+  QuadroVerde,
+  InputLogin,
+  BotaoEntrar,
+} from "./styles";
 
 const Login = () => {
-  const url = "http://localhost:3000/"; // conferir o endereço
+  const url = "https://m3-capstone-api.herokuapp.com/users/signin"; // conferir o endereço
 
   const history = useHistory();
+
   const formSchema = yup.object().shape({
     email: yup.string().required("E-mail obrigatório").email("E-mail inválido"),
-    password: yup
-      .string()
-      .required("Senha obrigatória")
-      .matches(/.{6}/, "Mínimo de 6 caracteres"),
+    senha: yup.string().required("Senha obrigatória"),
   });
 
   const {
@@ -34,13 +39,14 @@ const Login = () => {
   };
 
   const onSubmit = (data) => {
+    console.log("botao clicado");
     axios
       .post(url, data)
       .then((response) => {
-        // mandar o token para a store
         window.localStorage.clear();
         window.localStorage.setItem("authToken", response.data.token);
-        history.push(`/home`, response.data);
+        console.log(response);
+        history.push(`/home`); // adicionar o context
       })
       .catch((err) => {
         handleError(err);
@@ -48,26 +54,22 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <Header />
-      <main>
-        <h2>Login</h2>
-        <div id="quadroVerde">
+    <>
+      <Container>
+        <Header />
+        <TituloLogin>Login</TituloLogin>
+        <QuadroVerde>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <p className="titulos" id="emailTitulo">
-              E-mail:
-            </p>
-            <input id="email"></input>
-            <p className="titulos">Senha:</p>
-            <input id="senha" type="password"></input>
-            <button type="submit" id="btnEntrar">
-              ENTRAR
-            </button>
+            <TituloInput>E-mail:</TituloInput>
+            <InputLogin {...register("email")} />
+            <TituloInput>Senha:</TituloInput>
+            <InputLogin type="password" {...register("senha")} />
+            <BotaoEntrar type="submit">ENTRAR</BotaoEntrar>
           </form>
-        </div>
+        </QuadroVerde>
         <FormImages />
-      </main>
-    </div>
+      </Container>
+    </>
   );
 };
 export default Login;
