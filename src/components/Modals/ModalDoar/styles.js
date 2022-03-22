@@ -13,6 +13,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  position: relative;
 
   span {
     color: var(--verde-claro);
@@ -35,4 +36,15 @@ export const StyledInput = styled.input`
   border-radius: 5px;
   border: 1px solid black;
   background-color: var(--bege-escuro);
+`;
+
+export const CloseModalButton = styled.button`
+    all: unset;
+    font-size: 20px;
+    font-weight: bold;
+    top: 7px;
+    right: 10px;
+    color: black;
+    position: absolute;
+    cursor: pointer;
 `;
