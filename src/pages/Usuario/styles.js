@@ -11,6 +11,8 @@ export const Backgrounds = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   width: 90vw;
+  position: absolute;
+  bottom: 0;
   img{
     display: none;
     @media (min-width: 786px){
