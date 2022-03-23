@@ -1,5 +1,5 @@
 //Bibliotecas
-import { Route, Switch } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import PaginaCadastro from "./pages/Cadastro";
 import GlobalStyle from "./styles/global";
 import { ToastContainer } from "react-toastify";
@@ -15,28 +15,32 @@ import Button from "./components/Button";
 import ButtonHeader from "./components/ButtonHeader";
 import CardCreate from "./components/CardCreate";
 import CartaoDeColeta from "./components/CartaoDeColeta";
-import  Header from "./components/Header";
+import Header from "./components/Header";
 import FormBackground from "./components/FormBackground";
-
+import ModalItem from "./components/Modals/ModalItem";
+import CriaçãoPontoDeColeta from "./components/Modals/CriaçãoPontoDeColeta";
+import ModalExcluir from "./components/Modals/ModalExcluir";
+import ModalDoar from "./components/Modals/ModalDoar";
+import ModalMaisItem from "./components/Modals/ModalMaisItem";
 
 function App() {
   //Esse "porcentagem" vai ser mudado para um array onde vai ser decido a cor aparti de quantidade de arrays de iténs no inventario
   const dados = {
-    nome: "teste", 
-    id: 20, 
-    porcentagem: 40   
+    nome: "teste",
+    id: 20,
+    porcentagem: 40,
   };
 
   return (
     <>
       <GlobalStyle />
-      <ToastContainer/>
+      <ToastContainer />
       <Switch>
         <Route exact path="/">
-          <Landing/>
+          <Landing />
         </Route>
         <Route path="/login">
-          <Login/>
+          <Login />
         </Route>
         <Route path="/signup">
           <FormBackground>
@@ -44,7 +48,7 @@ function App() {
           </FormBackground>
         </Route>
         <Route path="/collection">
-          <PagColeta/>
+          <PagColeta />
         </Route>
         <Route path="/user">
           <Usuario/>
@@ -55,10 +59,20 @@ function App() {
         <Route path="/componentes">
           <Button>Teste</Button>
           <ButtonHeader>Teste</ButtonHeader>
-          <CardCreate/>
-          <CartaoDeColeta width={`${300}px`} height={`${300}px`} dados = {dados} />
-          <Header/>
+          <CardCreate />
+          <CartaoDeColeta
+            width={`${300}px`}
+            height={`${300}px`}
+            dados={dados}
+          />
+          <ModalItem />
+          <ModalMaisItem />
+          <CriaçãoPontoDeColeta />
+          <ModalExcluir />
+          <ModalDoar />
+          <Header />
         </Route>
+        <Redirect from="*" to="/" />
       </Switch>
     </>
   );
