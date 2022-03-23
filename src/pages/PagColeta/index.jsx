@@ -20,7 +20,8 @@ function PagColeta() {
   const [isLoggedIn, setIsLoggedIn] = useState(true); //TESTING
   const [estadoEscolhido, setEstadoEscolhido] = useState("");
   const [cidades, setCidades] = useState([]);
-  
+  const [cidade, setCidade] = useState("");
+
   const formSchema = yup.object().shape({
     state: yup.string().required("Campo obrigatório"),
     city: yup.string().required("Campo obrigatório"),
@@ -30,9 +31,9 @@ function PagColeta() {
     resolver: yupResolver(formSchema),
   });
 
-  const onSubmitFunction = ({ state, city }) => {
-    if (state !== "0" && city !== "0") {
-      const data = { city, state };
+  const onSubmitFunction = ({ city }) => {
+    if (city !== "0") {
+      setCidade(city);
     }
   };
 
@@ -46,7 +47,7 @@ function PagColeta() {
         `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${estadoEscolhido}/microrregioes`
       );
       const cidades = response.data.map(({ nome, id }) => ({ nome, id }));
-      const ordemAlpha = cidades.sort(({nome:nome1}, {nome:nome2}) =>
+      const ordemAlpha = cidades.sort(({ nome: nome1 }, { nome: nome2 }) =>
         nome1 < nome2 ? -1 : nome1 > nome2 ? 1 : 0
       );
       setCidades(ordemAlpha);
@@ -80,7 +81,7 @@ function PagColeta() {
                 <select {...register("city")}>
                   <option>Escolha cidade</option>
                   {cidades.map(({ id, nome }) => (
-                    <option key={id} value={id}>
+                    <option key={id} value={nome}>
                       {nome}
                     </option>
                   ))}
@@ -104,9 +105,7 @@ function PagColeta() {
             O nivel de necessidade é definido por cores{" "}
             <Link to="/sobre">entenda</Link>
           </h4>
-
-          <ListaPontosDeColeta />
-
+          <ListaPontosDeColeta cidade={cidade} />
         </LocationsContainer>
 
         <Footer>
