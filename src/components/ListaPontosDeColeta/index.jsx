@@ -13,7 +13,6 @@ export default function ListaPontosDeColeta() {
     if (paginaAtual > 0) setPaginaAtual(paginaAtual - 1);
   }
 
-  
   useEffect(() => {
     (async () => {
       const response = await axios.get(
@@ -25,9 +24,9 @@ export default function ListaPontosDeColeta() {
 
   return (
     <>
-      <ul>
+      <ul className="locationsInnerContainer">
         {dadoDosCards.length > 0 &&
-          dadoDosCards.map((data, index) => (
+          dadoDosCards.map((data) => (
             <CardPontoColeta key={data.id} dados={data} />
           ))}
       </ul>
