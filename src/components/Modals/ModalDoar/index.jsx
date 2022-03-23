@@ -11,8 +11,6 @@ function ModalDoar() {
   const [valorAtual, setValorAtual] = useState(0);
   const [showModal, setShowModal] = useState(true);
 
-  const closeModal = () => setShowModal(false);
-
   const formatValue = (value) =>
     Intl.NumberFormat("pt-BR", {
       style: "currency",
@@ -58,7 +56,7 @@ function ModalDoar() {
               Atualizar
             </Button>
           </form>
-          <CloseModalButton onClick={closeModal}>x</CloseModalButton>
+          <CloseModalButton onClick={() => setShowModal(false)}>x</CloseModalButton>
         </Container>
       )}
     </>

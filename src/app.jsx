@@ -17,7 +17,7 @@ import CartaoDeColeta from "./components/CartaoDeColeta";
 import Header from "./components/Header";
 import FormBackground from "./components/FormBackground";
 import ModalItem from "./components/Modals/ModalItem";
-import CriaçãoPontoDeColeta from "./components/Modals/CriaçãoPontoDeColeta";
+import CriacaoPontoDeColeta from "./components/Modals/CriacaoPontoDeColeta";
 import ModalExcluir from "./components/Modals/ModalExcluir";
 import ModalDoar from "./components/Modals/ModalDoar";
 import ModalMaisItem from "./components/Modals/ModalMaisItem";
@@ -68,7 +68,7 @@ function App() {
           />
           <ModalItem />
           <ModalMaisItem />
-          <CriaçãoPontoDeColeta />
+          <CriacaoPontoDeColeta />
           <ModalExcluir />
           <ModalDoar />
           <Header />

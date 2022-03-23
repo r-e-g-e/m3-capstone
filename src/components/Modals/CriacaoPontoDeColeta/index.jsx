@@ -2,16 +2,14 @@ import { Container, CloseModalButton, StyledLabel } from "./styles";
 import { useState } from "react";
 import Button from "../../Button";
 
-function CriaçãoPontoDeColeta() {
+function CriacaoPontoDeColeta() {
   const [showModal, setShowModal] = useState(true);
-
-  const closeModal = () => setShowModal(false);
 
   return (
     <>
       {showModal && (
         <Container>
-          <CloseModalButton onClick={closeModal}>X</CloseModalButton>
+          <CloseModalButton onClick={() => setShowModal(false)}>X</CloseModalButton>
           <form>
             <StyledLabel>
               Nome
@@ -44,4 +42,4 @@ function CriaçãoPontoDeColeta() {
     </>
   );
 }
-export default CriaçãoPontoDeColeta;
+export default CriacaoPontoDeColeta;

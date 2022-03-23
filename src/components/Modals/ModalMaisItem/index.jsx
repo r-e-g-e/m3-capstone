@@ -5,7 +5,6 @@ import { useState } from "react";
 function ModalMaisItem() {
   const [showModal, setShowModal] = useState(true);
 
-  const closeModal = () => setShowModal(false);
   return (
     <>
       {showModal && (
@@ -29,7 +28,7 @@ function ModalMaisItem() {
               bgColor={"orange"}
               width={"100px"}
               height={"30px"}
-              onClick={closeModal}
+              onClick={() => setShowModal(false)}
             >
               Cancelar
             </Button>

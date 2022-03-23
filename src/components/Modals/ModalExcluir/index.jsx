@@ -5,8 +5,6 @@ import { useState } from "react";
 function ModalExcluir() {
   const [showModal, setShowModal] = useState(true);
 
-  const closeModal = () => setShowModal(false);
-
   return (
     <>
       {showModal && (
@@ -27,7 +25,7 @@ function ModalExcluir() {
               bgColor={"orange"}
               height={"40px"}
               fontSize={"20px"}
-              onClick={closeModal}
+              onClick={() => setShowModal(false)}
             >
               Cancelar
             </Button>
