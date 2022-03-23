@@ -1,10 +1,9 @@
 import { Content } from "./styles";
 import { useState, useEffect } from "react";
 import ProfilePicture from "../ProfilePicture";
-import { use } from "react-router-dom";
 
 function CardPontoColeta({ dados }) {
-  const { name: nome, porcentagem, mapsLink } = dados;
+  const { name: nome, percentage:porcentagem, mapsLink } = dados;
   const [cor, setCor] = useState("var(--laranja)");
 
   useEffect(() => {

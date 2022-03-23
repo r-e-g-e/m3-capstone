@@ -13,10 +13,11 @@ export default function ListaPontosDeColeta() {
     if (paginaAtual > 0) setPaginaAtual(paginaAtual - 1);
   }
 
+  
   useEffect(() => {
     (async () => {
       const response = await axios.get(
-        `https://m3-capstone-api.herokuapp.com/collect?page=${paginaAtual}&perPage=6`
+        `https://m3-capstone-api.herokuapp.com/collect?page=${paginaAtual}&perPage=2`
       );
       setDadoDosCards(response.data.collects);
     })();
