@@ -30,6 +30,7 @@ const GlobalStyle = createGlobalStyle`
     a{
         text-decoration: none;
     }
+    
     .help-landing{
         width: 223px;
         height: 136px;

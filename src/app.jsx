@@ -10,22 +10,16 @@ import Login from "./pages/Login";
 import PaginaSobre from "./pages/sobre";
 import PagColeta from "./pages/PagColeta";
 import Usuario from "./pages/Usuario";
+import ControleDeColeta from "./pages/Controle-de-coleta";
 //Componentes
 import Button from "./components/Button";
 import ButtonHeader from "./components/ButtonHeader";
 import CardCreate from "./components/CardCreate";
 import CartaoDeColeta from "./components/CartaoDeColeta";
-import  Header from "./components/Header";
+import Header from "./components/Header";
 import FormBackground from "./components/FormBackground";
 
-
 function App() {
-  //Esse "porcentagem" vai ser mudado para um array onde vai ser decido a cor aparti de quantidade de arrays de iténs no inventario
-  const dados = {
-    nome: "teste", 
-    id: 20, 
-    porcentagem: 40   
-  };
 
   return (
     <>
@@ -34,6 +28,9 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Landing/>
+        </Route>
+        <Route path="/control">
+          <ControleDeColeta/>
         </Route>
         <Route path="/login">
           <Login/>
