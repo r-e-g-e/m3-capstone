@@ -1,5 +1,5 @@
 //Bibliotecas
-import { Route, Switch } from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import PaginaCadastro from "./pages/Cadastro";
 import GlobalStyle from "./styles/global";
 import { ToastContainer } from "react-toastify";
@@ -24,16 +24,16 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <ToastContainer/>
+      <ToastContainer />
       <Switch>
         <Route exact path="/">
-          <Landing/>
+          <Landing />
         </Route>
         <Route path="/control">
           <ControleDeColeta/>
         </Route>
         <Route path="/login">
-          <Login/>
+          <Login />
         </Route>
         <Route path="/signup">
           <FormBackground>
@@ -41,7 +41,7 @@ function App() {
           </FormBackground>
         </Route>
         <Route path="/collection">
-          <PagColeta/>
+          <PagColeta />
         </Route>
         <Route path="/user">
           <Usuario/>

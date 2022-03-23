@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.button`
-  transition: 0.4s; 
+  transition: 0.4s;
   background: var(--branco);
   background: ${(props) => (props.Cor ? "var(--branco)" : "var(--laranja)")};
   color: ${(props) => (props.Cor ? "var(--laranja)" : "var(--branco)")};
@@ -18,8 +18,8 @@ export const Container = styled.button`
     transition: 0.4s;
     background: ${(props) => (props.Cor ? "var(--laranja)" : "var(--branco)")};
     color: ${(props) => (props.Cor ? "var(--branco)" : "var(--laranja)")};
-}
- `;
+  }
+`;
 
 export const StyledButton = styled.button`
   margin: 10px 0;
@@ -44,6 +44,5 @@ export const StyledButton = styled.button`
     color: ${(props /* eslint-disable-next-line indent */) =>
       props.bgColor === "orange" ? "var(--laranja)" : "var(--branco)"};
     transition: 0.4s;
-
   }
 `;
