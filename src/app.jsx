@@ -7,9 +7,9 @@ import "react-toastify/dist/ReactToastify.css";
 import PaginaCadastro from "./pages/Cadastro";
 import Landing from "./pages/Lading";
 import Login from "./pages/Login";
-// import PaginaSobre from "./pages/sobre";
+import PaginaSobre from "./pages/sobre";
+import Usuario from "./pages/Usuario";
 // import PagColeta from "./pages/PagColeta";
-// import Usuario from "./pages/Usuario";
 // import ControleDeColeta from "./pages/Controle-de-coleta";
 // //Componentes
 // import Button from "./components/Button";
@@ -29,27 +29,27 @@ function App() {
         <Route exact path="/">
           <Landing />
         </Route>
-        {/* <Route path="/control">
-          <ControleDeColeta/>
-        </Route> */}
         <Route path="/login">
           <FormBackground>
             <Login />
           </FormBackground>
         </Route>
-        <Route path="/cadastro">
+        <Route path="/cadastrar">
           <FormBackground>
             <PaginaCadastro />
           </FormBackground>
         </Route>
-        {/* <Route path="/collection">
-          <PagColeta />
+        <Route path="/sobre">
+          <PaginaSobre />
         </Route>
         <Route path="/user">
           <Usuario/>
         </Route>
-        <Route path="/about">
-          <PaginaSobre />
+        {/* <Route path="/control">
+          <ControleDeColeta/>
+        </Route> */}
+        {/* <Route path="/collection">
+          <PagColeta />
         </Route>
         <Route path="/componentes">
           <Button>Teste</Button>
@@ -57,8 +57,8 @@ function App() {
           <CardCreate/>
           <CartaoDeColeta width={`${300}px`} height={`${300}px`} dados = {dados} />
           <Header/>
-        </Route> 
-        */}
+        </Route>  */}
+       
       </Switch>
     </>
   );
