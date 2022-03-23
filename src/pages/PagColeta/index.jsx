@@ -21,6 +21,7 @@ function PagColeta() {
   const [estadoEscolhido, setEstadoEscolhido] = useState("");
   const [cidades, setCidades] = useState([]);
   const [cidade, setCidade] = useState("");
+  const [remove, setRemove] = useState(false);
 
   const formSchema = yup.object().shape({
     state: yup.string().required("Campo obrigatório"),
@@ -92,6 +93,7 @@ function PagColeta() {
                   bgColor="orange"
                   width="100px"
                   height="35px"
+                  onClick={()=>setRemove(false)}
                 >
                   BUSCAR
                 </Button>
@@ -105,7 +107,8 @@ function PagColeta() {
             O nivel de necessidade é definido por cores{" "}
             <Link to="/sobre">entenda</Link>
           </h4>
-          <ListaPontosDeColeta cidade={cidade} />
+          <h2 className="filter" onClick={()=>setRemove(true)} >Remover filtro</h2>
+          <ListaPontosDeColeta remove={remove} setRemove={setRemove} cidade={cidade} />
         </LocationsContainer>
 
         <Footer>

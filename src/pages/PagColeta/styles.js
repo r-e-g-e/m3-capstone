@@ -26,7 +26,9 @@ export const CollectionContainer = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-
+  .filter{
+    color: var(--laranja);
+  }
   .mobile__h2 {
     text-align: center;
     font-weight: 500;
