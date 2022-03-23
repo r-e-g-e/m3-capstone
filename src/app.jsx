@@ -9,6 +9,7 @@ import Landing from "./pages/Lading";
 import Login from "./pages/Login";
 import PaginaSobre from "./pages/sobre";
 import PagColeta from "./pages/PagColeta";
+import Usuario from "./pages/Usuario";
 //Componentes
 import Button from "./components/Button";
 import ButtonHeader from "./components/ButtonHeader";
@@ -34,34 +35,30 @@ function App() {
         <Route exact path="/">
           <Landing/>
         </Route>
-    
         <Route path="/login">
           <Login/>
         </Route>
-    
         <Route path="/signup">
           <FormBackground>
             <PaginaCadastro />
           </FormBackground>
         </Route>
-
         <Route path="/collection">
           <PagColeta/>
         </Route>
-
+        <Route path="/user">
+          <Usuario/>
+        </Route>
         <Route path="/about">
           <PaginaSobre />
         </Route>
-
         <Route path="/componentes">
           <Button>Teste</Button>
           <ButtonHeader>Teste</ButtonHeader>
           <CardCreate/>
           <CartaoDeColeta width={`${300}px`} height={`${300}px`} dados = {dados} />
-          
           <Header/>
         </Route>
-        
       </Switch>
     </>
   );

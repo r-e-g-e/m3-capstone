@@ -7,7 +7,7 @@ function CardCreate() {
       <Container>
         <div className="ponto">
           <p>Você não possui nenhum ponto de coleta!</p>
-          <Button>CRIAR PONTO DE COLETA</Button>
+          <Button width={`${200}px`} height={`${40}px`} bgColor = {"orange"} >CRIAR PONTO DE COLETA</Button>
         </div>
       </Container>
     </>
