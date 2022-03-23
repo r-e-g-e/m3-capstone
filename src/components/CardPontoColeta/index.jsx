@@ -18,11 +18,11 @@ function CardPontoColeta({ dados }) {
   }, []);
 
   function handleOnClick() {
-    // console.log("chamou");
-    // window.open(mapsLink, "_blank", "noopener,noreferrer");
-    const newWindow = window.open(mapsLink);
-    console.log(mapsLink);
-    if (newWindow) newWindow.opener = null;
+    if (!mapsLink.includes("https://")) {
+      return window.open("https://" + mapsLink);
+    }
+
+    return window.open(mapsLink);
   }
 
   return (
