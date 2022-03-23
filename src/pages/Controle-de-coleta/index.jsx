@@ -1,31 +1,34 @@
-import {LocationsContainer, Container} from "./styles";
+//Bibliotecas 
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import api from "../../utils/api";
+//Componentes
 import Header from "../../components/Header";
 import Button from "../../components/Button";
 import CardItem from "../../components/CardItem";
 import ModalItem from "../../components/Modals/ModalItem";
 import ModalMaisItem from "../../components/Modals/ModalMaisItem";
 import ModalExcluir from "../../components/Modals/ModalExcluir";
-import ModalDoar from "../../components/Modals/ModalDoar";
+//Estilos
+import {LocationsContainer, Container} from "./styles";
 
 
-function ControleDeColeta(location){
+function ControleDeColeta({location, id}){
 
+  //Informações dos cards
   const [item, setItem] = useState([]);
-  const [card, setCard] = useState([]);
   const [itemId, setItemId] = useState([]);
   const [itemIdDel, setItemIdDel] = useState([]);
+  const [card, setCard] = useState([]);
   const [filter, setFilter] = useState(card);
   const [input, setinput] = useState(""); 
+  //Hooks dos modais
   const [modal, setModal] = useState(false);
   const [modalCreate, setModalCreate] = useState(false);
   const [modalDel, setModalDel] = useState(false);
-  const [modalDonate, setModalDonate] = useState(false);
+
   const history = useHistory();
-  const id = "6ef4dcbc-2879-4837-9985-429775284344";
 
   useEffect(()=>{
     api.get(`/collect/${id}/card`).then(res => {
@@ -45,11 +48,10 @@ function ControleDeColeta(location){
     setFilter(result);
     setinput("");
   }
+
   //Função de criar um card
   function createCard(input){
-    const obj = {
-      "name":input
-    };
+    const obj = {"name":input};
     api.post(`/collect/${id}/card`, obj).then(() => {
       toast.success("Card criado com sucesso!");
       api.get(`/collect/${id}/card`).then(res => {
@@ -73,10 +75,6 @@ function ControleDeColeta(location){
       { modalDel &&
         <ModalExcluir setItem={setItem} setModal={setModal}  setModalDel={setModalDel} itemIdDel={itemIdDel} itemId={itemId}/>
       }
-      
-      { modalDonate &&
-        <ModalDoar/>
-      }  
 
       <Header/>
       <Container>
@@ -84,7 +82,6 @@ function ControleDeColeta(location){
           <span>Acesse o maps:</span>
           <img src="/assets/maps.png" alt="icon"/>
         </div>
-        <h2>Recebeu doação <span onClick={()=>setModalDonate(true)} className="blue">informe</span></h2>
         <section className="search">
           <input type="text" value={input} onChange={(evt)=>setinput(evt.target.value)} />
           <div className="buttons">

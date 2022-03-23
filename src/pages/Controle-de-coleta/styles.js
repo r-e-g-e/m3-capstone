@@ -39,10 +39,6 @@ export const Container = styled.div`
     text-decoration: underline;
     cursor: pointer;
   }
-  .blue{
-    color: #327DC0;
-    cursor: pointer;
-  }
   .top{
     display: flex;
     justify-content: center;
@@ -61,7 +57,7 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
     @media (min-width: 996px){
-      margin-top: 49px;
+      margin-top: 80px;
     }
   }
   .icon{

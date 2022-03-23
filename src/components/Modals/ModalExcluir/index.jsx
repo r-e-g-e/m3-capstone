@@ -1,5 +1,5 @@
 import Button from "../../Button";
-import { Container, Content } from "./styles";
+import { Black, Container, Content } from "./styles";
 import { useState } from "react";
 import api from "../../../utils/api";
 
@@ -17,7 +17,7 @@ function ModalExcluir({setItem, setModal, setModalDel, itemIdDel, itemId}) {
   }
 
   return (
-    <>
+    <Black>
       <Container>
         <h2>Tem certeza que deseja excluir?</h2>
         <Content>
@@ -41,7 +41,7 @@ function ModalExcluir({setItem, setModal, setModalDel, itemIdDel, itemId}) {
           </Button>
         </Content>
       </Container>
-    </>
+    </Black>
   );
 }
 

@@ -1,5 +1,16 @@
 import styled from "styled-components";
 
+export const Black = styled.div`
+  margin-top: 10px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: #00000099;
+`;
+
 export const Container = styled.div`
   position: absolute;
   top: 0;
@@ -17,7 +28,6 @@ export const Container = styled.div`
   align-items: center;
   border-radius: 31px;
   padding: 20px 10px;
-
   section {
     width: 100%;
     height: 100px;
@@ -28,8 +38,7 @@ export const Container = styled.div`
     align-items: center;
     padding-top: 10px;
     overflow-y: scroll;
-
-    div {
+    div{
       color: var(--branco);
       background: var(--cinza);
       display: flex;
@@ -44,7 +53,7 @@ export const Container = styled.div`
         padding: 3px;
       }
       span {
-        width: 30px;
+        width: 50px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -53,17 +62,17 @@ export const Container = styled.div`
       }
     }
   }
-
   h2 {
     color: var(--laranja);
-  }
-  @media(min-width: 768px){
-    height: 400px;
-    width: 600px;
   }
   section {
     width: 100%;
     height: 400px;
+  }
+
+  @media(min-width: 768px){
+    height: 400px;
+    width: 600px;
   }
 `;
 

@@ -1,43 +1,45 @@
-import { Contador, Container, Content } from "./styles";
-import { useState } from "react";
-import api from "../../../utils/api";
+import { Black, Contador, Container, Content } from "./styles";
 import Button from "../../Button";
+import api from "../../../utils/api";
+import { useForm } from "react-hook-form";
 
 function ModalMaisItem({setItem, itemId, setModal, setModalCreate}) {
 
-  const [input, setInput] = useState("");
-  const [amount, setAmount] = useState(0);
+  const {register, handleSubmit} = useForm([]);
 
-  function handleClick(){
-    const obj = {
-      "type": input,
-      "isMoney": false,
-      "goal": amount
-    };
-    api.post(`/card/${itemId}/item`, obj).then(()=>{
+  const handleClick  = (date) => {
+    api.post(`/card/${itemId}/item`, date).then(()=>{
       api.get(`/card/${itemId}/item`).then(res => {
         setItem(res.data);
       });
     });
     setModalCreate(false);
     setModal(true);
-  }
+  };
 
   return (
-    <>
-      <Container>
+    <Black>
+      <Container onSubmit={handleSubmit(handleClick)}>
         <h2>Nome:</h2>
-        <input className="input-nome" onChange={(evt)=>setInput(evt.target.value)}/>
+        <input className="input-nome" {...register("type")}/>
+        <div className="money">
+          <h2>Dinheiro?</h2>
+          <select name="" id="" {...register("isMoney")} >
+            <option value="true">Sim</option>
+            <option value="false">Não</option>
+          </select>
+        </div>
         <Contador>
           <h2>Quantidade</h2>
-          <input type="number" onChange={(evt)=>setAmount(evt.target.value)}/>
+          <input type="number" {...register("goal")}/>
         </Contador>
+        
         <Content>
           <Button
             bgColor={"orange"}
             width={"100px"}
             height={"30px"}
-            onClick={()=>handleClick()}
+            type="submit"
           >
               Criar
           </Button>
@@ -51,7 +53,7 @@ function ModalMaisItem({setItem, itemId, setModal, setModalCreate}) {
           </Button>
         </Content>
       </Container>
-    </>
+    </Black>  
   );
 }
 
