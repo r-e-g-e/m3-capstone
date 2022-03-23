@@ -5,11 +5,7 @@ import axios from "axios";
 export default function ListaPontosDeColeta({ cidade = "" }) {
   const [paginaAtual, setPaginaAtual] = useState(0);
   const [dadoDosCards, setDadoDosCards] = useState([]);
-  console.log(
-    dadoDosCards
-      .filter(({ capital }) => capital === "São Mateus Do Sul")
-      .map((data) => console.log(data))
-  );
+  const [filter, setFilter] = useState([]);
   function handleChangePage(isPositive = true) {
     if (isPositive) {
       return setPaginaAtual(paginaAtual + 1);
@@ -20,22 +16,32 @@ export default function ListaPontosDeColeta({ cidade = "" }) {
   useEffect(() => {
     (async () => {
       const response = await axios.get(
-        `https://m3-capstone-api.herokuapp.com/collect?page=${paginaAtual}&perPage=2`
+        `https://m3-capstone-api.herokuapp.com/collect?page=${paginaAtual}`
       );
 
       setDadoDosCards(response.data.collects);
     })();
   }, [paginaAtual]);
 
+  useEffect(() => {
+    setFilter(dadoDosCards);
+  }, [dadoDosCards]);
+
+  useEffect(() => {
+    const filtro = dadoDosCards.filter((item) => {
+      return item.capital === cidade;
+    });
+    setFilter(filtro);
+  }, [cidade]);
+
+  console.log(filter);
+
   return (
     <>
       <ul className="locationsInnerContainer">
-        {dadoDosCards.length > 0 &&
-          dadoDosCards
-            .filter(({ capital }) => capital === cidade)
-            .map((data) => {
-              return <CardPontoColeta key={data.id} dados={data} />;
-            })}
+        {filter.map((data) => {
+          return <CardPontoColeta key={data.id} dados={data} />;
+        })}
       </ul>
 
       <section>
