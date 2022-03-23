@@ -36,7 +36,7 @@ export const Container = styled.div`
     justify-content: space-around;
     background: var(--branco);
     margin-top: 20px;
-    border-radius: 35px;
+    border-radius: 8px;
     font-size: 14px;
     align-items: center;
   }

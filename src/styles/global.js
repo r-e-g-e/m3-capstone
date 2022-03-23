@@ -32,6 +32,7 @@ const GlobalStyle = createGlobalStyle`
     a{
         text-decoration: none;
     }
+    
     .help-landing{
         width: 223px;
         height: 136px;
@@ -53,6 +54,12 @@ const GlobalStyle = createGlobalStyle`
     .flex{
         margin-top: 20px;
         display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
     }
