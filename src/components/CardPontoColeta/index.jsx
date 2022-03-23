@@ -3,12 +3,12 @@ import { useState, useEffect } from "react";
 import ProfilePicture from "../ProfilePicture";
 
 function CardPontoColeta({ dados }) {
-  const { name: nome, percentage:porcentagem, mapsLink } = dados;
+  const { name: nome, percentage: porcentagem, mapsLink } = dados;
   const [cor, setCor] = useState("var(--laranja)");
 
   useEffect(() => {
     if (porcentagem < 33.33) {
-      setCor("var(--laranja)");
+      setCor("var(--vermelho)");
     } else if (porcentagem >= 33.33 && porcentagem < 66.66) {
       setCor("var(--amarelo)");
     } else {

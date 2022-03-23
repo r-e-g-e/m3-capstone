@@ -5,7 +5,7 @@ export const Content = styled.li`
   justify-content: space-between;
   background: ${({ corDeFundo }) => corDeFundo};
   color: ${({ corDeFundo }) =>
-    corDeFundo === "var(--laranja)" ? "var(--branco)" : "var(--laranja)"};
+    corDeFundo === "var(--vermelho)" ? "var(--branco)" : "var(--vermelho)"};
   width: 268px;
   height: 196px;
   font-family: "Itim", cursive;

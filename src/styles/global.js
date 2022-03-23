@@ -12,17 +12,20 @@ export const GlobalStyle = createGlobalStyle`
         background-color: var(--bege);
     }
     :root {
-        --branco: #fefefe;
+        --bege: #fcf4d9;
         --verde-claro: #8ed2c9;
         --verde-escuro: #00aaa0;
-        --cinza: #c4c4c4;
+        --verde-medio: #70c76e;
+        --amarelo: #cae45c;
         --laranja: #d55b3e;
         --laranja-escuro: #CB6A41;
-        --bege-escuro: #E5DFCA;
+        --bege-escuro: #EDE0C4;
         --preto: #000000;
-        --bege: #fcf4d9;
-        --amarelo: #CAE45C;
-        --verde-medio: #70C76E;
+        --cinza-escuro: #7D7C7C;
+        --cinza: #c4c4c4;
+        --cinza-claro: #C4C4C487;
+        --branco: #fefefe;
+        --vermelho: #cb4641;
     }
     button{
         cursor: pointer;
