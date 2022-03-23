@@ -44,9 +44,9 @@ export default function ListaPontosDeColeta({ cidade, remove, setRemove}) {
         })}
       </ul>
       <section>
-        <button onClick={() => handleChangePage(false)}>{"<"}</button>
+        <button className="move" onClick={() => handleChangePage(false)}>{"<"}</button>
         {paginaAtual}
-        <button onClick={() => handleChangePage(true)}>{">"}</button>
+        <button className="move" onClick={() => handleChangePage(true)}>{">"}</button>
       </section>
     </>
   );

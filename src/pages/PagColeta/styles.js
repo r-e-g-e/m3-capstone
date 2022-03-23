@@ -28,6 +28,8 @@ export const CollectionContainer = styled.div`
   align-items: center;
   .filter{
     color: var(--laranja);
+    margin-bottom: 30px;
+    cursor: pointer;
   }
   .mobile__h2 {
     text-align: center;
@@ -62,7 +64,7 @@ export const CollectionHeader = styled.div`
     width: 160px;
     height: 65px;
     display: flex;
-    flex-direction: row
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: flex-end;
@@ -104,11 +106,21 @@ export const CollectionHeader = styled.div`
 export const SelectContainer = styled.div`
   width: 285px;
   height: 350px;
-
+  .flex{
+    display: flex;
+    flex-direction: column;
+    select{
+      margin: 20px 0;
+    }
+  }
   .mobile__h2 {
     font-family: "Roboto", sans-serif;
   }
-
+  @media (min-width: 768px){
+    .flex{
+      flex-direction: row;
+    }
+  }
   @media (min-width: 992px) {
     width: 750px;
     height: 145px;
@@ -233,15 +245,21 @@ export const LocationsContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-
     background-color: var(--bege-escuro);
+    @media (min-width: 768px){
+      width: 600px;
+
+    }
     @media (min-width: 992px) {
       flex-direction: row;
+      width: 992px;
+      overflow: inherit;
       justify-content: space-evenly;
       align-items: flex-start;
       flex-wrap: wrap;
       border: none;
       background-color: inherit;
+      
     }
   }
 `;

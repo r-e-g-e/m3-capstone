@@ -38,7 +38,6 @@ function PagColeta() {
     }
   };
 
-  //https://servicodados.ibge.gov.br/api/v1/localidades/estados/41/microrregioes
   const { pontos } = useContext(PontosDeColetaContext);
   const { estados } = useContext(LocaisContext);
 
@@ -68,26 +67,27 @@ function PagColeta() {
             <form onSubmit={handleSubmit(onSubmitFunction)}>
               <h4 className="select__h4">Busca por pontos de coleta</h4>
               <div className="select__auxDiv">
-                <select
-                  {...register("state")}
-                  onChange={(e) => setEstadoEscolhido(e.target.value)}
-                >
-                  <option value="0">Escolha estado</option>
-                  {estados.map(({ name, id }) => (
-                    <option key={id} value={id}>
-                      {name}
-                    </option>
-                  ))}
-                </select>
-                <select {...register("city")}>
-                  <option>Escolha cidade</option>
-                  {cidades.map(({ id, nome }) => (
-                    <option key={id} value={nome}>
-                      {nome}
-                    </option>
-                  ))}
-                </select>
-
+                <div className="flex">
+                  <select
+                    {...register("state")}
+                    onChange={(e) => setEstadoEscolhido(e.target.value)}
+                  >
+                    <option value="0">Escolha estado</option>
+                    {estados.map(({ name, id }) => (
+                      <option key={id} value={id}>
+                        {name}
+                      </option>
+                    ))}
+                  </select>
+                  <select {...register("city")}>
+                    <option>Escolha cidade</option>
+                    {cidades.map(({ id, nome }) => (
+                      <option key={id} value={nome}>
+                        {nome}
+                      </option>
+                    ))}
+                  </select>
+                </div>    
                 <Button
                   type="submit"
                   bgColor="orange"
@@ -121,34 +121,3 @@ function PagColeta() {
 }
 
 export default PagColeta;
-
-{
-  /*isLoggedIn ? (
-          <CollectionHeader>
-            <h1>
-              <span className="ajude">Ajude.</span>
-              <span className="me">me</span>
-            </h1>
-
-            <div className="loggedin__navContainer">
-              <Link to="/about">Sobre</Link>
-              <Link to="/">Sair</Link>
-              <ProfilePicture
-                width={"60px"}
-                height={"60px"}
-                userName="marco the kid"
-              />
-            </div>
-          </CollectionHeader>
-        ) : (
-          <CollectionHeader>
-            <h1>
-              <span className="ajude">Ajude.</span>
-              <span className="me">me</span>
-            </h1>
-            <Button width="100px" height="40px" bgColor="orange">
-              Voltar
-            </Button>
-          </CollectionHeader>
-        )*/
-}
