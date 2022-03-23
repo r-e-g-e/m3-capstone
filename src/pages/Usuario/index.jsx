@@ -2,25 +2,23 @@ import Header from "../../components/Header";
 import PerfilUser from "../../components/PerfilUser";
 import CardCreate from "../../components/CardCreate";
 import { Container, Backgrounds } from "./styles";
-function Usuario(){
-  const teste = false;
+import { useState } from "react";
+function Usuario() {
+  const [logado, setLogado] = useState(true);
+
   const data = {
-    name: "Teste da silva"
+    name: "Teste da silva",
   };
 
-  return(
+  return (
     <div className="container">
-      <Header/>
+      <Header />
       <Container>
-        {teste ? (
-          <CardCreate/>
-        ) : (
-          <PerfilUser data = {data} />
-        )}
+        {logado ? <CardCreate /> : <PerfilUser data={data} />}
       </Container>
       <Backgrounds>
-        <img src="/assets/background/twoPeoplesImage.svg" alt="background"/>
-        <img src="/assets/background/maskPeople.svg" alt="background"/>
+        <img src="/assets/background/twoPeoplesImage.svg" alt="background" />
+        <img src="/assets/background/maskPeople.svg" alt="background" />
       </Backgrounds>
     </div>
   );
