@@ -52,26 +52,13 @@ export const Container = styled.section`
 
       margin-bottom: 30px;
     }
-  }
-`;
 
-export const Botao = styled.button`
-  background-color: var(--laranja);
-  color:white;
-
-  padding: 10px 12px;
-
-  color: white;
-
-  font-size: 18px;
-  font-weight: 600;
-  
-  border: none;
-  border-radius: 5px;
-  
-  
-  &:hover{
-    background-color: white;
-    color:var(--laranja);
+    .cadastro--container-botoes{
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-around;
+      
+      width: 100%;
+    }
   }
 `;

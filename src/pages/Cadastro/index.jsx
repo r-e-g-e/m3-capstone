@@ -2,9 +2,11 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Input from "../../components/Input";
-import { Container, Botao } from "./styles";
+import { Container, FlexSection } from "./styles";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { useHistory } from "react-router-dom";
+import Botao from "../../components/Button";
 
 export default function PaginaCadastro(){
   const schema = yup.object().shape({
@@ -32,6 +34,8 @@ export default function PaginaCadastro(){
     resolver: yupResolver(schema)
   });
 
+  const history = useHistory();
+
   async function handleFormSubmit(data){
 
     delete data.confirmarSenha;
@@ -39,14 +43,15 @@ export default function PaginaCadastro(){
     const response = await axios({
       method:"POST",
       data,
-      // url:"https://m3-capstone-api.herokuapp.com/user/signup",
-      url:"http://localhost:3030/users/signup",
+      url:"https://m3-capstone-api.herokuapp.com/users/signup",
       validateStatus: () => true
     });
 
     if(response.status >= 400) return toast.error(response.data.error);
 
     toast.success("Conta criada!");
+
+    history.push("/");
   }
 
   return(
@@ -91,10 +96,22 @@ export default function PaginaCadastro(){
             inputType="password"
           />
         </section>
-        
-        <Botao>
+
+        <div className="cadastro--container-botoes">
+          <Botao
+            bgColor={"orange"}
+            height={"40px"}
+            width={"100px"}
+          >
           CADASTRAR
-        </Botao>
+          </Botao>
+          <Botao
+            height={"40px"}
+            width={"100px"}
+          >
+          Sair
+          </Botao>
+        </div>
       </form>
     </Container>
   );

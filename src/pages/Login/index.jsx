@@ -40,38 +40,43 @@ export default function Login() {
   }
 
   return (
-    <>
-      <Header />
-      <Container>
-        <h2>Login</h2>
+    <Container>
+      <h2>Login</h2>
 
-        <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)}>
 
-          <section>
-            <Input
-              register={register("email")}
-              error={errors.email?.message}
-              title="Email"
-              placeholder="email"
-            />
+        <section>
+          <Input
+            register={register("email")}
+            error={errors.email?.message}
+            title="Email"
+            placeholder="email"
+          />
 
-            <Input
-              register={register("email")}
-              error={errors.senha?.message}
-              title="Senha"
-              placeholder="senha"
-            />
-          </section>
+          <Input
+            register={register("email")}
+            error={errors.senha?.message}
+            title="Senha"
+            placeholder="senha"
+          />
+        </section>
           
+        <div className="cadastro--container-botoes">
           <Button
             bgColor={"orange"}
             height={"40px"}
             width={"100px"}
           >
-            ENTRAR
+          CADASTRAR
           </Button>
-        </form>
-      </Container>
-    </>
+          <Button
+            height={"40px"}
+            width={"100px"}
+          >
+          Sair
+          </Button>
+        </div>
+      </form>
+    </Container>
   );
 }

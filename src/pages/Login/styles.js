@@ -37,6 +37,14 @@ export const Container = styled.section`
 
       margin-bottom: 30px;
     }
+
+    .cadastro--container-botoes{
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-around;
+      
+      width: 100%;
+    }
   }
 `;
 

@@ -4,8 +4,8 @@ import GlobalStyle from "./styles/global";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 //Paginas
-// import PaginaCadastro from "./pages/Cadastro";
-// import Landing from "./pages/Lading";
+import PaginaCadastro from "./pages/Cadastro";
+import Landing from "./pages/Lading";
 import Login from "./pages/Login";
 // import PaginaSobre from "./pages/sobre";
 // import PagColeta from "./pages/PagColeta";
@@ -23,13 +23,13 @@ function App() {
 
   return (
     <>
-      <GlobalStyle />
       <ToastContainer />
+      <GlobalStyle />
       <Switch>
-        {/* <Route exact path="/">
+        <Route exact path="/">
           <Landing />
         </Route>
-        <Route path="/control">
+        {/* <Route path="/control">
           <ControleDeColeta/>
         </Route> */}
         <Route path="/login">
@@ -37,12 +37,12 @@ function App() {
             <Login />
           </FormBackground>
         </Route>
-        {/* <Route path="/signup">
+        <Route path="/cadastro">
           <FormBackground>
             <PaginaCadastro />
           </FormBackground>
         </Route>
-        <Route path="/collection">
+        {/* <Route path="/collection">
           <PagColeta />
         </Route>
         <Route path="/user">
@@ -57,7 +57,8 @@ function App() {
           <CardCreate/>
           <CartaoDeColeta width={`${300}px`} height={`${300}px`} dados = {dados} />
           <Header/>
-        </Route> */}
+        </Route> 
+        */}
       </Switch>
     </>
   );
