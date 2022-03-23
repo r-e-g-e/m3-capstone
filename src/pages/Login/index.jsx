@@ -5,13 +5,10 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 import Input from "../../components/Input";
-// import Header from "../../components/Header";
+import { Container, BotaoEntrar } from "./styles";
+import Button from "../../components/Button";
+import Header from "../../components/Header";
 // import FormImages from "../../components/FormBackground";
-import {
-  Container,
-  TituloLogin,
-  BotaoEntrar
-} from "./styles";
 
 export default function Login() {
   const url = "https://m3-capstone-api.herokuapp.com/users/signin";
@@ -43,28 +40,38 @@ export default function Login() {
   }
 
   return (
-    <Container>
-      {/* <Header /> */}
-      <TituloLogin>Login</TituloLogin>
+    <>
+      <Header />
+      <Container>
+        <h2>Login</h2>
 
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <Input
-          register={register("email")}
-          error={errors.email?.message}
-          title="Email"
-          placeholder="email"
-        />
+        <form onSubmit={handleSubmit(onSubmit)}>
 
-        <Input
-          register={register("email")}
-          error={errors.senha?.message}
-          title="Senha"
-          placeholder="senha"
-        />
+          <section>
+            <Input
+              register={register("email")}
+              error={errors.email?.message}
+              title="Email"
+              placeholder="email"
+            />
+
+            <Input
+              register={register("email")}
+              error={errors.senha?.message}
+              title="Senha"
+              placeholder="senha"
+            />
+          </section>
           
-        <BotaoEntrar type="submit">ENTRAR</BotaoEntrar>
-      </form>
-      {/* <BotaoVoltar onClick={voltar}>Voltar</BotaoVoltar> */}
-    </Container>
+          <Button
+            bgColor={"orange"}
+            height={"40px"}
+            width={"100px"}
+          >
+            ENTRAR
+          </Button>
+        </form>
+      </Container>
+    </>
   );
 }

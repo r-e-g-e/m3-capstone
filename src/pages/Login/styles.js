@@ -8,18 +8,36 @@ export const Container = styled.section`
   min-height: 100vh;
   font-family: "Roboto", sans-serif;
 
-  form {
-    margin-top: 40px;
+  h2{
+    color: #d55b3e;
+    text-align: center;
+    font-weight: 100;
+    font-size: 24pt;
+    font-style: italic;
+    margin-top: 110px;
   }
-`;
 
-export const TituloLogin = styled.p`
-  color: #d55b3e;
-  text-align: center;
-  font-weight: 100;
-  font-size: 24pt;
-  font-style: italic;
-  margin-top: 110px;
+  form{
+    background-color: var(--verde-escuro);
+    
+    margin: 0 auto;
+    padding: 30px 40px;
+
+    border-radius: 5px;
+    
+    text-align: center;
+
+    width: 95%;
+    max-width:400px;
+
+    section{
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      margin-bottom: 30px;
+    }
+  }
 `;
 
 export const QuadroVerde = styled.div`
@@ -89,7 +107,7 @@ export const BotaoEntrar = styled.button`
 
 export const BotaoVoltar = styled.button`
   background-color: rgba(76, 175, 80, 0);
-  color: ##d55b3e;
+  color: #d55b3e;
   border: none;
   font-weight: bold;
   font-size: 18px;
