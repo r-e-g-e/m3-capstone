@@ -17,7 +17,7 @@ import {
 } from "./styles";
 
 const Login = () => {
-  const url = "https://m3-capstone-api.herokuapp.com/users/signin"; // conferir o endereço
+  const url = "https://m3-capstone-api.herokuapp.com/users/signin";
 
   const history = useHistory();
 
@@ -33,10 +33,6 @@ const Login = () => {
   } = useForm({
     resolver: yupResolver(formSchema),
   });
-
-  const handleError = (er) => {
-    toast("Erro no login!");
-  };
 
   const onSubmit = (data) => {
     axios
@@ -56,12 +52,17 @@ const Login = () => {
         <TituloLogin>Login</TituloLogin>
         <QuadroVerde>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <TituloInput>E-mail:</TituloInput>
+            <TituloInput placeholder="Email">
+              {errors.email ? errors.email.message : "Email:"}
+            </TituloInput>
             <InputLogin {...register("email")} />
-            <TituloInput>Senha:</TituloInput>
+            <TituloInput>
+              {errors.senha ? errors.senha.message : "Senha:"}
+            </TituloInput>
             <InputLogin type="password" {...register("senha")} />
             <BotaoEntrar type="submit">ENTRAR</BotaoEntrar>
           </form>
+
           <ToastContainer />
         </QuadroVerde>
         <FormImages />
