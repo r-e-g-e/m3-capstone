@@ -2,11 +2,11 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Input from "../../components/Input";
-import { Container, FlexSection } from "./styles";
+import { Container } from "./styles";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useHistory } from "react-router-dom";
-import Botao from "../../components/Button";
+import Button from "../../components/Button";
 
 export default function PaginaCadastro(){
   const schema = yup.object().shape({
@@ -98,19 +98,22 @@ export default function PaginaCadastro(){
         </section>
 
         <div className="cadastro--container-botoes">
-          <Botao
+          <Button
             bgColor={"orange"}
             height={"40px"}
             width={"100px"}
+            type="submit"
           >
           CADASTRAR
-          </Botao>
-          <Botao
+          </Button>
+          <Button
             height={"40px"}
             width={"100px"}
+            type="button"
+            onClick={() => history.goBack()}
           >
           Sair
-          </Botao>
+          </Button>
         </div>
       </form>
     </Container>

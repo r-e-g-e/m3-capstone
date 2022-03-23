@@ -5,14 +5,12 @@ import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 import Input from "../../components/Input";
-import { Container, BotaoEntrar } from "./styles";
+import { Container } from "./styles";
 import Button from "../../components/Button";
-import Header from "../../components/Header";
+// import Header from "../../components/Header";
 // import FormImages from "../../components/FormBackground";
 
 export default function Login() {
-  const url = "https://m3-capstone-api.herokuapp.com/users/signin";
-
   const history = useHistory();
 
   const formSchema = yup.object().shape({
@@ -28,15 +26,23 @@ export default function Login() {
     resolver: yupResolver(formSchema),
   });
 
-  function onSubmit(data) {
-    axios
-      .post(url, data)
-      .then((response) => {
-        history.push("/home");
-      })
-      .catch((err) => {
-        toast.error("Erro no login!");
-      });
+  async function onSubmit(data) {
+    delete data.confirmarSenha;
+
+    const response = await axios({
+      method:"POST",
+      data,
+      url:"https://m3-capstone-api.herokuapp.com/users/signin",
+      validateStatus: () => true
+    });
+
+    if(response.status >= 400) return toast.error(response.data.error);
+
+    toast.success("Logado com sucesso!");
+
+    localStorage.setItem("token", response.data);
+
+    history.push("/home");
   }
 
   return (
@@ -51,13 +57,15 @@ export default function Login() {
             error={errors.email?.message}
             title="Email"
             placeholder="email"
+            inputType="email"
           />
 
           <Input
-            register={register("email")}
+            register={register("senha")}
             error={errors.senha?.message}
             title="Senha"
             placeholder="senha"
+            inputType="password"
           />
         </section>
           
@@ -66,12 +74,15 @@ export default function Login() {
             bgColor={"orange"}
             height={"40px"}
             width={"100px"}
+            type="submit"
           >
-          CADASTRAR
+          Entrar
           </Button>
           <Button
             height={"40px"}
             width={"100px"}
+            type="button"
+            onClick={() => history.goBack()}
           >
           Sair
           </Button>
