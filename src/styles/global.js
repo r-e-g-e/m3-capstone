@@ -10,9 +10,6 @@ const GlobalStyle = createGlobalStyle`
     body {
         font-family: "Roboto", sans-serif ;
         background-color: var(--bege);
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
     }
     :root {
         --bege: #fcf4d9;
@@ -33,6 +30,36 @@ const GlobalStyle = createGlobalStyle`
     a{
         text-decoration: none;
     }
-
+    
+    .help-landing{
+        width: 223px;
+        height: 136px;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 47px;
+        text-align: center;
+        color:  var(--branco);
+    }
+    .flex-column{
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .flex{
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 `;
 export default GlobalStyle;
