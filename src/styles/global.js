@@ -22,9 +22,11 @@ const GlobalStyle = createGlobalStyle`
         --amarelo: #cae45c;
         --laranja: #d55b3e;
         --laranja-escuro: #CB6A41;
-        --bege-escuro: #E5DFCA;
+        --bege-escuro: #EDE0C4;
         --preto: #000000;
+        --cinza-escuro: #7D7C7C;
         --cinza: #c4c4c4;
+        --cinza-claro: #C4C4C487;
         --branco: #fefefe;  
     }
     button{

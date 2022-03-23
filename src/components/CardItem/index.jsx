@@ -1,10 +1,21 @@
 import {Container} from "./styles";
 import Button from "../../components/Button";
-function CardItem({item}){
+import api from "../../utils/api";
+function CardItem({id, item,  setModal, setItemId, setCard}){
+
+  function handleClick(){
+    api.delete(`/card/${item.id}`).then(()=>{
+      api.get(`/collect/${id}/card`).then(res => {
+        setCard(res.data);
+      });
+    });
+  }
+
   return(
     <Container>
       <h2 className="white" >{item.name}</h2>
-      <Button width={`${150}px`} height={`${55}px`} bgColor = {"orange"}>Ver</Button>
+      <Button width={`${150}px`} height={`${55}px`} bgColor = {"orange"} onClick={()=>{setModal(true); setItemId(item.id);}} >Ver</Button>
+      <span className="excluir" onClick={()=>handleClick()}>Excluir</span>
     </Container>
   );
 }

@@ -33,16 +33,11 @@ export const Container = styled.div`
       height: 61px;
     }
   }
-  .menu{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-  }
   .listAll{
     cursor: pointer;
     font-size: 25px;
     text-decoration: underline;
+    cursor: pointer;
   }
   .blue{
     color: #327DC0;

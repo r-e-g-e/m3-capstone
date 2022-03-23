@@ -1,15 +1,15 @@
-import { Route, Switch } from "react-router-dom";
 import GlobalStyle from "./styles/global";
-import ControleDeColeta from "./pages/Controle-de-coleta";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {Route, Switch } from "react-router-dom";
+
+import ControleDeColeta from "./pages/Controle-de-coleta";
 
 function App() {
-
   return (
     <>
-      <ToastContainer/>
       <GlobalStyle />
+      <ToastContainer />
       <Switch>
         <Route path="/control">
           <ControleDeColeta/>
