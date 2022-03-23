@@ -27,14 +27,14 @@ function ControleDeColeta(){
     }
   ];
 
-  function search(input){
+  function pesquisar(input){
     const result = testes.filter(item=>{
       return item.name === input;
     });
     setFilter(result);
   }
 
-  function createCard(input){
+  function criarCard(input){
     //implementa api
   }
 
@@ -54,8 +54,12 @@ function ControleDeColeta(){
         <section className="search">
           <input type="text" onChange={(evt)=>setinput(evt.target.value)} />
           <div className="buttons">
-            <Button width={`${220}px`} height={`${50}px`} bgColor = {"orange"} onClick={()=>search(input)}>Pesquisa</Button>
-            <Button width={`${220}px`} height={`${50}px`} bgColor = {"orange"} onClick={()=>createCard(input)} >Criar</Button>
+            <Button width={`${220}px`} height={`${50}px`} bgColor = {"orange"} onClick={()=>pesquisar(input)}>
+              Pesquisa
+            </Button>
+            <Button width={`${220}px`} height={`${50}px`} bgColor = {"orange"} onClick={()=>criarCard(input)}>
+              Criar
+            </Button>
           </div>
         </section>
         <h2>Gerenciar</h2>
