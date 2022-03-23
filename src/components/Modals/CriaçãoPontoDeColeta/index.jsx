@@ -1,33 +1,62 @@
 import { Container, CloseModalButton, StyledLabel } from "./styles";
-import { useState } from "react";
+import api from "./../../../utils/api";
 import Button from "../../Button";
 
-function CriaçãoPontoDeColeta() {
-  const [showModal, setShowModal] = useState(true);
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { toast } from "react-toastify";
 
+function CriaçãoPontoDeColeta({ showModal, setShowModal }) {
   const closeModal = () => setShowModal(false);
+
+  const formSchema = yup.object().shape({
+    nome: yup.string().required("Este campo é obrigatório!"),
+    estado: yup.string().required("Este campo é obrigatório!"),
+    capital: yup.string().required("Este campo é obrigatório!"),
+    link: yup.string().required("Este campo é obrigatório!"),
+  });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(formSchema),
+  });
+
+  const onSubmitFunction = (data) =>
+    api
+      .post("/collect", data)
+      .then((_) => {
+        toast.success("Cadastrado com sucesso");
+        setShowModal(false);
+      })
+      .catch((_) => {
+        toast.error("Ocorreu algum erro, tente novamente");
+      });
 
   return (
     <>
       {showModal && (
         <Container>
           <CloseModalButton onClick={closeModal}>X</CloseModalButton>
-          <form>
+          <form onSubmit={handleSubmit(onSubmitFunction)}>
             <StyledLabel>
-              Nome
-              <input type="text" />
+              Nome {errors.nome?.message}
+              <input type="text" {...register("nome")} />
             </StyledLabel>
             <StyledLabel>
-              Estado
-              <input type="text" />
+              Estado {errors.estado?.message}
+              <input type="text" {...register("estado")} />
             </StyledLabel>
             <StyledLabel>
-              Capital
-              <input type="text" />
+              Capital {errors.capital?.message}
+              <input type="text" {...register("capital")} />
             </StyledLabel>
             <StyledLabel>
-              Link do Maps
-              <input type="text" />
+              Link do Maps {errors.link?.message}
+              <input type="url" {...register("link")} />
             </StyledLabel>
 
             <Button
@@ -35,6 +64,7 @@ function CriaçãoPontoDeColeta() {
               bgColor={"orange"}
               height={"40px"}
               fontSize={"24px"}
+              type="submit"
             >
               Criar
             </Button>
