@@ -14,12 +14,17 @@ import {
   QuadroVerde,
   InputLogin,
   BotaoEntrar,
+  BotaoVoltar,
 } from "./styles";
 
-const Login = () => {
+export default function Login() {
   const url = "https://m3-capstone-api.herokuapp.com/users/signin";
 
   const history = useHistory();
+
+  function voltar() {
+    history.push("/");
+  }
 
   const formSchema = yup.object().shape({
     email: yup.string().required("E-mail obrigatório").email("E-mail inválido"),
@@ -34,7 +39,8 @@ const Login = () => {
     resolver: yupResolver(formSchema),
   });
 
-  const onSubmit = (data) => {
+  function onSubmit(data) {
+    console.log(data);
     axios
       .post(url, data)
       .then((response) => {
@@ -43,7 +49,7 @@ const Login = () => {
       .catch((err) => {
         toast.error("Erro no login!");
       });
-  };
+  }
 
   return (
     <>
@@ -62,12 +68,11 @@ const Login = () => {
             <InputLogin type="password" {...register("senha")} />
             <BotaoEntrar type="submit">ENTRAR</BotaoEntrar>
           </form>
-
           <ToastContainer />
         </QuadroVerde>
+        <BotaoVoltar onClick={voltar}>Voltar</BotaoVoltar>
         <FormImages />
       </Container>
     </>
   );
-};
-export default Login;
+}
