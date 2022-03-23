@@ -22,3 +22,16 @@ export const Backgrounds = styled.div`
     }
   }
 `;
+
+export const ModalContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.4);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
