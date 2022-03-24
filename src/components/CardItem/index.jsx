@@ -1,7 +1,10 @@
-import {Container} from "./styles";
+//Bibliotecas
 import { toast } from "react-toastify";
-import Button from "../../components/Button";
 import api from "../../utils/api";
+//Componentes
+import {Container} from "./styles";
+import Button from "../../components/Button";
+
 function CardItem({id, item,  setModal, setItemId, setCard}){
 
   const email = localStorage.getItem("email");
@@ -16,6 +19,7 @@ function CardItem({id, item,  setModal, setItemId, setCard}){
         
       });
     });
+
   }
   return(
     <Container>

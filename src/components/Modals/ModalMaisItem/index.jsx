@@ -56,5 +56,4 @@ function ModalMaisItem({setItem, itemId, setModal, setModalCreate}) {
     </Black>  
   );
 }
-
 export default ModalMaisItem;

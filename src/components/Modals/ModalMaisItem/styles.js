@@ -11,7 +11,6 @@ export const Black = styled.div`
   background-color: #00000099;
 `;
 
-
 export const Container = styled.form`
   border: 1px solid var(--preto);
   width: 320px;

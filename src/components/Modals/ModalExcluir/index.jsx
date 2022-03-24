@@ -1,10 +1,8 @@
 import Button from "../../Button";
 import { Black, Container, Content } from "./styles";
-import { useState } from "react";
 import api from "../../../utils/api";
 
 function ModalExcluir({setItem, setModal, setModalDel, itemIdDel, itemId}) {
-  
 
   function delItem(){
     api.delete(`/card/${itemId}/item/${itemIdDel}`).then(()=>{
@@ -44,5 +42,4 @@ function ModalExcluir({setItem, setModal, setModalDel, itemIdDel, itemId}) {
     </Black>
   );
 }
-
 export default ModalExcluir;

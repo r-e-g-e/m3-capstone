@@ -21,7 +21,6 @@ export const Container = styled.section`
     margin: 0;
     margin-bottom: 25px;
   }
-  
   form{
     background-color: ${primaria};
     margin: 0 auto;

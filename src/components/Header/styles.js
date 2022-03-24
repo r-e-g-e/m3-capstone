@@ -27,6 +27,7 @@ export const Container = styled.header`
 
     .logo {
       width: 170px;
+      cursor: pointer;
     }
   }
 `;

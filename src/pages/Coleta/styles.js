@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import img from "../../assets/wheelchair2.svg";
 
 export const Footer = styled.div`
   display: none;
@@ -46,7 +45,7 @@ export const CollectionContainer = styled.div`
   }
 
   @media (min-width: 992px) {
-    background: url(${img});
+    background: url("assets/background/wheelchair.svg");
     background-repeat: no-repeat;
     background-size: 500px;
     background-position: bottom -50px right -50px;
@@ -234,7 +233,6 @@ export const LocationsContainer = styled.div`
       display: none;
     }
   }
-
   .locationsInnerContainer {
     width: 95%;
     border: 2px solid black;

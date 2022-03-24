@@ -9,4 +9,5 @@ export const ProfileIconContainer = styled.div`
   justify-content: center;
   align-items: center;
   color: var(--branco);
+  cursor: pointer;
 `;

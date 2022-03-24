@@ -4,7 +4,7 @@ import axios from "axios";
 //Componentes
 import CardPontoColeta from "../CardPontoColeta";
 
-export default function ListaPontosDeColeta({ cidade, remove}) {
+export default function ListaPontosDeColeta({cidade, remove}){
   
   const [paginaAtual, setPaginaAtual] = useState(0);
   const [dadoDosCards, setDadoDosCards] = useState([]);

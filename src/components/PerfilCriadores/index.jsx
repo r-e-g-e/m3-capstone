@@ -21,5 +21,4 @@ function PerfilCriadores() {
     </>
   );
 }
-
 export default PerfilCriadores;

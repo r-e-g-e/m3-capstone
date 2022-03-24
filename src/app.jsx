@@ -12,6 +12,7 @@ import Login from "./pages/Login";
 import Coleta from "./pages/Coleta";
 import Sobre from "./pages/Sobre";
 import ControleDeColeta from "./pages/ControleDeColeta";
+import Usuario from "./pages/Usuario";
 
 function App() {
 
@@ -33,6 +34,9 @@ function App() {
             <Cadastro/>
           </FormBackground>
         </Route>
+        <Route path="/user">
+          <Usuario/>
+        </Route>
         <Route exact path="/about">
           <Sobre/>
         </Route>
@@ -41,9 +45,6 @@ function App() {
         </Route>
         <Route path="/control">
           <ControleDeColeta/>
-        </Route>
-        <Route exact path="/:name">
-          <span>oi</span>
         </Route>
       </Switch>
     </>

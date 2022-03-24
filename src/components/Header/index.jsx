@@ -8,7 +8,6 @@ import ProfilePicture from "../ProfilePicture";
 function Header({login}) {
 
   const history =  useHistory();
-
   const info = localStorage.getItem("email");
 
   function handleClick(){
@@ -17,12 +16,15 @@ function Header({login}) {
 
   return (
     <Container>
-      <img className="logo" src="/assets/Ajude.me.svg" alt="ajude.me logo" />
+      <img onClick={()=>history.push("/collection")} className="logo" src="/assets/Ajude.me.svg" alt="ajude.me logo" />
       {!login ? (
-        <ButtonHeader onClick={()=>history.push("/")} >voltar</ButtonHeader>
+        <ButtonHeader onClick={()=>history.push("/")}>voltar</ButtonHeader>
       ) : (
         <LogadoContainer>
           <ul>
+            <li>
+              <Link to={"/collection"}>Coletas</Link>
+            </li>
             <li>
               <Link to={"/about"}>Sobre</Link>
             </li>

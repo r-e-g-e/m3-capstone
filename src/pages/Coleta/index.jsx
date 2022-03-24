@@ -16,7 +16,6 @@ import { PontosDeColetaContext } from "../../Providers/PontosDeColeta";
 function Coleta() {
 
   const login = localStorage.getItem("token");
-
   const [estadoEscolhido, setEstadoEscolhido] = useState("");
   const [cidades, setCidades] = useState([]);
   const [cidade, setCidade] = useState("");

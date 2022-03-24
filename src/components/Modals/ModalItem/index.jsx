@@ -1,7 +1,9 @@
-import Button from "../../Button";
-import { Black, Container, Content } from "./styles";
+//Bibliotecas
 import api from "../../../utils/api";
 import { useEffect } from "react";
+//Componentes
+import Button from "../../Button";
+import { Black, Container, Content } from "./styles";
 
 function ModalItem({item, setItem, setModal, itemId, setModalCreate, setModalDel, setItemIdDel}) {
 
@@ -14,7 +16,7 @@ function ModalItem({item, setItem, setModal, itemId, setModalCreate, setModalDel
       setItem(res.data);
     });
   }, []);
- 
+
   return (
     <Black>
       <Container>

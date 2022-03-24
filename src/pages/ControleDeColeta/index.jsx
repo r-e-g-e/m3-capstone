@@ -1,6 +1,5 @@
 //Bibliotecas 
 import { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import api from "../../utils/api";
 //Componentes
@@ -20,7 +19,6 @@ function ControleDeColeta(){
   const id = localStorage.getItem(`ID${email}`);
   const maps = localStorage.getItem(`MAPS${email}`);
   const login = localStorage.getItem("token");
-
   //Informações dos cards
   const [item, setItem] = useState([]);
   const [itemId, setItemId] = useState([]);
@@ -32,8 +30,6 @@ function ControleDeColeta(){
   const [modal, setModal] = useState(false);
   const [modalCreate, setModalCreate] = useState(false);
   const [modalDel, setModalDel] = useState(false);
-
-  const history = useHistory();
 
   if(id!==off){
     useEffect(()=>{
@@ -97,7 +93,7 @@ function ControleDeColeta(){
 
       <Header login={login}/>
       <Container>
-        <a href={maps} className="icon">
+        <a href={JSON.parse(maps)} className="icon">
           <span>Acesse o maps:</span>
           <img src="/assets/maps.png" alt="icon"/>
         </a>
