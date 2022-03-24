@@ -1,11 +1,4 @@
-import {
-  Container,
-  Content,
-  Nome,
-  CargoSpan,
-  FotoPerfil,
-  LinkedInLink,
-} from "./styles";
+import {Container, Content, Nome, CargoSpan, FotoPerfil, LinkedInLink} from "./styles";
 import criadores from "../../utils/criadores";
 
 function PerfilCriadores() {

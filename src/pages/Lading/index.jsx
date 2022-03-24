@@ -1,6 +1,8 @@
+//Bibliotecas
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+//Componentes
 import {Header, Container,  Flex, ContainerMenu, Figure, Image } from "./style.js";
 import Button from "../../components/Button";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function Landing() {
 
@@ -22,8 +24,9 @@ function Landing() {
         </ContainerMenu>
         <Figure>
           <p>Ajude quem precisa!</p>
-          <span>Descrição: Lorem ipsum dolor sit amet, consectetur 
-              adipiscing elit, sed do eiusmod tempor</span>
+          <span>Que o desejo de ajudar o próximo consiga sempre superar o 
+            egoísmo e a falta de esperança no ser humano.</span>
+          <span>Autora: Andresa Martins Vicentini</span>
           <Image src="/assets/background/icon-familia-mao.svg" alt="icon"/>  
         </Figure>
       </Flex>

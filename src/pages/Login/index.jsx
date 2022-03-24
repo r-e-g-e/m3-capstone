@@ -1,16 +1,17 @@
+//Biblioteca
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useHistory } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
+//Componentes
 import Input from "../../components/Input";
 import { Container } from "./styles";
 import Button from "../../components/Button";
-// import Header from "../../components/Header";
-// import FormImages from "../../components/FormBackground";
 
 export default function Login() {
+  
   const history = useHistory();
 
   const formSchema = yup.object().shape({
@@ -41,8 +42,9 @@ export default function Login() {
     toast.success("Logado com sucesso!");
 
     localStorage.setItem("token", response.data);
+    localStorage.setItem("email", data.email);
 
-    history.push("/home");
+    history.push("/collection");
   }
 
   return (

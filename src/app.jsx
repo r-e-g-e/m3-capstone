@@ -1,23 +1,18 @@
 //Bibliotecas
-import { Redirect, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import GlobalStyle from "./styles/global";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-//Paginas
-import PaginaCadastro from "./pages/Cadastro";
-import Landing from "./pages/Lading";
-import Login from "./pages/Login";
-import PaginaSobre from "./pages/sobre";
-import Usuario from "./pages/Usuario";
-// import PagColeta from "./pages/PagColeta";
-// import ControleDeColeta from "./pages/Controle-de-coleta";
-// //Componentes
-// import Button from "./components/Button";
-// import ButtonHeader from "./components/ButtonHeader";
-// import CardCreate from "./components/CardCreate";
-// import CartaoDeColeta from "./components/CartaoDeColeta";
-// import Header from "./components/Header";
+//Provider
+import { PontosDeColetaProvider } from "./Providers/PontosDeColeta";
+//Componentes
 import FormBackground from "./components/FormBackground";
+//Paginas
+import Landing from "./pages/Lading";
+import Cadastro from "./pages/Cadastro";
+import Login from "./pages/Login";
+import Coleta from "./pages/Coleta";
+import Sobre from "./pages/Sobre";
 
 function App() {
 
@@ -27,7 +22,7 @@ function App() {
       <GlobalStyle />
       <Switch>
         <Route exact path="/">
-          <Landing />
+          <Landing/>
         </Route>
         <Route path="/login">
           <FormBackground>
@@ -36,29 +31,20 @@ function App() {
         </Route>
         <Route exact path="/signup">
           <FormBackground>
-            <PaginaCadastro />
+            <Cadastro/>
           </FormBackground>
         </Route>
-        <Route exact path="/sobre">
-          <PaginaSobre />
+        <Route exact path="/about">
+          <Sobre/>
         </Route>
-        <Route exact path="/user">
-          <Usuario/>
+        <Route path="/collection">
+          <PontosDeColetaProvider>
+            <Coleta/>
+          </PontosDeColetaProvider>
         </Route>
-        {/* <Route path="/control">
-          <ControleDeColeta/>
-        </Route> */}
-        {/* <Route path="/collection">
-          <PagColeta />
+        <Route exact path="/:name">
+          <span>oi</span>
         </Route>
-        <Route path="/componentes">
-          <Button>Teste</Button>
-          <ButtonHeader>Teste</ButtonHeader>
-          <CardCreate/>
-          <CartaoDeColeta width={`${300}px`} height={`${300}px`} dados = {dados} />
-          <Header/>
-        </Route>  */}
-       
       </Switch>
     </>
   );

@@ -6,7 +6,6 @@ export const Container = styled.div`
   img {
     max-width: 500px;
     width: 60%;
-
     z-index: -1;
   }
 

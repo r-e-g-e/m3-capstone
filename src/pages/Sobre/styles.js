@@ -32,6 +32,8 @@ export const TitulosLightItalic = styled.h2`
 export const PDescricao = styled.p`
   margin-top: 25px;
   color:var(--laranja);
+  font-size: 25px;
+  text-align: center;
   font-family: 'Roboto', sans-serif;
 `;
 

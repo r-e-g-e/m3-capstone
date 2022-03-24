@@ -1,14 +1,16 @@
-import * as yup from "yup";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import Input from "../../components/Input";
-import { Container } from "./styles";
+//Bibliotecas
 import axios from "axios";
 import { toast } from "react-toastify";
 import { useHistory } from "react-router-dom";
+import * as yup from "yup";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+//Componentes
+import Input from "../../components/Input";
+import { Container } from "./styles";
 import Button from "../../components/Button";
 
-export default function PaginaCadastro(){
+export default function Cadastro(){
   const schema = yup.object().shape({
     nome: yup.string()
       .required("Campo obrigatório."),

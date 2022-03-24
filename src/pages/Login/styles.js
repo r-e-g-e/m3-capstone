@@ -15,26 +15,21 @@ export const Container = styled.section`
     font-size: 24pt;
     font-style: italic;
     margin-top: 110px;
+    margin-bottom: 20px;
   }
 
   form{
     background-color: var(--verde-escuro);
-    
     margin: 0 auto;
     padding: 30px 40px;
-
     border-radius: 5px;
-    
     text-align: center;
-
     width: 95%;
     max-width:400px;
-
     section{
       display: flex;
       flex-direction: column;
       gap: 20px;
-
       margin-bottom: 30px;
     }
 
@@ -42,7 +37,6 @@ export const Container = styled.section`
       display: flex;
       flex-direction: row-reverse;
       justify-content: space-around;
-      
       width: 100%;
     }
   }
@@ -57,7 +51,6 @@ export const QuadroVerde = styled.div`
   height: 370px;
   margin: auto;
   margin-top: 5px;
-
   @media screen and (max-width: 375px) {
     width: 300px;
   }
@@ -69,7 +62,6 @@ export const TituloInput = styled.p`
   margin-left: 42px;
   margin-bottom: 5px;
   text-align: left;
-
   @media screen and (max-width: 375px) {
     margin-left: 35px;
   }
@@ -84,7 +76,6 @@ export const InputLogin = styled.input`
   padding: 0 5px;
   box-sizing: borde-box;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
   @media screen and (max-width: 375px) {
     margin-left: 35px;
   }

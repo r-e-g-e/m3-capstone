@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
         outline: 0;
     }
     body {
-        font-family: "Roboto", sans-serif ;
+        font-family: "Roboto", sans-serif;
         background-color: var(--bege);
     }
     :root {
@@ -24,7 +24,9 @@ const GlobalStyle = createGlobalStyle`
         --cinza-escuro: #7D7C7C;
         --cinza: #c4c4c4;
         --cinza-claro: #C4C4C487;
-        --branco: #fefefe;  
+        --branco: #fefefe;
+        --vermelho: #cb4641;
+
     }
     button{
         cursor: pointer;
@@ -32,36 +34,21 @@ const GlobalStyle = createGlobalStyle`
     a{
         text-decoration: none;
     }
-    
-    .help-landing{
-        width: 223px;
-        height: 136px;
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 40px;
-        line-height: 47px;
-        text-align: center;
-        color:  var(--branco);
-    }
-    .flex-column{
-        margin-top: 20px;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-    }
+   
     .flex{
         margin-top: 20px;
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .container{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+    .move{
+        margin-top: 30px;
+        background-color: var(--laranja);
+        width: 50px;
+        height: 20px;
+        color: var(--branco);
+        border: none;
+        margin: 10px;
     }
 `;
 export default GlobalStyle;

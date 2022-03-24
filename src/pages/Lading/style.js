@@ -7,7 +7,6 @@ export const Header = styled.div`
   align-items: flex-end;
   justify-content: space-around;
   padding: 10px;
-
   @media (min-width: 600px) {
     height: 100px;
     align-items: center;
@@ -34,6 +33,30 @@ export const ContainerMenu = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .flex-column{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .help-landing{
+        width: 223px;
+        height: 136px;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 47px;
+        text-align: center;
+        color:  var(--branco);
+    }      
 `;
 
 export const Figure = styled.figure`

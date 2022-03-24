@@ -1,25 +1,32 @@
-import { Container, LogadoContainer } from "./styles";
+//Bibliotecas
 import { Link } from "react-router-dom";
-import ButtonHeader from "../ButtonHeader";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+//Componentes
+import {ButtonHeader, Container, LogadoContainer } from "./styles";
 import ProfilePicture from "../ProfilePicture";
 
-function Header({ logado = true }) {
+function Header({login}) {
+
+  const history =  useHistory();
+
+  const info = localStorage.getItem("email");
+
   return (
     <Container>
       <img className="logo" src="/assets/Ajude.me.svg" alt="ajude.me logo" />
-      {!logado ? (
-        <ButtonHeader>voltar</ButtonHeader>
+      {!login ? (
+        <ButtonHeader onClick={()=>history.push("/")} >voltar</ButtonHeader>
       ) : (
         <LogadoContainer>
           <ul>
             <li>
               <Link to={"/about"}>Sobre</Link>
             </li>
-            <li>
+            <li onClick={()=>localStorage.clear()} >
               <Link to={"/"}>Sair</Link>
             </li>
           </ul>
-          <ProfilePicture width={"60px"} height={"60px"} userName="Testando" />
+          <ProfilePicture width={"60px"} height={"60px"} userName={info}/>
         </LogadoContainer>
       )}
     </Container>
