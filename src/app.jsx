@@ -13,6 +13,7 @@ import Cadastro from "./pages/Cadastro";
 import Login from "./pages/Login";
 import Coleta from "./pages/Coleta";
 import Sobre from "./pages/Sobre";
+import ControleDeColeta from "./pages/ControleDeColeta";
 
 function App() {
 
@@ -42,8 +43,11 @@ function App() {
             <Coleta/>
           </PontosDeColetaProvider>
         </Route>
-        <Route exact path="/:name">
+        {/* <Route exact path="/:name">
           <span>oi</span>
+        </Route> */}
+        <Route path="/control">
+          <ControleDeColeta/>
         </Route>
       </Switch>
     </>

@@ -10,6 +10,9 @@ const GlobalStyle = createGlobalStyle`
     body {
         font-family: "Roboto", sans-serif;
         background-color: var(--bege);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
     }
     :root {
         --bege: #fcf4d9;
@@ -50,5 +53,6 @@ const GlobalStyle = createGlobalStyle`
         border: none;
         margin: 10px;
     }
+
 `;
 export default GlobalStyle;
