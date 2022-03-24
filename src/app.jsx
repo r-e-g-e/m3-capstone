@@ -18,9 +18,10 @@ import CardCreate from "./components/CardCreate";
 import CartaoDeColeta from "./components/CartaoDeColeta";
 import Header from "./components/Header";
 import FormBackground from "./components/FormBackground";
+import ModalAtualizarValor from "./components/Modals/ModalAtualizarValor";
 
 function App() {
-
+  const dados = "oi";
   return (
     <>
       <GlobalStyle />
@@ -30,7 +31,7 @@ function App() {
           <Landing />
         </Route>
         <Route path="/control">
-          <ControleDeColeta/>
+          <ControleDeColeta />
         </Route>
         <Route path="/login">
           <Login />
@@ -44,7 +45,7 @@ function App() {
           <PagColeta />
         </Route>
         <Route path="/user">
-          <Usuario/>
+          <Usuario />
         </Route>
         <Route path="/about">
           <PaginaSobre />
@@ -52,9 +53,14 @@ function App() {
         <Route path="/componentes">
           <Button>Teste</Button>
           <ButtonHeader>Teste</ButtonHeader>
-          <CardCreate/>
-          <CartaoDeColeta width={`${300}px`} height={`${300}px`} dados = {dados} />
-          <Header/>
+          <CardCreate />
+          <CartaoDeColeta
+            width={`${300}px`}
+            height={`${300}px`}
+            dados={dados}
+          />
+          <ModalAtualizarValor />
+          <Header />
         </Route>
       </Switch>
     </>
