@@ -36,7 +36,7 @@ export default function Login() {
       validateStatus: () => true
     });
 
-    if(response.status >= 400) return toast.error(response.data.error);
+    if(response.status >= 400) return toast.error("Informações incorretas!");
 
     toast.success("Logado com sucesso!");
 

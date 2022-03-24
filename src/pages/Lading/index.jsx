@@ -16,7 +16,7 @@ function Landing() {
           <h2 className="help-landing">Um site para ajuda ao próximo</h2>
           <div className="flex-column">
             <Button width={`${200}px`} height={`${40}px`} bgColor = {"orange"} onClick={()=>history.push("/login")}>ENTRAR</Button>
-            <Button width={`${200}px`} height={`${40}px`} bgColor = {"orange"} onClick={()=>history.push("/cadastro")}>CADASTRA-SE</Button>
+            <Button width={`${200}px`} height={`${40}px`} bgColor = {"orange"} onClick={()=>history.push("/signup")}>CADASTRA-SE</Button>
             <Button width={`${200}px`} height={`${40}px`} bgColor = {"orange"} onClick={()=>history.push("/collection")}>PONTO DE COLETA</Button>
           </div>
         </ContainerMenu>

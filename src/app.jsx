@@ -34,7 +34,7 @@ function App() {
             <Login />
           </FormBackground>
         </Route>
-        <Route exact path="/cadastrar">
+        <Route exact path="/signup">
           <FormBackground>
             <PaginaCadastro />
           </FormBackground>

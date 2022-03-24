@@ -4,6 +4,7 @@ const primaria = "var(--verde-escuro)";
 const secundaria = "var(--laranja)";
 
 export const Container = styled.section`
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   
