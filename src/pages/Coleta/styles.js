@@ -15,7 +15,9 @@ export const Footer = styled.div`
     font-weight: bold;
     margin-bottom: 10px;
     a {
-      color: cyan;
+      color: var(--laranja);
+      filter: brightness(1.6);
+      text-decoration: underline;
     }
   }
 `;
@@ -135,6 +137,10 @@ export const SelectContainer = styled.div`
       align-items: center;
       width: inherit;
       height: inherit;
+      .flex{
+        margin: 0;
+        gap: 10px;
+      }
       @media (min-width: 992px) {
         flex-direction: row;
       }
