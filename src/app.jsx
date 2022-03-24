@@ -13,16 +13,16 @@ import Coleta from "./pages/Coleta";
 import Sobre from "./pages/Sobre";
 import ControleDeColeta from "./pages/ControleDeColeta";
 import Usuario from "./pages/Usuario";
+import Comentarios from "./pages/Comentarios";
 
 function App() {
-
   return (
     <>
       <ToastContainer />
       <GlobalStyle />
       <Switch>
         <Route exact path="/">
-          <Landing/>
+          <Landing />
         </Route>
         <Route path="/login">
           <FormBackground>
@@ -31,20 +31,23 @@ function App() {
         </Route>
         <Route exact path="/signup">
           <FormBackground>
-            <Cadastro/>
+            <Cadastro />
           </FormBackground>
         </Route>
         <Route path="/user">
-          <Usuario/>
+          <Usuario />
         </Route>
         <Route exact path="/about">
-          <Sobre/>
+          <Sobre />
         </Route>
         <Route path="/collection">
-          <Coleta/>
+          <Coleta />
         </Route>
         <Route path="/control">
-          <ControleDeColeta/>
+          <ControleDeColeta />
+        </Route>
+        <Route path="/message">
+          <Comentarios />
         </Route>
       </Switch>
     </>
