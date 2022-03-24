@@ -34,15 +34,15 @@ function App() {
             <Login />
           </FormBackground>
         </Route>
-        <Route path="/cadastrar">
+        <Route exact path="/cadastrar">
           <FormBackground>
             <PaginaCadastro />
           </FormBackground>
         </Route>
-        <Route path="/sobre">
+        <Route exact path="/sobre">
           <PaginaSobre />
         </Route>
-        <Route path="/user">
+        <Route exact path="/user">
           <Usuario/>
         </Route>
         {/* <Route path="/control">
