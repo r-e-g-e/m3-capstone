@@ -7,14 +7,18 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useContext, useEffect, useState } from "react";
 import { LocaisContext } from "../../Providers/Locais";
 //Componentes
-import { CollectionContainer, SelectContainer, LocationsContainer, Footer} from "./styles";
+import {
+  CollectionContainer,
+  SelectContainer,
+  LocationsContainer,
+  Footer,
+} from "./styles";
 import Header from "../../components/Header";
 import Button from "../../components/Button";
 import ListaPontosDeColeta from "../../components/ListaPontosDeColeta";
 import { PontosDeColetaContext } from "../../Providers/PontosDeColeta";
 
 function Coleta() {
-
   const login = localStorage.getItem("token");
   const [estadoEscolhido, setEstadoEscolhido] = useState("");
   const [cidades, setCidades] = useState([]);
@@ -31,12 +35,14 @@ function Coleta() {
   });
 
   const onSubmitFunction = ({ city }) => {
-    if (city) {
+    console.log("submitettedd");
+    if (city.length > 0) {
       setCidade(city);
+      console.log(city);
     }
   };
-  
-  function handleRemoverFiltro(){
+
+  function handleRemoverFiltro() {
     setRemove(true);
     setEstadoEscolhido("");
   }
@@ -60,7 +66,7 @@ function Coleta() {
   return (
     <>
       <CollectionContainer>
-        <Header login={login}/>
+        <Header login={login} />
         <SelectContainer>
           <h2 className="mobile__h2">Busca por pontos de coleta:</h2>
           <div className="select__innerContainer">
@@ -87,13 +93,13 @@ function Coleta() {
                       </option>
                     ))}
                   </select>
-                </div>    
+                </div>
                 <Button
                   type="submit"
                   bgColor="orange"
                   width="100px"
                   height="35px"
-                  onClick={()=>setRemove(false)}
+                  onClick={() => setRemove(false)}
                 >
                   BUSCAR
                 </Button>
@@ -107,10 +113,16 @@ function Coleta() {
             O nivel de necessidade é definido por cores{" "}
             <Link to="/about">entenda</Link>
           </h4>
-          {
-            estadoEscolhido && <h2 className="filter" onClick={handleRemoverFiltro} >Remover filtro</h2>
-          }
-          <ListaPontosDeColeta remove={remove} setRemove={setRemove} cidade={cidade}/>
+          {estadoEscolhido && (
+            <h2 className="filter" onClick={handleRemoverFiltro}>
+              Remover filtro
+            </h2>
+          )}
+          <ListaPontosDeColeta
+            remove={remove}
+            setRemove={setRemove}
+            cidade={cidade}
+          />
         </LocationsContainer>
         <Footer>
           O nivel de necessidade é definido por cores{" "}
