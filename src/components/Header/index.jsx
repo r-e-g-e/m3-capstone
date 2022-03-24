@@ -12,8 +12,6 @@ function Header({login}) {
   const info = localStorage.getItem("email");
 
   function handleClick(){
-    const email = localStorage.getItem("email");
-    localStorage.removeItem(`ID${email}`);
     localStorage.removeItem("token");
   }
 

@@ -7,6 +7,7 @@ function ModalItem({item, setItem, setModal, itemId, setModalCreate, setModalDel
 
   const email = localStorage.getItem("email");
   const id = localStorage.getItem(`ID${email}`);
+  const off = localStorage.getItem("OFF");
 
   useEffect(()=>{
     api.get(`/card/${itemId}/item`).then(res => {
@@ -19,7 +20,7 @@ function ModalItem({item, setItem, setModal, itemId, setModalCreate, setModalDel
       <Container>
         <h2>Itens</h2>
         <Content>
-          { id &&
+          { id===off &&
            <Button width={"90px"} bgColor={"orange"} height={"40px"} ontSize={"20px"} onClick={()=>{setModal(false); setModalCreate(true);}}>+</Button>
           }
           <Button
@@ -37,7 +38,7 @@ function ModalItem({item, setItem, setModal, itemId, setModalCreate, setModalDel
             <div key={index}>
               <h3>{element.type}</h3>
               <span>{ JSON.parse(element.isMoney) ? `R$${element.goal}`: element.goal}</span>
-              { id &&
+              {  id===off &&
               <Button onClick={()=>{setModalDel(true);setItemIdDel(element.id);setModal(false);}} >X</Button>
               }
             </div>
