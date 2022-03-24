@@ -17,10 +17,14 @@ function Coleta() {
 
   const login = localStorage.getItem("token");
 
-  const [estadoEscolhido, setEstadoEscolhido] = useState("");
-  const [cidades, setCidades] = useState([]);
-  const [cidade, setCidade] = useState("");
-  const [remove, setRemove] = useState(false);
+  const paginaController = useState(0);
+
+  const { cidadeState, estadoState } = useContext(PontosDeColetaContext);
+  const [ setCidade ] = cidadeState;
+  const [ estado, setEstado ] = estadoState;
+
+  const [ estadoSelect, setEstadoSelect ] = useState("");
+  const [ cidadesSelect, setCidadesSelect ] = useState([]);
 
   const formSchema = yup.object().shape({
     state: yup.string().required("Campo obrigatório"),
@@ -31,32 +35,45 @@ function Coleta() {
     resolver: yupResolver(formSchema),
   });
 
-  const onSubmitFunction = ({ city }) => {
-    if (city) {
-      setCidade(city);
-    }
+  const onSubmitFunction = ({state, city}) => {
+    setEstado(state);
+    setCidade(city);
+    
+    //o mesmo que setPagina para 0
+    paginaController[1](0);
   };
   
   function handleRemoverFiltro(){
-    setRemove(true);
-    setEstadoEscolhido("");
+    setEstado("");
+    setCidade("");
+    //limpar Estados
+    document.querySelector("#ColetaEstadoSelect").value = "";
+
+    //limpar cidades
+    document.querySelector("#ColetaCidadeSelect").value = "";
+    setCidadesSelect([]);
   }
 
-  const { pontos } = useContext(PontosDeColetaContext);
-  const { estados } = useContext(LocaisContext);
+  // const { pontos } = useContext(PontosDeColetaContext);
+  const { estados: estadosValue } = useContext(LocaisContext);
 
-  useEffect(() => {
+  useEffect(() => {   
+    if(!estadoSelect) return;
+    
     (async () => {
+      const { id } = estadosValue.find( estado => estado.name === estadoSelect);
+
       const response = await axios.get(
-        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${estadoEscolhido}/microrregioes`
+        `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${id}/microrregioes`
       );
       const cidades = response.data.map(({ nome, id }) => ({ nome, id }));
       const ordemAlpha = cidades.sort(({ nome: nome1 }, { nome: nome2 }) =>
         nome1 < nome2 ? -1 : nome1 > nome2 ? 1 : 0
       );
-      setCidades(ordemAlpha);
+
+      setCidadesSelect(ordemAlpha);
     })();
-  }, [estadoEscolhido]);
+  }, [estadoSelect]);
 
   return (
     <>
@@ -71,18 +88,22 @@ function Coleta() {
                 <div className="flex">
                   <select
                     {...register("state")}
-                    onChange={(e) => setEstadoEscolhido(e.target.value)}
+                    onChange={e => setEstadoSelect(e.target.value)}
+                    id="ColetaEstadoSelect"
                   >
                     <option>Escolha estado</option>
-                    {estados.map(({ name, id }) => (
-                      <option key={id} value={id}>
+                    {estadosValue.map(({ name, id }) => (
+                      <option key={id} value={name}>
                         {name}
                       </option>
                     ))}
                   </select>
-                  <select {...register("city")}>
+                  <select 
+                    {...register("city")} 
+                    id="ColetaCidadeSelect" 
+                  >
                     <option>Escolha cidade</option>
-                    {cidades.map(({ id, nome }) => (
+                    {cidadesSelect.map(({ id, nome }) => (
                       <option key={id} value={nome}>
                         {nome}
                       </option>
@@ -94,7 +115,6 @@ function Coleta() {
                   bgColor="orange"
                   width="100px"
                   height="35px"
-                  onClick={()=>setRemove(false)}
                 >
                   BUSCAR
                 </Button>
@@ -109,9 +129,11 @@ function Coleta() {
             <Link to="/about">entenda</Link>
           </h4>
           {
-            estadoEscolhido && <h2 className="filter" onClick={handleRemoverFiltro} >Remover filtro</h2>
+            estado && <h2 className="filter" onClick={handleRemoverFiltro} >Remover filtro</h2>
           }
-          <ListaPontosDeColeta remove={remove} setRemove={setRemove} cidade={cidade}/>
+          <ListaPontosDeColeta 
+            paginaController={paginaController}
+          />
         </LocationsContainer>
         <Footer>
           O nivel de necessidade é definido por cores{" "}

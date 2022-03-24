@@ -1,14 +1,19 @@
 //Bibliotecas
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useEffect } from "react";
+import api from "../../utils/api";
+import { useContext } from "react";
 //Componentes
 import CardPontoColeta from "../CardPontoColeta";
+import { PontosDeColetaContext } from "../../Providers/PontosDeColeta";
 
-export default function ListaPontosDeColeta({ cidade, remove}) {
+export default function ListaPontosDeColeta({ paginaController }) {
   
-  const [paginaAtual, setPaginaAtual] = useState(0);
-  const [dadoDosCards, setDadoDosCards] = useState([]);
-  const [filter, setFilter] = useState([]);
+  const [paginaAtual, setPaginaAtual] = paginaController;
+  const { pontosState, cidadeState, estadoState } = useContext(PontosDeColetaContext);
+  
+  const [pontos, setPontos] = pontosState;
+  const [ cidade ] = cidadeState;
+  const [ estado ] = estadoState;
 
   function handleChangePage(isPositive = true) {
     if (isPositive) {
@@ -17,44 +22,54 @@ export default function ListaPontosDeColeta({ cidade, remove}) {
     if (paginaAtual > 0) setPaginaAtual(paginaAtual - 1);
   }
 
+  async function handleChangeFiltro(){
+    const response = await api("/collect",{
+      data:{
+        "filter":"*"
+      }
+    });
+    
+    let { collects } = response.data;
+
+    if(estado && estado !== "Escolha estado"){
+      collects = collects.filter(collect => collect.state === estado);
+    }
+
+    if(cidade && cidade !== "Escolha cidade"){
+      collects = collects.filter(collect => collect.capital === cidade);
+    }
+
+    setPontos(collects);
+  }
+
   useEffect(() => {
+    if(cidade || estado) return handleChangeFiltro();
+
     (async () => {
-      const response = await axios.get(`https://m3-capstone-api.herokuapp.com/collect?page=${paginaAtual}&perPage=6`);
+      const response = await api.get(`/collect?page=${paginaAtual}&perPage=6`);
       const collects = response.data.collects;
 
-      if(remove) {
-        setDadoDosCards(collects);
-      }
-      
-      else if(cidade){
-        const collectsFiltrados = collectsFiltrados.filter( item => item.capital === cidade);
-
-        setFilter(collectsFiltrados);
-      }
-      
-      else {
-        setDadoDosCards(collects);
-      }
-     
+      setPontos(collects);
     })();
-  }, [cidade, paginaAtual, remove]);
-
-  useEffect(() => {
-    setFilter(dadoDosCards);
-  }, [dadoDosCards]);
+  }, [paginaAtual, cidade, estado]);
 
   return (
     <>
       <ul className="locationsInnerContainer">
-        {filter.map((data) => {
-          return <CardPontoColeta key={data.id} data={data}/>;
-        })}
+        {pontos.map((data) => (
+          <CardPontoColeta key={data.id} data={data}/>
+        ))}
       </ul>
-      <section>
-        <button className="move" onClick={() => handleChangePage(false)}>{"<"}</button>
-        {paginaAtual}
-        <button className="move" onClick={() => handleChangePage(true)}>{">"}</button>
-      </section>
+
+      {
+        !cidade && !estado && (
+          <section>
+            <button className="move" onClick={() => handleChangePage(false)}>{"<"}</button>
+            {paginaAtual}
+            <button className="move" onClick={() => handleChangePage(true)}>{">"}</button>
+          </section>
+        )
+      }
     </>
   );
 }

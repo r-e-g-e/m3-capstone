@@ -17,7 +17,11 @@ export function LocaisProvider({ children }) {
         name: object.nome,
       }));
 
-      setEstados(nomesDosEstados);
+      const ordemAlpha = nomesDosEstados.sort(({ name: nome1 }, { name: nome2 }) =>
+        nome1 < nome2 ? -1 : nome1 > nome2 ? 1 : 0
+      );
+
+      setEstados(ordemAlpha);
     })();
   }, []);
 

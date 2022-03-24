@@ -5,14 +5,17 @@ import axios from "axios";
 export const PontosDeColetaContext = createContext([]);
 
 export function PontosDeColetaProvider({ children }) {
-  const [pontos, setPontos] = useState([]);
+  const pontosState = useState([]);
+  const estadoState = useState("");
+  const cidadeState = useState("");
   const [id, setId] = useState([]);
+
 
   async function getPontos() {
     const response = await axios
       .get("https://m3-capstone-api.herokuapp.com/collect")
       .catch((err) => console.log(err));
-    setPontos(response.data.collects);
+    pontosState[1](response.data.collects);
   }
 
   function infoGuard(id){
@@ -24,7 +27,7 @@ export function PontosDeColetaProvider({ children }) {
   }, []);
 
   return (
-    <PontosDeColetaContext.Provider value={{ pontos, id, infoGuard}}>
+    <PontosDeColetaContext.Provider value={{ pontosState, estadoState, cidadeState, id, infoGuard,}}>
       {children}
     </PontosDeColetaContext.Provider>
   );
