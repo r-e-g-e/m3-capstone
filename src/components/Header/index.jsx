@@ -1,6 +1,7 @@
 //Bibliotecas
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { toast } from "react-toastify";
 //Componentes
 import {ButtonHeader, Container, LogadoContainer } from "./styles";
 import ProfilePicture from "../ProfilePicture";
@@ -10,13 +11,18 @@ function Header({login}) {
   const history =  useHistory();
   const info = localStorage.getItem("email");
 
+  function popUp(){
+    toast.success("Você foi desconectado");
+    history.push("/collection");
+  }
+
   function handleClick(){
     localStorage.removeItem("token");
   }
 
   return (
     <Container>
-      <img onClick={()=>history.push("/collection")} className="logo" src="/assets/Ajude.me.svg" alt="ajude.me logo" />
+      <img onClick={()=>popUp()} className="logo" src="/assets/Ajude.me.svg" alt="ajude.me logo" />
       {!login ? (
         <ButtonHeader onClick={()=>history.push("/")}>voltar</ButtonHeader>
       ) : (

@@ -11,7 +11,7 @@ export const Container = styled.div`
   margin: 10px 10px;
   border-radius: 8px;
   .excluir{
-    color:var(--laranja);
+    color:var(--branco);
     cursor: pointer;
   }
   .white{

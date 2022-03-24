@@ -21,7 +21,7 @@ export default function Cadastro(){
     
     cpf: yup.string()
       .required("Campo obrigatório.")
-      .length(9, "Seu CPF deve conter 9 numeros!"),
+      .length(11, "Seu CPF deve conter 11 numeros!"),
     
     senha: yup.string()
       .required("Campo obrigatório.")

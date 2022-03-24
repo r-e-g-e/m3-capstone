@@ -14,7 +14,7 @@ export const Footer = styled.div`
     font-weight: bold;
     margin-bottom: 10px;
     a {
-      color: var(--laranja);
+      color: var(--verde-escuro);
       filter: brightness(1.6);
       text-decoration: underline;
     }
@@ -52,52 +52,6 @@ export const CollectionContainer = styled.div`
   }
 `;
 
-export const CollectionHeader = styled.div`
-  min-width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  height: 100px;
-  background-color: var(--verde-claro);
-  margin: 0;
-  .loggedin__navContainer {
-    width: 160px;
-    height: 65px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-end;
-    @media (min-width: 850px) {
-      width: 300px;
-    }
-    .profilePic {
-      display: flex;
-      flex-direction: row;
-      width: inherit;
-      align-items: center;
-      justify-content: flex-end;
-      height: 40px;
-    }
-    a {
-      text-decoration: none;
-      color: var(--branco);
-      border-radius: 5px;
-    }
-  }
-  .ajude,
-  .me {
-    font-size: 26px;
-    font-weight: bold;
-  }
-  .ajude {
-    color: var(--branco);
-  }
-  .me {
-    color: var(--laranja);
-  }
-`;
-
 export const SelectContainer = styled.div`
   width: 285px;
   height: 350px;
@@ -110,6 +64,7 @@ export const SelectContainer = styled.div`
   }
   .mobile__h2 {
     font-family: "Roboto", sans-serif;
+    margin-top: 20px;
   }
   @media (min-width: 768px){
     .flex{
@@ -170,6 +125,7 @@ export const SelectContainer = styled.div`
         font-size: 25px;
         color: var(--branco);
         display: none;
+        margin-top: 20px;
 
         @media (min-width: 992px) {
           display: block;

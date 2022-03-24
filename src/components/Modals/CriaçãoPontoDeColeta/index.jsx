@@ -34,7 +34,7 @@ function CriaçãoPontoDeColeta({ showModal, setShowModal, setClose }) {
         localStorage.setItem("name", res.data.name);
         localStorage.setItem(`ID${email}`, res.data.id);
         localStorage.setItem("OFF", res.data.id);
-        localStorage.setItem(`MAPS${email}`, JSON.stringify(res.data.mapsLink));
+        localStorage.setItem("maps", JSON.stringify(res.data.mapsLink));
         toast.success("Cadastrado com sucesso");
         setShowModal(false);
         setClose(true);

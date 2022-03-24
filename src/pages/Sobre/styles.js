@@ -9,6 +9,7 @@ export const Container = styled.div`
 
 export const ContentContainer = styled.div`
   width: 90%;
+  text-align: justify;
 
   @media only screen and (min-width: 1366px) {
   width: 65%;
@@ -23,7 +24,6 @@ export const TitulosLightItalic = styled.h2`
   color: var(--laranja);
   text-align: center;
   font-family: 'Roboto', sans-serif;
-
   @media only screen and (min-width: 850px) {
     font-size: 30px;
   }

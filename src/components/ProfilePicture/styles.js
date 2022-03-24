@@ -10,4 +10,5 @@ export const ProfileIconContainer = styled.div`
   align-items: center;
   color: var(--branco);
   cursor: pointer;
+  font-size: 20px;
 `;

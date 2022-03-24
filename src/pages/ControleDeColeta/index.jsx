@@ -17,7 +17,7 @@ function ControleDeColeta(){
   const email = localStorage.getItem("email");
   const off = localStorage.getItem("OFF");
   const id = localStorage.getItem(`ID${email}`);
-  const maps = localStorage.getItem(`MAPS${email}`);
+  const maps = localStorage.getItem("maps");
   const login = localStorage.getItem("token");
   //Informações dos cards
   const [item, setItem] = useState([]);
@@ -93,7 +93,7 @@ function ControleDeColeta(){
 
       <Header login={login}/>
       <Container>
-        <a href={maps} className="icon">
+        <a href={maps} className="icon" rel="noreferrer" target="_blank">
           <span>Acesse o maps:</span>
           <img src="/assets/maps.png" alt="icon"/>
         </a>

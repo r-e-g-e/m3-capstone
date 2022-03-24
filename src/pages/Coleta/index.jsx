@@ -59,8 +59,8 @@ function Coleta() {
 
   return (
     <>
+      <Header login={login}/>
       <CollectionContainer>
-        <Header login={login}/>
         <SelectContainer>
           <h2 className="mobile__h2">Busca por pontos de coleta:</h2>
           <div className="select__innerContainer">
