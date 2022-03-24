@@ -32,10 +32,15 @@ function Coleta() {
   });
 
   const onSubmitFunction = ({ city }) => {
-    if (city !== "0") {
+    if (city) {
       setCidade(city);
     }
   };
+  
+  function handleRemoverFiltro(){
+    setRemove(true);
+    setEstadoEscolhido("");
+  }
 
   const { pontos } = useContext(PontosDeColetaContext);
   const { estados } = useContext(LocaisContext);
@@ -68,7 +73,7 @@ function Coleta() {
                     {...register("state")}
                     onChange={(e) => setEstadoEscolhido(e.target.value)}
                   >
-                    <option value="0">Escolha estado</option>
+                    <option>Escolha estado</option>
                     {estados.map(({ name, id }) => (
                       <option key={id} value={id}>
                         {name}
@@ -103,7 +108,9 @@ function Coleta() {
             O nivel de necessidade é definido por cores{" "}
             <Link to="/about">entenda</Link>
           </h4>
-          <h2 className="filter" onClick={()=>setRemove(true)} >Remover filtro</h2>
+          {
+            estadoEscolhido && <h2 className="filter" onClick={handleRemoverFiltro} >Remover filtro</h2>
+          }
           <ListaPontosDeColeta remove={remove} setRemove={setRemove} cidade={cidade}/>
         </LocationsContainer>
         <Footer>
