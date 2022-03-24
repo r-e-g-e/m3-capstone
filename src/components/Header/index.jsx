@@ -11,6 +11,12 @@ function Header({login}) {
 
   const info = localStorage.getItem("email");
 
+  function handleClick(){
+    const email = localStorage.getItem("email");
+    localStorage.removeItem(`ID${email}`);
+    localStorage.removeItem("token");
+  }
+
   return (
     <Container>
       <img className="logo" src="/assets/Ajude.me.svg" alt="ajude.me logo" />
@@ -22,7 +28,7 @@ function Header({login}) {
             <li>
               <Link to={"/about"}>Sobre</Link>
             </li>
-            <li onClick={()=>localStorage.clear()} >
+            <li onClick={()=>handleClick()} >
               <Link to={"/"}>Sair</Link>
             </li>
           </ul>

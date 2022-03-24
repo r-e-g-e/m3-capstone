@@ -6,17 +6,11 @@ export const PontosDeColetaContext = createContext([]);
 
 export function PontosDeColetaProvider({ children }) {
   const [pontos, setPontos] = useState([]);
-  const [id, setId] = useState([]);
 
   async function getPontos() {
     const response = await axios
-      .get("https://m3-capstone-api.herokuapp.com/collect")
-      .catch((err) => console.log(err));
+      .get("https://m3-capstone-api.herokuapp.com/collect");
     setPontos(response.data.collects);
-  }
-
-  function infoGuard(id){
-    setId(id);
   }
 
   useEffect(() => {
@@ -24,7 +18,7 @@ export function PontosDeColetaProvider({ children }) {
   }, []);
 
   return (
-    <PontosDeColetaContext.Provider value={{ pontos, id, infoGuard}}>
+    <PontosDeColetaContext.Provider value={{ pontos }}>
       {children}
     </PontosDeColetaContext.Provider>
   );

@@ -10,11 +10,16 @@ import CardItem from "../../components/CardItem";
 import ModalItem from "../../components/Modals/ModalItem";
 import ModalMaisItem from "../../components/Modals/ModalMaisItem";
 import ModalExcluir from "../../components/Modals/ModalExcluir";
-//Estilos
 import {LocationsContainer, Container} from "./styles";
 
+function ControleDeColeta(){
 
-function ControleDeColeta({location, id}){
+  //Informações sendo guardadas no localStorage
+  const email = localStorage.getItem("email");
+  const off = localStorage.getItem("OFF");
+  const id = localStorage.getItem(`ID${email}`);
+  const maps = localStorage.getItem(`MAPS${email}`);
+  const login = localStorage.getItem("token");
 
   //Informações dos cards
   const [item, setItem] = useState([]);
@@ -30,11 +35,25 @@ function ControleDeColeta({location, id}){
 
   const history = useHistory();
 
-  useEffect(()=>{
-    api.get(`/collect/${id}/card`).then(res => {
-      setCard(res.data);
-    });
-  }, []);
+  if(id!==off){
+    useEffect(()=>{
+      api.get(`/collect/${off}/card`).then(res => {
+        setCard(res.data);
+      });
+    }, []);
+  }else if(id){
+    useEffect(()=>{
+      api.get(`/collect/${id}/card`).then(res => {
+        setCard(res.data);
+      });
+    }, []);
+  }else{
+    useEffect(()=>{
+      api.get(`/collect/${off}/card`).then(res => {
+        setCard(res.data);
+      });
+    }, []);
+  }
 
   useEffect(()=>{
     setFilter(card);
@@ -76,17 +95,19 @@ function ControleDeColeta({location, id}){
         <ModalExcluir setItem={setItem} setModal={setModal}  setModalDel={setModalDel} itemIdDel={itemIdDel} itemId={itemId}/>
       }
 
-      <Header/>
+      <Header login={login}/>
       <Container>
-        <div className="icon" onClick={()=>history.push(location)}>
+        <a href={maps} className="icon">
           <span>Acesse o maps:</span>
           <img src="/assets/maps.png" alt="icon"/>
-        </div>
+        </a>
         <section className="search">
           <input type="text" value={input} onChange={(evt)=>setinput(evt.target.value)} />
           <div className="buttons">
             <Button width={`${220}px`} height={`${50}px`} bgColor = {"orange"} onClick={()=>search(input)}>Pesquisa</Button>
-            <Button width={`${220}px`} height={`${50}px`} bgColor = {"orange"} onClick={()=>createCard(input)}>Criar</Button>
+            {id &&
+               <Button width={`${220}px`} height={`${50}px`} bgColor = {"orange"} onClick={()=>createCard(input)}>Criar</Button>
+            }
           </div>
         </section>
         <h2 onClick={()=>setFilter(card)} className="listAll">Mostra todos os cards</h2>

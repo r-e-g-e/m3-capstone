@@ -3,8 +3,6 @@ import { Route, Switch } from "react-router-dom";
 import GlobalStyle from "./styles/global";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-//Provider
-import { PontosDeColetaProvider } from "./Providers/PontosDeColeta";
 //Componentes
 import FormBackground from "./components/FormBackground";
 //Paginas
@@ -39,15 +37,13 @@ function App() {
           <Sobre/>
         </Route>
         <Route path="/collection">
-          <PontosDeColetaProvider>
-            <Coleta/>
-          </PontosDeColetaProvider>
+          <Coleta/>
         </Route>
-        {/* <Route exact path="/:name">
-          <span>oi</span>
-        </Route> */}
         <Route path="/control">
           <ControleDeColeta/>
+        </Route>
+        <Route exact path="/:name">
+          <span>oi</span>
         </Route>
       </Switch>
     </>
