@@ -47,7 +47,6 @@ function Coleta() {
     setEstadoEscolhido("");
   }
 
-  const { pontos } = useContext(PontosDeColetaContext);
   const { estados } = useContext(LocaisContext);
 
   useEffect(() => {

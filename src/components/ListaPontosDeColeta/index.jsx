@@ -21,13 +21,19 @@ export default function ListaPontosDeColeta({ cidade, remove }) {
         `https://m3-capstone-api.herokuapp.com/collect?page=${paginaAtual}&perPage=6`
       );
       const collects = response.data.collects;
+      setDadoDosCards(collects);
 
       if (remove) {
         setDadoDosCards(collects);
+        return 0;
       } else if (cidade.length > 0) {
-        setDadoDosCards(collects.filter((item) => item.capital === cidade));
-      } else if (dadoDosCards.length === 0) {
-        setDadoDosCards(collects);
+        setDadoDosCards(
+          collects.filter(
+            (item) =>
+              item.capital.toLowerCase().trim() === cidade.toLowerCase().trim()
+          )
+        );
+        return 0;
       }
     })();
   }, [cidade, paginaAtual, remove]);
