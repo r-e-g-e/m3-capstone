@@ -11,18 +11,14 @@ function Header({login}) {
   const history =  useHistory();
   const info = localStorage.getItem("email");
 
-  function popUp(){
-    toast.success("Você foi desconectado");
-    history.push("/collection");
-  }
-
   function handleClick(){
+    toast.success("Você foi desconectado");
     localStorage.removeItem("token");
   }
 
   return (
     <Container>
-      <img onClick={()=>popUp()} className="logo" src="/assets/Ajude.me.svg" alt="ajude.me logo" />
+      <img onClick={()=>history.push("/collection")} className="logo" src="/assets/Ajude.me.svg" alt="ajude.me logo" />
       {!login ? (
         <ButtonHeader onClick={()=>history.push("/")}>voltar</ButtonHeader>
       ) : (
