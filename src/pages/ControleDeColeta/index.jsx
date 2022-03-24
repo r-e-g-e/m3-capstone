@@ -93,7 +93,7 @@ function ControleDeColeta(){
 
       <Header login={login}/>
       <Container>
-        <a href={JSON.parse(maps)} className="icon">
+        <a href={maps} className="icon">
           <span>Acesse o maps:</span>
           <img src="/assets/maps.png" alt="icon"/>
         </a>
