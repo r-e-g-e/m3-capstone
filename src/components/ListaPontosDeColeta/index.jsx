@@ -18,20 +18,23 @@ export default function ListaPontosDeColeta({ cidade, remove}) {
   }
 
   useEffect(() => {
-    (() => {
-      axios.get(
-        `https://m3-capstone-api.herokuapp.com/collect?page=${paginaAtual}`).then(res=>{
-        if(remove){
-          setDadoDosCards(res.data.collects);
-        }else if(cidade){
-          const filtro = res.data.collects.filter((item) => {
-            return item.capital === cidade;
-          });
-          setFilter(filtro);
-        }else{
-          setDadoDosCards(res.data.collects);  
-        }
-      });
+    (async () => {
+      const response = await axios.get(`https://m3-capstone-api.herokuapp.com/collect?page=${paginaAtual}&perPage=6`);
+      const collects = response.data.collects;
+
+      if(remove) {
+        setDadoDosCards(collects);
+      }
+      
+      else if(cidade){
+        const collectsFiltrados = collectsFiltrados.filter( item => item.capital === cidade);
+
+        setFilter(collectsFiltrados);
+      }
+      
+      else {
+        setDadoDosCards(collects);
+      }
      
     })();
   }, [cidade, paginaAtual, remove]);
