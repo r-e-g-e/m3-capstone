@@ -33,7 +33,6 @@ function ModalAtualizarValor({itemId, setModalUpdate, setModal, element}) {
             <p>Atualize:</p>
             <div>
               <input type="number" {...register("goal")} required />
-              <p>R$</p>
             </div>
           </DonateDiv>
           <ButtonsDiv>
