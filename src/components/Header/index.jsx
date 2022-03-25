@@ -34,7 +34,9 @@ function Header({login}) {
               <Link to={"/"}>Sair</Link>
             </li>
           </ul>
-          <ProfilePicture width={"60px"} height={"60px"} userName={info}/>
+          <div onClick={()=>history.push("/user")}>
+            <ProfilePicture width={"60px"} height={"60px"} userName={info}/>
+          </div>
         </LogadoContainer>
       )}
     </Container>

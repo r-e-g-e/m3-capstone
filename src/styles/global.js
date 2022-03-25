@@ -54,6 +54,9 @@ const GlobalStyle = createGlobalStyle`
         margin: 10px;
         border-radius: 100%;
     }
+    .mouse{
+        cursor: pointer;
+    }
 
 `;
 export default GlobalStyle;

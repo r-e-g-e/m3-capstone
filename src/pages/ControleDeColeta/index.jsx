@@ -6,10 +6,12 @@ import api from "../../utils/api";
 import Header from "../../components/Header";
 import Button from "../../components/Button";
 import CardItem from "../../components/CardItem";
+import {LocationsContainer, Container} from "./styles";
+//Modais
 import ModalItem from "../../components/Modals/ModalItem";
 import ModalMaisItem from "../../components/Modals/ModalMaisItem";
 import ModalExcluir from "../../components/Modals/ModalExcluir";
-import {LocationsContainer, Container} from "./styles";
+import ModalAtualizarValor from "../../components/Modals/ModalUpdate";
 
 function ControleDeColeta(){
 
@@ -18,8 +20,10 @@ function ControleDeColeta(){
   const off = localStorage.getItem("OFF");
   const id = localStorage.getItem(`ID${email}`);
   const maps = localStorage.getItem("maps");
+  const formatMaps = JSON.parse(maps);
   const login = localStorage.getItem("token");
   //Informações dos cards
+  const [element, setElement] = useState([]);
   const [item, setItem] = useState([]);
   const [itemId, setItemId] = useState([]);
   const [itemIdDel, setItemIdDel] = useState([]);
@@ -30,6 +34,7 @@ function ControleDeColeta(){
   const [modal, setModal] = useState(false);
   const [modalCreate, setModalCreate] = useState(false);
   const [modalDel, setModalDel] = useState(false);
+  const [modalUpdate, setModalUpdate] = useState(false);
 
   if(id!==off){
     useEffect(()=>{
@@ -80,7 +85,7 @@ function ControleDeColeta(){
     <>
       
       { modal &&
-        <ModalItem item={item} setItem={setItem} modal={modal} setModal={setModal} setModalCreate={setModalCreate} itemId={itemId} setModalDel={setModalDel} setItemIdDel={setItemIdDel}/>
+        <ModalItem setElement={setElement} setModalUpdate={setModalUpdate} item={item} setItem={setItem} modal={modal} setModal={setModal} setModalCreate={setModalCreate} itemId={itemId} setModalDel={setModalDel} setItemIdDel={setItemIdDel}/>
       }
 
       { modalCreate &&
@@ -91,9 +96,13 @@ function ControleDeColeta(){
         <ModalExcluir setItem={setItem} setModal={setModal}  setModalDel={setModalDel} itemIdDel={itemIdDel} itemId={itemId}/>
       }
 
+      { modalUpdate &&
+        <ModalAtualizarValor itemId={itemId} setModalUpdate={setModalUpdate} setModal={setModal} element={element}/>
+      }
+
       <Header login={login}/>
       <Container>
-        <a href={maps} className="icon" rel="noreferrer" target="_blank">
+        <a href={formatMaps} className="icon" rel="noreferrer" target="_blank">
           <span>Acesse o maps:</span>
           <img src="/assets/maps.png" alt="icon"/>
         </a>
