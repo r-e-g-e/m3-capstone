@@ -116,7 +116,7 @@ function ControleDeColeta(){
           <input type="text" value={input} onChange={(evt)=>setinput(evt.target.value)} />
           <div className="buttons">
             <Button width={`${220}px`} height={`${50}px`} bgColor = {"orange"} onClick={()=>search(input)}>Pesquisa</Button>
-            {id===off &&
+            {id === off && login &&
                <Button width={`${220}px`} height={`${50}px`} bgColor = {"orange"} onClick={()=>createCard(input)}>Criar</Button>
             }
           </div>
