@@ -12,19 +12,8 @@ function CardPontoColeta({data}) {
   const [cor, setCor] = useState("var(--laranja)");
 
   function directCard(name, id, mapsLink){
-
-    const email = localStorage.getItem("email");
     localStorage.setItem("OFF", id);
-
-    const validation = localStorage.getItem(`ID${email}`);
-
-    if(!validation){
-      if(email){
-        localStorage.setItem(`ID${email}`, id);
-        localStorage.setItem(`MAPS${email}`, mapsLink);
-      }
-    }
-
+    localStorage.setItem("maps", mapsLink);
     history.push("/control");
   }
 

@@ -6,7 +6,7 @@ export const Container = styled.header`
   margin-bottom: 20px;
   width: 100%;
   height: 75px;
-  padding: 10px;
+  padding: 5px;
   background: var(--verde-claro);
 
   .logo {

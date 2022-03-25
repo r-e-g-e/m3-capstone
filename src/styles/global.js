@@ -47,11 +47,15 @@ const GlobalStyle = createGlobalStyle`
     .move{
         margin-top: 30px;
         background-color: var(--laranja);
-        width: 50px;
-        height: 20px;
+        width: 40px;
+        height: 40px;
         color: var(--branco);
         border: none;
         margin: 10px;
+        border-radius: 100%;
+    }
+    .mouse{
+        cursor: pointer;
     }
 
 `;

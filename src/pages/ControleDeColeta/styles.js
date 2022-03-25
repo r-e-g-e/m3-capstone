@@ -38,6 +38,7 @@ export const Container = styled.div`
     font-size: 25px;
     text-decoration: underline;
     cursor: pointer;
+    font-family: Roboto, sans-serif;
   }
   .top{
     display: flex;

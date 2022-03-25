@@ -16,6 +16,7 @@ export const Header = styled.div`
 export const Container = styled.div`
   display: flex;
   flex-direction:column;
+  font-family: ui-sans-serif
 `;
 
 export const Flex = styled.div`

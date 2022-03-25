@@ -1,6 +1,7 @@
 //Bibliotecas
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { toast } from "react-toastify";
 //Componentes
 import {ButtonHeader, Container, LogadoContainer } from "./styles";
 import ProfilePicture from "../ProfilePicture";
@@ -11,6 +12,7 @@ function Header({login}) {
   const info = localStorage.getItem("email");
 
   function handleClick(){
+    toast.success("Você foi desconectado");
     localStorage.removeItem("token");
   }
 
@@ -32,7 +34,9 @@ function Header({login}) {
               <Link to={"/"}>Sair</Link>
             </li>
           </ul>
-          <ProfilePicture width={"60px"} height={"60px"} userName={info}/>
+          <div onClick={()=>history.push("/user")}>
+            <ProfilePicture width={"60px"} height={"60px"} userName={info}/>
+          </div>
         </LogadoContainer>
       )}
     </Container>

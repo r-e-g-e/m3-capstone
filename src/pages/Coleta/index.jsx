@@ -16,7 +16,7 @@ import {
 import Header from "../../components/Header";
 import Button from "../../components/Button";
 import ListaPontosDeColeta from "../../components/ListaPontosDeColeta";
-import { PontosDeColetaContext } from "../../Providers/PontosDeColeta";
+// import { PontosDeColetaContext } from "../../Providers/PontosDeColeta";
 
 function Coleta() {
   const login = localStorage.getItem("token");
@@ -47,6 +47,7 @@ function Coleta() {
     setEstadoEscolhido("");
   }
 
+  // const { pontos } = useContext(PontosDeColetaContext);
   const { estados } = useContext(LocaisContext);
 
   useEffect(() => {
@@ -64,8 +65,8 @@ function Coleta() {
 
   return (
     <>
+      <Header login={login}/>
       <CollectionContainer>
-        <Header login={login} />
         <SelectContainer>
           <h2 className="mobile__h2">Busca por pontos de coleta:</h2>
           <div className="select__innerContainer">

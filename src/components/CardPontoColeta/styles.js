@@ -9,10 +9,11 @@ export const Content = styled.li`
   width: 268px;
   height: 196px;
   font-family: "Itim", cursive;
-  border-radius: 40px;
+  border-radius: 8px;
   padding: 20px;
   margin-top: 5px;
   margin-bottom: 10px;
+  font-size: 20px;
   @media (min-width: 992px) {
     margin: 0;
     width: 313px;
@@ -36,11 +37,13 @@ export const Content = styled.li`
       margin-bottom: 25px;
     }
     h2 {
-      font-size: 16px;
+      font-size: 20px;
     }
   }
 
   button {
+    width: 90px;
+    height: 30px;
     align-self: center;
     border: 2px solid;
     border-radius: 5px;

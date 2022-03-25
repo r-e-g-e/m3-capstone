@@ -8,10 +8,17 @@ function ModalMaisItem({setItem, itemId, setModal, setModalCreate}) {
   const {register, handleSubmit} = useForm([]);
 
   const handleClick  = (date) => {
-    api.post(`/card/${itemId}/item`, date).then(()=>{
+
+    const color = {
+      "currentAmount":0.2,
+      "goal":date.goal
+    };
+
+    api.post(`/card/${itemId}/item`, date).then((response)=>{
       api.get(`/card/${itemId}/item`).then(res => {
         setItem(res.data);
       });
+      api.put(`/card/${itemId}/item/${response.data.id}`, color);
     });
     setModalCreate(false);
     setModal(true);
