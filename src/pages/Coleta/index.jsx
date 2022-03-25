@@ -11,7 +11,7 @@ import { CollectionContainer, SelectContainer, LocationsContainer, Footer} from 
 import Header from "../../components/Header";
 import Button from "../../components/Button";
 import ListaPontosDeColeta from "../../components/ListaPontosDeColeta";
-import { PontosDeColetaContext } from "../../Providers/PontosDeColeta";
+// import { PontosDeColetaContext } from "../../Providers/PontosDeColeta";
 
 function Coleta() {
 
@@ -41,7 +41,7 @@ function Coleta() {
     setEstadoEscolhido("");
   }
 
-  const { pontos } = useContext(PontosDeColetaContext);
+  // const { pontos } = useContext(PontosDeColetaContext);
   const { estados } = useContext(LocaisContext);
 
   useEffect(() => {

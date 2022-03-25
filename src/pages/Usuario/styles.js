@@ -13,6 +13,7 @@ export const Backgrounds = styled.div`
   width: 90vw;
   position: absolute;
   bottom: 0;
+  z-index: -1;
   img{
     display: none;
     @media (min-width: 786px){

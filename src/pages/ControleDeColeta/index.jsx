@@ -20,7 +20,6 @@ function ControleDeColeta(){
   const off = localStorage.getItem("OFF");
   const id = localStorage.getItem(`ID${email}`);
   const maps = localStorage.getItem("maps");
-  const formatMaps = JSON.parse(maps);
   const login = localStorage.getItem("token");
   //Informações dos cards
   const [element, setElement] = useState([]);
@@ -35,6 +34,13 @@ function ControleDeColeta(){
   const [modalCreate, setModalCreate] = useState(false);
   const [modalDel, setModalDel] = useState(false);
   const [modalUpdate, setModalUpdate] = useState(false);
+
+  let formatMaps = "";
+  try {
+    formatMaps = JSON.parse(maps);
+  } catch (error) {
+    formatMaps = localStorage.getItem("maps");
+  }
 
   if(id!==off){
     useEffect(()=>{
