@@ -20,7 +20,9 @@ export default function ListaPontosDeColeta({ cidade, remove }) {
       const response = await axios.get(
         `https://m3-capstone-api.herokuapp.com/collect?page=${paginaAtual}&perPage=6`
       );
-      const collects = response.data.collects;
+      const collects = response.data.collects.filter(item=>{
+        return item.name !== "message";
+      });
       setDadoDosCards(collects);
 
       if (remove) {

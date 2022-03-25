@@ -20,6 +20,7 @@ function Landing() {
             <Button width={`${200}px`} height={`${40}px`} bgColor = {"orange"} onClick={()=>history.push("/login")}>ENTRAR</Button>
             <Button width={`${200}px`} height={`${40}px`} bgColor = {"orange"} onClick={()=>history.push("/signup")}>CADASTRO</Button>
             <Button width={`${200}px`} height={`${40}px`} bgColor = {"orange"} onClick={()=>history.push("/collection")}>PONTO DE COLETA</Button>
+            <Button width={`${200}px`} height={`${40}px`} bgColor = {"orange"} onClick={()=>history.push("/message")}>COMENTÁRIOS</Button>
           </div>
         </ContainerMenu>
         <Figure>

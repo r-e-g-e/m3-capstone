@@ -13,6 +13,7 @@ import Coleta from "./pages/Coleta";
 import Sobre from "./pages/Sobre";
 import ControleDeColeta from "./pages/ControleDeColeta";
 import Usuario from "./pages/Usuario";
+import Comentarios from "./pages/Comentarios";
 
 function App() {
 
@@ -33,6 +34,9 @@ function App() {
           <FormBackground>
             <Cadastro/>
           </FormBackground>
+        </Route>
+        <Route path="/message">
+          <Comentarios  idCard={""}/>
         </Route>
         <Route path="/user">
           <Usuario/>
