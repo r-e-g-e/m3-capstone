@@ -10,7 +10,7 @@ function ModalMaisItem({setItem, itemId, setModal, setModalCreate}) {
   const handleClick  = (date) => {
 
     const color = {
-      "currentAmount":2,
+      "currentAmount": 2,
       "goal":date.goal
     };
 

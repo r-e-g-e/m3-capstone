@@ -36,7 +36,7 @@ function App() {
           </FormBackground>
         </Route>
         <Route path="/message">
-          <Comentarios  idCard={""}/>
+          <Comentarios  idCard={"b7cb3095-998b-4e31-8eb7-bf359378436a"}/>
         </Route>
         <Route path="/user">
           <Usuario/>
