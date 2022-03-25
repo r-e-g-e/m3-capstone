@@ -28,12 +28,12 @@ export const Container = styled.div`
       height: 94px;
       background: var(--branco);
       padding: 10px;
+      border: 1px solid;
       input {
-        /* width: 605.22px; */
         border: none;
         width: 100%;
       }
-      /* text-align: center; */
+    
     }
     button {
       width: 306px;
@@ -66,13 +66,13 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   width: 340px;
-  min-height: 200px;
+  height: 400px;
   background: #d8d4c6;
-  max-height: 300px;
   overflow-y: scroll;
 
   @media (min-width: 700px) {
     width: 700px;
+    height: 500px;
   }
 `;
 
